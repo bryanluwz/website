@@ -1,0 +1,30 @@
+.nav-bar {
+  width: max-content;
+  margin: 1rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+
+  background-color: aqua;
+  transition: all 0.3s;
+
+  .nav-bar-element {
+    padding: 0.4rem 0.8rem;
+    transition: all 0.3s;
+    height: 1.2rem;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .nav-bar-indicator {
+    bottom: 0.6rem;
+    height: 2rem;
+    margin-left: 0;
+
+    width: 80px; /* Adjust based on your tab width */
+    border-radius: 100px;
+    position: absolute;
+    background: #ffcc00;
+    z-index: 0;
+  }
+}

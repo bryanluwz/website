@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const loader = require('sass-loader');
+const loader = require('sass');
 
 module.exports = {
 	entry: './src/index.tsx',
