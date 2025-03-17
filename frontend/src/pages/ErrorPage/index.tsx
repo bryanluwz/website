@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import * as mainStyles from "../style.scss";
+import { FadeWrapper } from "../../components/FadeWrapper";
 
 export const ErrorPage: React.FC = () => {
   const { t } = useTranslation();
@@ -14,10 +15,14 @@ export const ErrorPage: React.FC = () => {
       width={"100%"}
     >
       <Box className={mainStyles.pageTitleWrapper}>
-        <Typography variant={"h1"} className={mainStyles.pageTitle}>
-          {t("404-title")}
-        </Typography>
-        <Typography variant="h2">{t("404-text")}</Typography>
+        <FadeWrapper>
+          <Typography variant={"h1"} className={mainStyles.pageTitle}>
+            {t("404-title")}
+          </Typography>
+        </FadeWrapper>
+        <FadeWrapper delay={0.3}>
+          <Typography variant="h2">{t("404-text")}</Typography>
+        </FadeWrapper>
       </Box>
     </Stack>
   );

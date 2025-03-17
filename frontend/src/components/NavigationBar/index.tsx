@@ -65,7 +65,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
       if (window.scrollY > 150) {
         setNavBarStyles({
           backgroundColor: "var(--secondary-background-color) !important",
-          backdropFilter: " blur(10px)",
+          backdropFilter: "blur(50px)",
         });
       } else {
         setNavBarStyles({});
