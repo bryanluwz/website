@@ -1,21 +1,24 @@
 .nav-bar {
   width: max-content;
+  height: min-content;
   margin: 1rem;
   padding: 0.6rem 0.8rem;
   border-radius: 100px;
-  align-items: center;
   position: relative;
 
-  background-color: aqua;
+  // Add color when scroll down
+  background-color: transparent;
   transition: all 0.3s;
 
   .nav-bar-element {
     padding: 0.4rem 0.8rem;
     transition: all 0.3s;
-    height: 1.2rem;
+    font-weight: 500;
     z-index: 1;
     cursor: pointer;
+    user-select: none;
   }
+
   .nav-bar-indicator {
     bottom: 0.6rem;
     height: 2rem;
@@ -24,7 +27,7 @@
     width: 80px; /* Adjust based on your tab width */
     border-radius: 100px;
     position: absolute;
-    background: #ffcc00;
+    background: var(--secondary-background-color);
     z-index: 0;
   }
 }

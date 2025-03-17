@@ -1,6 +1,6 @@
 /* theme.css */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 body {
   margin: 0;
@@ -10,23 +10,40 @@ body {
   --root-font-size: 16px;
 
   /* Colors */
-  --primary-background-color: #dbdeea;
-  --secondary-background-color: #d0d0d0;
-  --primary-selection-color: #f0f0f0;
-  --secondary-selection-color: #d6d9e3;
 
-  --primary-dark-background-color: #2f2f2f;
-  --secondary-dark-background-color: #3f3f3f;
+  --background-drop-color: hsla(36, 40%, 87%, 0.741);
+  --background-gradient-start-1: #a3e5e5;
+  --background-gradient-start-2: #f9968b;
+
+  --dark-slate-gray: #2f4f4f;
+  --light-slate-gray: #708090;
+  --tomato: #ff6347;
+  --salmon: #f08080;
+  --indian-red: #cd5c5c;
+  --light-lime: #daf7a6;
+  --yellow: #ffc300;
+  --medium-aquamarine: #76cdcd;
+  --medium-turquoise: #2cced2;
 
   /* Font */
-  --font-family: "Inter", "Open Sans", "Roboto", sans-serif;
+  --cta-font-family: "Inter", "Roboto", sans-serif;
+  --font-family: "Poppins", "Roboto", sans-serif;
   --font-size: 0.5rem;
+  --primary-font-color: var(--dark-slate-gray); /* Dark slate gray */
+  --secondary-font-color: var(--light-slate-gray); /* Light slate gay */
+  --cta-color: var(--salmon); /* Sialmen */
+  --attn-color: var(--tomato); /* Tomato */
+  --counter-cta-color: var(--medium-aquamarine); /* Medium Aquamarine */
+  --secondary-color: var(--medium-turquoise); /* Medium Turquoise */
+  --secondary-background-color: #fafafa80;
 
   /* Defaults */
+  color: var(--primary-font-color);
+  font-family: var(--font-family);
 }
 
 /* Customise scrollbar */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 10px;
 }
 
@@ -36,11 +53,11 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: var(--primary-background-color);
-}
+} */
 
 /* Customise selection */
 
 ::selection {
-  background: var(--primary-background-color);
-  color: var(--secondary-background-color);
+  background: var(--primary-font-color);
+  color: #f0f0f0;
 }

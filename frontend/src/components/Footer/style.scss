@@ -1,0 +1,27 @@
+.container {
+  margin-top: 4rem !important;
+  width: calc(100%);
+  height: max-content;
+
+  padding: 2rem 0;
+  // justify-self: flex-end;
+
+  justify-content: center;
+  background-color: var(--secondary-background-color);
+
+  .link {
+    text-decoration: none;
+    width: max-content;
+
+    > * {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      > * {
+        color: var(--primary-font-color);
+      }
+    }
+  }
+}

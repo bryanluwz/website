@@ -15,7 +15,7 @@ const themeOptions: ThemeOptions = {
     },
   },
   typography: {
-    fontFamily: `"Inter", "Open Sans", "Roboto", sans-serif`,
+    fontFamily: `var(--font-family)`,
     h6: {
       fontSize: "1rem",
       fontWeight: 600,
@@ -33,28 +33,31 @@ const themeOptions: ThemeOptions = {
       fontWeight: 600,
     },
     h2: {
-      fontSize: "2rem",
+      fontSize: "clamp(1.875rem, 1.3rem + 2.5vw, 3.5rem",
+      fontFamily: "var(--cta-font-family)",
       fontWeight: 600,
     },
     h1: {
-      fontSize: "2.2rem",
+      fontSize: "clamp(3.2rem, 0.6rem + 8.25vw, 8.5rem)",
+      fontFamily: "var(--cta-font-family)",
       fontWeight: 600,
     },
     body1: {
-      fontSize: "1rem",
+      fontSize: "clamp(1rem, .8rem + .5vw, 1.375rem)",
       fontWeight: 400,
     },
     body2: {
-      fontSize: "1rem",
+      fontSize: "clamp(0.8rem, .8rem + .5vw, 1rem)",
       fontWeight: 600,
     },
     subtitle1: {
-      fontSize: "0.9rem",
+      fontSize: "clamp(0.8rem, .8rem + .5vw, 1rem)",
       fontWeight: 400,
     },
     subtitle2: {
-      fontSize: "0.9rem",
-      fontWeight: 600,
+      color: "var(--secondary-font-color)",
+      fontSize: "clamp(0.8rem, .8rem + .5vw, 1rem)",
+      fontWeight: 500,
     },
   },
   components: {

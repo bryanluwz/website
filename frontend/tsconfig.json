@@ -6,7 +6,8 @@
     "moduleResolution": "node",
     "outDir": "./dist",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "resolveJsonModule": true
   },
   "include": ["src/**/*", "./typings.d.ts", "index.tsx"]
 }

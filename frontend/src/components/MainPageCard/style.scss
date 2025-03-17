@@ -1,0 +1,17 @@
+.card {
+  padding: 2rem;
+
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  text-align: right;
+
+  &.linked {
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(1) contrast(1);
+      transform: scale(1.05);
+      box-shadow: 0px 50px 100px -20px rgba(0, 0, 0, 0.15);
+    }
+  }
+}

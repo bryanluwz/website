@@ -1,6 +1,6 @@
 export enum PagesEnum {
-  "Home" = "/",
-  "About" = "about",
-  "Contact" = "contact",
-  "Not Found" = "not-found",
+  "nav-work" = "/",
+  "nav-about" = "about",
+  "nav-funsies" = "funsies",
+  "nav-contact" = "contact",
 }
