@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { PagesEnum } from "../../../apis/enums";
-import { useNavigate } from "react-router";
 
 // Define the state interface
 interface NavigationState {
@@ -8,7 +7,7 @@ interface NavigationState {
 }
 
 const initialState: NavigationState = {
-  currentRoute: PagesEnum["Home"],
+  currentRoute: PagesEnum["nav-work"],
 };
 
 const navigationSlice = createSlice({

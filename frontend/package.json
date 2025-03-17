@@ -1,6 +1,6 @@
 {
-  "name": "chatbot-for-education",
-  "description": "Chatbot for Education",
+  "name": "website",
+  "description": "My own personal website",
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",

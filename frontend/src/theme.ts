@@ -1,23 +1,23 @@
 import { createTheme, ThemeOptions } from "@mui/material/styles";
 
 const themeOptions: ThemeOptions = {
-  palette: {
-    mode: "light",
-    primary: {
-      main: "#1b1b1b",
-    },
-    secondary: {
-      main: "#0065d5",
-    },
-    background: {
-      default: "#f5f5f5",
-      paper: "#dbdeea",
-    },
-  },
+  // palette: {
+  //   mode: "light",
+  //   primary: {
+  //     main: "#1b1b1b",
+  //   },
+  //   secondary: {
+  //     main: "#0065d5",
+  //   },
+  //   background: {
+  //     default: "#f5f5f5",
+  //     paper: "#dbdeea",
+  //   },
+  // },
   typography: {
     fontFamily: `var(--font-family)`,
     h6: {
-      fontSize: "1rem",
+      fontSize: "clamp(1rem, .8rem + .5vw, 1.1rem)",
       fontWeight: 600,
     },
     h5: {
@@ -60,26 +60,26 @@ const themeOptions: ThemeOptions = {
       fontWeight: 500,
     },
   },
-  components: {
-    MuiModal: {
-      styleOverrides: {
-        root: {
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        },
-      },
-      defaultProps: {
-        slotProps: {
-          backdrop: {
-            sx: {
-              opacity: "0.8 !important",
-            },
-          },
-        },
-      },
-    },
-  },
+  // components: {
+  //   MuiModal: {
+  //     styleOverrides: {
+  //       root: {
+  //         display: "flex",
+  //         alignItems: "center",
+  //         justifyContent: "center",
+  //       },
+  //     },
+  //     defaultProps: {
+  //       slotProps: {
+  //         backdrop: {
+  //           sx: {
+  //             opacity: "0.8 !important",
+  //           },
+  //         },
+  //       },
+  //     },
+  //   },
+  // },
 };
 
 export const theme = createTheme(themeOptions);

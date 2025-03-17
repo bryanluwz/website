@@ -3,7 +3,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import * as mainStyles from "../style.scss";
 
-export const ErrorPage: React.FC = () => {
+export const WIPPage: React.FC = () => {
   const { t } = useTranslation();
 
   return (
@@ -15,12 +15,12 @@ export const ErrorPage: React.FC = () => {
     >
       <Box className={mainStyles.pageTitleWrapper}>
         <Typography variant={"h1"} className={mainStyles.pageTitle}>
-          {t("404-title")}
+          {t("wip-title")}
         </Typography>
-        <Typography variant="h2">{t("404-text")}</Typography>
+        <Typography variant="h2">{t("wip-text")}</Typography>
       </Box>
     </Stack>
   );
 };
 
-export default ErrorPage;
+export default WIPPage;

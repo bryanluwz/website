@@ -12,7 +12,12 @@ export const MainPage: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Stack direction={"column"} spacing={"5rem"} alignItems={"center"}>
+    <Stack
+      direction={"column"}
+      spacing={"5rem"}
+      alignItems={"center"}
+      width={"100%"}
+    >
       <Box className={mainStyles.pageTitleWrapper}>
         <Typography variant={"h1"} className={mainStyles.pageTitle}>
           {t("welcome")}

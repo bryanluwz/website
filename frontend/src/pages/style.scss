@@ -1,7 +1,6 @@
 .main-container {
   width: 100%;
-  min-height: calc(100dvh - 2rem);
-  padding-top: 2rem;
+  min-height: 100dvh;
   align-items: center;
   background: linear-gradient(
       to bottom right,
@@ -15,6 +14,14 @@
       var(--background-drop-color) 100vh,
       var(--background-drop-color) 50vh
     );
+
+  > *:not(:last-child) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
   .page-title-wrapper {
     .page-title {
