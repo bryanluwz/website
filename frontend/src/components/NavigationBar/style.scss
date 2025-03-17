@@ -1,0 +1,47 @@
+.wrapper {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+
+  .nav-bar {
+    width: max-content;
+    height: min-content;
+    margin: 1rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 100px;
+    position: relative;
+    z-index: 100;
+    align-items: center;
+
+    // Add color when scroll down
+    background-color: transparent;
+    transition: all 0.3s;
+
+    .nav-bar-element {
+      padding: 0.4rem clamp(0.5rem, 0.5rem + 0.5vw, 0.8rem);
+      transition: all 0.3s;
+      font-weight: 500;
+      z-index: 1;
+      cursor: pointer;
+      user-select: none;
+
+      &.language {
+        &:hover {
+          color: var(--primary-font-color);
+        }
+      }
+    }
+
+    .nav-bar-indicator {
+      bottom: 0.6rem;
+      height: 2rem;
+      margin-left: 0;
+
+      border-radius: 100px;
+      position: absolute;
+      backdrop-filter: blur(10px);
+      background: var(--secondary-background-color);
+      z-index: 0;
+    }
+  }
+}

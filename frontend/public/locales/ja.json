@@ -1,0 +1,23 @@
+{
+  "nav-work": "仕事",
+  "nav-about": "私について",
+  "nav-funsies": "楽しいこと",
+  "nav-contact": "連絡",
+  "footer-copyright": "© 2025 Bryan Lu",
+  "footer-sauce": "ソース",
+  "footer-links": "リンク",
+  "footer-linkedin": "LinkedIn",
+  "footer-github": "GitHub",
+  "footer-instagram": "Instagram",
+  "footer-resume": "履歴書",
+  "footer-email": "メール",
+  "footer-message": "メッセージ",
+  "footer-chat": "私とチャットしよう！",
+  "404-title": "あれ？",
+  "404-text": "間違ったページ？",
+  "wip-title": "ばれた！",
+  "wip-text": "まだ作業中…",
+  "welcome": "はい Bryan です",
+  "introduction-title": "私は南洋理工大学のコンピュータ工学の最終年の学生です。",
+  "introduction-text": "私は現実世界の問題を解決するソフトウェアの開発に情熱を持っており、常に学び成長する機会を探しています。"
+}
