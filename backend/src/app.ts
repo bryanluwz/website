@@ -1,13 +1,12 @@
 import express from "express";
-import ChatRouter from "./routes/chatRoutes";
 import cors from "cors";
-import DashboardRouter from "./routes/dashboardRoutes";
-import AuthRouter from "./routes/authRoutes";
-import UserRouter from "./routes/userRoute";
-import PersonaRouter from "./routes/personaRoutes";
 import path from "path";
 import fs from "fs";
 import mime from "mime-types";
+
+require("dotenv").config();
+
+const app = express();
 
 // Connection test from FE
 app.get("/api/hello", (req, res) => {
