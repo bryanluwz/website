@@ -4,7 +4,7 @@
     "allowJs": true,
     "jsx": "react",
     "moduleResolution": "node",
-    "outDir": "../backend/public",
+    "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true,
     "resolveJsonModule": true
