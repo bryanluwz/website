@@ -2,7 +2,7 @@
   position: sticky;
   z-index: 100;
   top: 0;
-  overflow-x: auto;
+  overflow-x: none;
   max-width: 90%;
   margin-left: 100px;
 
@@ -11,10 +11,11 @@
     max-width: 100%;
     height: min-content;
     margin: var(--margin-sm);
-    border-radius: 100px;
+    border-radius: 50px;
     position: relative;
     z-index: 100;
     align-items: center;
+    padding: 0 var(--margin-xxs);
 
     // Add color when scroll down
     background-color: transparent;
@@ -45,9 +46,6 @@
     }
 
     .nav-bar-indicator {
-      // bottom: var(--margin-xxs);
-      margin-left: 0;
-
       border-radius: 100px;
       position: absolute;
       backdrop-filter: blur(5px);

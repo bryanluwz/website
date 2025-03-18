@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Box, Grid2, Stack, Typography } from "@mui/material";
 
 import { MainPageCard } from "../../components/MainPageCard";
-import PlaceholderImage from "../../../public/assets/default.jpg";
+import Mugshot from "../../../public/assets/mugshot.png";
 import * as mainStyles from "../style.scss";
 import * as styles from "./style.scss";
 import { FadeWrapper } from "../../components/FadeWrapper";
@@ -45,7 +45,7 @@ export const MainPage: React.FC = () => {
             <Box
               component="img"
               alt="Description of image"
-              src={PlaceholderImage}
+              src={Mugshot}
               className={mainStyles.image}
             />
           </FadeWrapper>

@@ -1,4 +1,4 @@
-import { Box, Grid2, Link, Stack, Typography } from "@mui/material";
+import { Grid2, Link, Stack, Typography } from "@mui/material";
 import React from "react";
 import * as styles from "./style.scss";
 import { useTranslation } from "react-i18next";
