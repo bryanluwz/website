@@ -26,7 +26,14 @@ export const MainPage: React.FC = () => {
           </Typography>
         </FadeWrapper>
       </Box>
-      <Stack direction={"row"} spacing={3} className={mainStyles.pageIntro}>
+      <Stack
+        direction={{
+          xs: "column",
+          sm: "row",
+        }}
+        spacing={3}
+        className={mainStyles.pageIntro}
+      >
         <Box
           component="a"
           href="https://www.linkedin.com/in/bryanluwz/"
@@ -53,22 +60,42 @@ export const MainPage: React.FC = () => {
         </Stack>
       </Stack>
       <Grid2 container spacing={2} className={styles.cardGrid}>
-        <Grid2 size={7}>
+        <Grid2
+          size={{
+            xs: 12,
+            sm: 7,
+          }}
+        >
           <FadeWrapper delay={0.5}>
             <MainPageCard title="Work 1" superTitle="Work" />
           </FadeWrapper>
         </Grid2>
-        <Grid2 size={5}>
+        <Grid2
+          size={{
+            xs: 12,
+            sm: 5,
+          }}
+        >
           <FadeWrapper delay={0.5}>
             <MainPageCard title="Chatbot" superTitle="AI & LLM" />
           </FadeWrapper>
         </Grid2>
-        <Grid2 size={5}>
+        <Grid2
+          size={{
+            xs: 12,
+            sm: 5,
+          }}
+        >
           <FadeWrapper delay={0.5}>
             <MainPageCard title="Topic 3" superTitle="Insert something here" />
           </FadeWrapper>
         </Grid2>
-        <Grid2 size={7}>
+        <Grid2
+          size={{
+            xs: 12,
+            sm: 7,
+          }}
+        >
           <FadeWrapper delay={0.5}>
             <MainPageCard title="Topic 4" superTitle="Insert something here" />
           </FadeWrapper>

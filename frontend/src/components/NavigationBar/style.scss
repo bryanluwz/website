@@ -2,12 +2,15 @@
   position: sticky;
   z-index: 100;
   top: 0;
+  overflow-x: auto;
+  max-width: 90%;
+  margin-left: 100px;
 
   .nav-bar {
-    width: max-content;
+    width: min-content;
+    max-width: 100%;
     height: min-content;
-    margin: 1rem;
-    padding: 0.6rem 0.8rem;
+    margin: var(--margin-sm);
     border-radius: 100px;
     position: relative;
     z-index: 100;
@@ -17,8 +20,17 @@
     background-color: transparent;
     transition: all 0.3s;
 
+    overflow-x: auto;
+
+    white-space: nowrap;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     .nav-bar-element {
-      padding: 0.4rem clamp(0.5rem, 0.5rem + 0.5vw, 0.8rem);
+      margin: var(--margin-xs) var(--margin-xs);
+      padding: var(--margin-xs) var(--margin-sm);
       transition: all 0.3s;
       font-weight: 500;
       z-index: 1;
@@ -33,13 +45,12 @@
     }
 
     .nav-bar-indicator {
-      bottom: 0.6rem;
-      height: 2rem;
+      // bottom: var(--margin-xxs);
       margin-left: 0;
 
       border-radius: 100px;
       position: absolute;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(5px);
       background: var(--secondary-background-color);
       z-index: 0;
     }
