@@ -39,9 +39,12 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
     width: 0,
     height: 0,
   });
+  const [updateIndicatorBool, setUpdateIndicatorBool] = React.useState(false); // Stupid apple safari bug
   const navRefs = React.useRef<{ [key: number]: HTMLSpanElement | null }>({}); // Store refs for each tab
+  const [updateIndicatorTimeoutId, setUpdateIndicatorTimeoutId] =
+    React.useState<NodeJS.Timeout | null>(null);
 
-  React.useEffect(() => {
+  const updateIndicator = () => {
     const activeIndex = Math.max(
       pages.findIndex((page) => page[1] === currentRoute),
       0
@@ -55,14 +58,43 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
         height: activeTab.offsetHeight,
       });
     }
+  };
+
+  React.useEffect(() => {
+    updateIndicator();
   }, [currentRoute, pages, i18n.language]);
+
+  React.useEffect(() => {
+    if (updateIndicatorBool) {
+      updateIndicator();
+      setUpdateIndicatorBool(false);
+    }
+  }, [updateIndicatorBool]);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (updateIndicatorTimeoutId) {
+        clearTimeout(updateIndicatorTimeoutId);
+      }
+      setUpdateIndicatorTimeoutId(
+        setTimeout(() => {
+          setUpdateIndicatorBool(true);
+        }, 300)
+      );
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Set navigation bar styles
   const [navBarStyles, setNavBarStyles] = React.useState({});
 
   React.useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 150) {
+      if (window.scrollY > 120) {
         setNavBarStyles({
           backgroundColor: "var(--secondary-background-color) !important",
           backdropFilter: "blur(50px)",
@@ -90,7 +122,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
     <Box className={styles.wrapper}>
       <Stack
         direction="row"
-        spacing={2}
+        spacing={0}
         className={styles.navBar}
         sx={navBarStyles}
       >

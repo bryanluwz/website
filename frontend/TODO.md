@@ -1,4 +1,6 @@
-1. responsive design
+# TODO
+
+1. [/] responsive design
 
 2. finish main page
 

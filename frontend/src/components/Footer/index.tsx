@@ -8,8 +8,8 @@ export const Footer: React.FC = () => {
 
   return (
     <Grid2 container spacing={2} className={styles.container}>
-      <Grid2 size={2.5} />
-      <Grid2 size={4.5}>
+      <Grid2 size={{ xs: 1, sm: 0 }} display={{ xs: "none", sm: "block" }} />
+      <Grid2 size={{ xs: 10, sm: 5 }} display={{ xs: "none", sm: "block" }}>
         <Stack direction="row" spacing={1}>
           <Typography variant="subtitle2">{t("footer-copyright")}</Typography>
           <Typography variant="subtitle2">&#8226;</Typography>
@@ -22,8 +22,8 @@ export const Footer: React.FC = () => {
           </Link>
         </Stack>
       </Grid2>
-      <Grid2 size={2}>
-        <Stack direction="column" spacing={2}>
+      <Grid2 size={{ xs: 5, sm: 3 }}>
+        <Stack direction="column" spacing={{ xs: 1, sm: 2 }}>
           <Typography variant="body2">{t("footer-links")}</Typography>
           <Stack direction="column" spacing={1}>
             <Link
@@ -64,8 +64,8 @@ export const Footer: React.FC = () => {
           </Stack>
         </Stack>
       </Grid2>
-      <Grid2 size={2}>
-        <Stack direction="column" spacing={2}>
+      <Grid2 size={{ xs: 5, sm: 2 }}>
+        <Stack direction="column" spacing={{ xs: 1, sm: 2 }}>
           <Typography variant="body2">{t("footer-message")}</Typography>
           <Stack direction={"column"} spacing={1}>
             <Link className={styles.link}>
@@ -74,7 +74,21 @@ export const Footer: React.FC = () => {
           </Stack>
         </Stack>
       </Grid2>
-      <Grid2 size={1} />
+      <Grid2 size={{ xs: 3, sm: 2 }} />
+      <Grid2 size={{ xs: 1, sm: 0 }} display={{ sm: "none" }} />
+      <Grid2 size={{ xs: 10, sm: 5 }} display={{ sm: "none" }}>
+        <Stack direction="row" spacing={1}>
+          <Typography variant="subtitle2">{t("footer-copyright")}</Typography>
+          <Typography variant="subtitle2">&#8226;</Typography>
+          <Link
+            className={styles.link}
+            target="_blank"
+            href="https://github.com/bryanluwz/website"
+          >
+            <Typography variant="subtitle2">{t("footer-sauce")}</Typography>
+          </Link>
+        </Stack>
+      </Grid2>
     </Grid2>
   );
 };

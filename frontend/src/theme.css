@@ -9,6 +9,14 @@ body {
 :root {
   --root-font-size: 16px;
 
+  --margin-xxs: 0.25rem;
+  --margin-xs: 0.5rem;
+  --margin-sm: 1rem;
+  --margin-md: 1.5rem;
+  --margin-lg: 2rem;
+  --margin-xl: 3rem;
+  --margin-xxl: 4rem;
+
   /* Colors */
 
   --background-drop-color: hsla(36, 40%, 87%, 0.741);
