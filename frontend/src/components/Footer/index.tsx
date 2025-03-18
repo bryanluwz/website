@@ -22,7 +22,6 @@ export const Footer: React.FC = () => {
           </Link>
         </Stack>
       </Grid2>
-      ````
       <Grid2 size={{ xs: 5, sm: 3 }}>
         <Stack direction="column" spacing={{ xs: 1, sm: 2 }}>
           <Typography variant="body2">{t("footer-links")}</Typography>
