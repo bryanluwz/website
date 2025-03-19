@@ -3,125 +3,123 @@ import { Box, Stack, Typography } from "@mui/material";
 
 import * as styles from "./style.scss";
 import cx from "classnames";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 interface MainPageCardProps {
   title?: string;
   superTitle?: string; // if subtitle is under the title, then supertitle should be above right?
   backgroundColor?: string;
-  content?: React.ReactNode | string;
-}
-
-enum CardMovementEnum {
-  ORIGINAL_STATIC = "static",
-  CENTER_STATIC = "center_static",
-  MOVING_TO_CENTER = "moving_to_center",
-  MOVING_BACK = "moving_back",
+  image?: string;
+  content?: {
+    [key: string]: {
+      title: string;
+      content: string;
+    };
+  };
 }
 
 export const MainPageCard: React.FC<MainPageCardProps> = ({
   title = "Title",
   superTitle = "Super Title",
   backgroundColor = "#f0f0f0",
-  content = "Content",
+  content = [],
 }) => {
-  const [isPopupCardOpen, setIsPopupCardOpen] = React.useState<
-    boolean | undefined
-  >(undefined);
-  const [isMoving, setIsMoving] = React.useState<CardMovementEnum>(
-    CardMovementEnum.ORIGINAL_STATIC
-  );
-  const cardRef = React.useRef<HTMLDivElement>(null);
-  const [originalCardPosition, setOriginalCardPosition] = React.useState({
-    top: 0,
-    left: 0,
-  });
+  const { t, i18n } = useTranslation();
 
-  const calculateOriginalCardPosition = () => {
-    if (cardRef.current) {
-      const cardRect = cardRef.current.getBoundingClientRect();
-      setOriginalCardPosition({
-        top: cardRect.top,
-        left: cardRect.left,
+  const [isPopupCardOpen, setIsPopupCardOpen] = React.useState(false);
+  const cardRef = React.useRef<HTMLDivElement | null>(null);
+
+  const handleOpenPopupCard = () => {
+    setIsPopupCardOpen(true);
+  };
+
+  const handleClosePopupCard = () => {
+    setIsPopupCardOpen(false);
+  };
+
+  const [cardAnimateStyle, setCardAnimateStyle] = React.useState<{
+    [key: string]: string | number;
+  } | null>(null);
+
+  const updateCardAnimateStyle = () => {
+    if (!cardRef.current) return;
+
+    if (isPopupCardOpen) {
+      setCardAnimateStyle({
+        height: "auto",
+        zIndex: 201,
       });
+      setTimeout(() => {
+        cardRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "center",
+        });
+      }, 400);
+    } else {
+      setCardAnimateStyle(null);
     }
   };
 
   React.useEffect(() => {
-    if (isPopupCardOpen === true) {
-      calculateOriginalCardPosition();
-      setIsMoving(CardMovementEnum.MOVING_TO_CENTER);
-    } else if (isPopupCardOpen === false) {
-      setIsMoving(CardMovementEnum.MOVING_BACK);
-    }
-  }, [isPopupCardOpen]);
-
-  const handleBoxTransitionStyles = () => {
-    switch (isMoving) {
-      case CardMovementEnum.MOVING_TO_CENTER:
-      case CardMovementEnum.CENTER_STATIC:
-        return {
-          position: "fixed",
-          top: window.screenY + window.innerHeight / 2,
-          left: window.screenX + window.innerWidth / 2,
-          transform: "translate(-50%, -50%)",
-        } as const;
-      case CardMovementEnum.MOVING_BACK:
-        return {
-          position: "fixed",
-          top: `${originalCardPosition.top}px`,
-          left: `${originalCardPosition.left}px`,
-        } as const;
-      case CardMovementEnum.ORIGINAL_STATIC:
-      default:
-        return {} as const;
-    }
-  };
-
-  const cardContent = React.useMemo(() => {
-    if (!isPopupCardOpen) {
-      return (
-        <>
-          <Typography variant="subtitle1">{superTitle}</Typography>
-          <Typography variant="h2">{title}</Typography>
-        </>
-      );
-    } else if (isPopupCardOpen) {
-      return (
-        <>
-          <Typography variant="h2">{title}</Typography>
-          <Typography variant="subtitle1">{superTitle}</Typography>
-          <Typography variant="body1">{content}</Typography>
-        </>
-      );
-    }
-  }, [isPopupCardOpen, title, superTitle, content, isMoving]);
+    updateCardAnimateStyle();
+  }, [isPopupCardOpen, i18n.language]);
 
   return (
     <>
       {/* Card that transforms into the Popup */}
-      <Box
-        className={styles.cardWrapper}
-        sx={handleBoxTransitionStyles()}
-        onTransitionEnd={() => {
-          if (isMoving === CardMovementEnum.MOVING_BACK) {
-            setIsMoving(CardMovementEnum.ORIGINAL_STATIC);
-          } else if (isMoving === CardMovementEnum.MOVING_TO_CENTER) {
-            setIsMoving(CardMovementEnum.CENTER_STATIC);
-          }
-        }}
-      >
-        <Stack
+      <Box className={styles.cardWrapper}>
+        <motion.div
           ref={cardRef}
-          className={cx(styles.card, {
+          className={cx(styles.cardContainer, {
             [styles.link]: !isPopupCardOpen,
           })}
-          sx={{ backgroundColor }}
-          onMouseEnter={() => calculateOriginalCardPosition()}
-          onClick={() => setIsPopupCardOpen(true)}
-          spacing={0}
+          style={{ backgroundColor }}
+          transition={{ type: "spring", stiffness: 200, damping: 22 }}
+          initial={{ transform: "scale(1)" }}
+          animate={cardAnimateStyle ?? { transform: "scale(1)" }}
+          onClick={handleOpenPopupCard}
+          whileHover={
+            !isPopupCardOpen
+              ? {
+                  transform: "scale(1.05)",
+                  boxShadow: "0px 50px 100px -20px rgba(0, 0, 0, 0.15)",
+                }
+              : {}
+          }
         >
-          {cardContent}
-        </Stack>
+          <Stack
+            className={cx(styles.card, {
+              [styles.focused]: isPopupCardOpen,
+            })}
+            onClick={() => setIsPopupCardOpen(true)}
+            spacing={2}
+          >
+            <Stack direction={"column"} spacing={0}>
+              <Typography variant="subtitle1">{superTitle}</Typography>
+              <Typography variant="h3">{title}</Typography>
+            </Stack>
+            <Stack direction={"column"} spacing={2}>
+              {isPopupCardOpen &&
+                Object.entries(content).map((item, index) => (
+                  <Stack direction={"column"}>
+                    <Typography key={index} variant="h5">
+                      {item[1].title}
+                    </Typography>
+                    <Typography key={index} variant="subtitle1">
+                      {item[1].content}
+                    </Typography>
+                  </Stack>
+                ))}
+              {isPopupCardOpen && content.length === 0 && (
+                <Typography variant="subtitle1">
+                  {t("main-page-card-no-content")}
+                </Typography>
+              )}
+            </Stack>
+          </Stack>
+        </motion.div>
       </Box>
 
       {/* Popup Overlay */}
@@ -129,7 +127,7 @@ export const MainPageCard: React.FC<MainPageCardProps> = ({
         className={cx(styles.popupOverlay, {
           [styles.active]: isPopupCardOpen,
         })}
-        onClick={() => setIsPopupCardOpen(false)}
+        onClick={handleClosePopupCard}
       />
     </>
   );

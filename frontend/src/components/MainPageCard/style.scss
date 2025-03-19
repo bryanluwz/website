@@ -1,14 +1,16 @@
 .card-wrapper {
   transition: top 0.4s ease, left 0.4s ease, transform 0.4s ease;
-  z-index: 201;
+  position: relative;
+  min-height: 20rem;
 
-  .card {
-    min-height: 20rem;
+  .card-container {
+    position: absolute;
+    width: calc(100% - 4rem);
+    height: calc(100% - 4rem);
     padding: 2rem;
 
     border-radius: 20px;
     transition: transform 0.3s ease, box-shadow 0.4s ease;
-    text-align: right;
 
     > * {
       color: var(--primary-font-color);
@@ -16,19 +18,18 @@
 
     &.link {
       cursor: pointer;
-      &:hover {
-        filter: brightness(1) contrast(1);
-        transform: scale(1.05);
-        transform-origin: center;
-        box-shadow: 0px 50px 100px -20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card {
+      padding: 0rem;
+      text-align: right;
+      transition: all 0.3s ease;
+
+      &.focused {
+        text-align: left;
       }
     }
   }
-}
-
-.hidden {
-  opacity: 0;
-  pointer-events: none;
 }
 
 .popupOverlay {
@@ -45,15 +46,4 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
   }
-}
-
-.popupCard {
-  background: white;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  max-width: 500px;
-  text-align: center;
-
-  transition: all 0.3s ease;
 }

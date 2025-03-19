@@ -19,6 +19,7 @@ export const MainPage: React.FC = () => {
       alignItems={"center"}
       width={"100%"}
     >
+      {/* Page title */}
       <Box className={mainStyles.pageTitleWrapper}>
         <FadeWrapper>
           <Typography variant={"h1"} className={mainStyles.pageTitle}>
@@ -26,6 +27,7 @@ export const MainPage: React.FC = () => {
           </Typography>
         </FadeWrapper>
       </Box>
+      {/* Main page intro */}
       <Stack
         direction={{
           xs: "column",
@@ -52,13 +54,17 @@ export const MainPage: React.FC = () => {
         </Box>
         <Stack direction={"column"} spacing={2} className={mainStyles.text}>
           <FadeWrapper delay={0.3}>
-            <Typography variant={"h2"}>{t("introduction-title")}</Typography>
+            <Typography variant={"h3"}>{t("introduction-title")}</Typography>
           </FadeWrapper>
           <FadeWrapper delay={0.3}>
-            <Typography variant={"body1"}>{t("introduction-text")}</Typography>
+            <Typography variant={"h5"}>{t("introduction-text")}</Typography>
           </FadeWrapper>
         </Stack>
       </Stack>
+      {/* Main page cards */}
+      <FadeWrapper delay={0.5}>
+        <Typography variant="h2">{t("main-page-card-title")}</Typography>
+      </FadeWrapper>
       <Grid2 container spacing={3} className={styles.cardGrid}>
         <Grid2
           size={{
@@ -68,8 +74,8 @@ export const MainPage: React.FC = () => {
         >
           <FadeWrapper delay={0.5}>
             <MainPageCard
-              title="Frontend Developer Intern"
-              superTitle="Experience"
+              title="Frontend Software Developer"
+              superTitle="Internship"
             />
           </FadeWrapper>
         </Grid2>
@@ -80,7 +86,10 @@ export const MainPage: React.FC = () => {
           }}
         >
           <FadeWrapper delay={0.5}>
-            <MainPageCard title="Full Stack Chatbot" superTitle="Experience" />
+            <MainPageCard
+              title="Full Stack Chatbot"
+              superTitle="LLM + AI + Software Development"
+            />
           </FadeWrapper>
         </Grid2>
         <Grid2
@@ -90,7 +99,10 @@ export const MainPage: React.FC = () => {
           }}
         >
           <FadeWrapper delay={0.5}>
-            <MainPageCard title="Embedded Programming" superTitle="Projects" />
+            <MainPageCard
+              title="Autonomous Vehicle Navigation"
+              superTitle="Embedded Programming"
+            />
           </FadeWrapper>
         </Grid2>
         <Grid2
@@ -103,6 +115,20 @@ export const MainPage: React.FC = () => {
             <MainPageCard
               title="First Class Honours"
               superTitle="Nanyang Technological University"
+              content={{
+                "1": {
+                  title: "ASEAN Scholar",
+                  content: "Rewardee of the ASEAN Scholarship",
+                },
+                "2": {
+                  title: "Computer Engineering",
+                  content: "First Class Honours",
+                },
+                "3": {
+                  title: "Dean's List",
+                  content: "Awarded Dean's List for 100 semesters",
+                },
+              }}
             />
           </FadeWrapper>
         </Grid2>
