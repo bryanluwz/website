@@ -1,17 +1,59 @@
-.card {
-  padding: 2rem;
+.card-wrapper {
+  transition: top 0.4s ease, left 0.4s ease, transform 0.4s ease;
+  z-index: 201;
 
-  border-radius: 20px;
-  transition: all 0.3s ease-in-out;
-  text-align: right;
+  .card {
+    min-height: 20rem;
+    padding: 2rem;
 
-  &.linked {
-    cursor: pointer;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.4s ease;
+    text-align: right;
 
-    &:hover {
-      filter: brightness(1) contrast(1);
-      transform: scale(1.05);
-      box-shadow: 0px 50px 100px -20px rgba(0, 0, 0, 0.15);
+    > * {
+      color: var(--primary-font-color);
+    }
+
+    &.link {
+      cursor: pointer;
+      &:hover {
+        filter: brightness(1) contrast(1);
+        transform: scale(1.05);
+        transform-origin: center;
+        box-shadow: 0px 50px 100px -20px rgba(0, 0, 0, 0.15);
+      }
     }
   }
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  transition: all 0.3s ease;
+
+  z-index: 200;
+
+  &.active {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.popupCard {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  text-align: center;
+
+  transition: all 0.3s ease;
 }

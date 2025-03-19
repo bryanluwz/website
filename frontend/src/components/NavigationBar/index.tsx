@@ -65,7 +65,12 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
     document.title = `Bryan Lu ${String.fromCharCode(8226)} ${t(
       pages.find((page) => page[1] === currentRoute)![0]
     )}`;
-  }, [currentRoute, pages, i18n.language]);
+  }, [pages, i18n.language]);
+
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    updateIndicator();
+  }, [currentRoute]);
 
   React.useEffect(() => {
     if (updateIndicatorBool) {

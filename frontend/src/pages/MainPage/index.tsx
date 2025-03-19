@@ -59,7 +59,7 @@ export const MainPage: React.FC = () => {
           </FadeWrapper>
         </Stack>
       </Stack>
-      <Grid2 container spacing={2} className={styles.cardGrid}>
+      <Grid2 container spacing={3} className={styles.cardGrid}>
         <Grid2
           size={{
             xs: 12,
@@ -67,7 +67,10 @@ export const MainPage: React.FC = () => {
           }}
         >
           <FadeWrapper delay={0.5}>
-            <MainPageCard title="Work 1" superTitle="Work" />
+            <MainPageCard
+              title="Frontend Developer Intern"
+              superTitle="Experience"
+            />
           </FadeWrapper>
         </Grid2>
         <Grid2
@@ -77,7 +80,7 @@ export const MainPage: React.FC = () => {
           }}
         >
           <FadeWrapper delay={0.5}>
-            <MainPageCard title="Chatbot" superTitle="AI & LLM" />
+            <MainPageCard title="Full Stack Chatbot" superTitle="Experience" />
           </FadeWrapper>
         </Grid2>
         <Grid2
@@ -87,7 +90,7 @@ export const MainPage: React.FC = () => {
           }}
         >
           <FadeWrapper delay={0.5}>
-            <MainPageCard title="Topic 3" superTitle="Insert something here" />
+            <MainPageCard title="Embedded Programming" superTitle="Projects" />
           </FadeWrapper>
         </Grid2>
         <Grid2
@@ -97,7 +100,10 @@ export const MainPage: React.FC = () => {
           }}
         >
           <FadeWrapper delay={0.5}>
-            <MainPageCard title="Topic 4" superTitle="Insert something here" />
+            <MainPageCard
+              title="First Class Honours"
+              superTitle="Nanyang Technological University"
+            />
           </FadeWrapper>
         </Grid2>
       </Grid2>
