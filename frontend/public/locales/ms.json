@@ -27,73 +27,78 @@
   },
   "main-page-cards": {
     "title": "Pengalaman",
+    "description": "Berikut adalah beberapa projek dan pengalaman saya",
     "card-0": {
       "title": "Jurutera Frontend",
       "supertitle": "Latihan Industri",
+      "time": "Jan 2024 - Jun 2024",
+      "company": "Univers Pte. Ltd. Singapura",
       "content": [
         {
           "content-title": "Tanggungjawab",
           "content-body": [
-            "Developed and maintained the frontend of the company's web application",
-            "Collaborated with the backend team to integrate new features",
-            "Optimized the application for performance and user experience"
+            "Membangunkan dan menyelenggarakan kod frontend pelbagai projek menggunakan React, Typescript, Ant Design dan ECharts",
+            "Bekerjasama dengan pasukan UI dan backend untuk mengintegrasi ciri-ciri dan fungsi-fungsi baharu",
+            "Menulis Spesifikasi Keperluan Perisian (SRS) untuk pelbagai projek",
+            "Menggunakan Pipelines CI/CD, seperti Jenkins untuk mengautomasikan proses pengedaran"
           ]
         }
       ]
     },
     "card-1": {
       "title": "Chatbot Full Stack",
-      "supertitle": "Pembangunan Web",
+      "supertitle": "Pembangunan Web + AI",
+      "time": "Ogos 2024 - Mei 2025",
+      "company": "Universiti Teknologi Nanyang",
       "content": [
         {
-          "content-title": "Skills",
+          "content-title": "Tanggungjawab",
           "content-body": [
-            "React",
-            "Node.js",
-            "Python",
-            "ExpressJS",
-            "Huggingface",
-            "transformers"
-          ]
-        },
-        {
-          "content-title": "Responsibilities",
-          "content-body": [
-            "Developed the frontend of the chatbot using React",
-            "Implemented the backend using Node.js and ExpressJS",
-            "Integrated the chatbot with Huggingface's transformers"
+            "Membangunkan kod frontend chatbot menggunakan React dan Typescript",
+            "Melaksanakan server backend menggunakan Node.js dan ExpressJS dengan API RESTful",
+            "Mengintegrasikan chatbot menggunakan server AI Python dengan PyTorch dan Hugging Face Transformers"
           ]
         }
       ]
     },
     "card-2": {
-      "title": "Autonomous Vehicle Navigation",
-      "supertitle": "Embedded Programming",
+      "title": "Navigasi Kenderaan Automatik",
+      "supertitle": "Sistem Terbenam",
+      "time": "Ogos 2023 - Nov 2023",
+      "company": "Universiti Teknologi Nanyang",
       "content": [
         {
-          "content-title": "Skills",
-          "content-body": ["C", "Embedded Systems", "FreeRTOS", "STM32"]
-        },
-        {
-          "content-title": "Responsibilities",
+          "content-title": "Tanggungjawab",
           "content-body": [
-            "Developed the navigation system for an autonomous vehicle",
-            "Integrated the navigation system with the vehicle's sensors",
-            "Optimized the navigation system for real-time performance"
+            "Membangunkan kawalan untuk STM32 Microcontroller untuk berinteraksi dengan sensor dan motor",
+            "Melaksanakan algoritma kawalan PID untuk kelajuan motor dan kawalan sudut stereng",
+            "Mengintegrasikan kawalan dengan Raspberry Pi untuk navigasi automatik",
+            "Membangunkan algoritma Visi Komputer untuk pengesanan lorong dan penghindaran halangan"
           ]
         }
       ]
     },
     "card-3": {
-      "title": "First Class Honours",
-      "supertitle": "Nanyang Technological University",
+      "title": "Ijazah Kelas Pertama",
+      "supertitle": "Kejuruteraan Komputer",
+      "time": "2021 - 2025",
+      "company": "Universiti Teknologi Nanyang",
       "content": [
         {
-          "content-title": "ASEAN Scholar"
+          "content-title": "Ijazah Kelas Pertama",
+          "content-body": [
+            "Menamatkan pengajian dengan Ijazah Kelas Pertama dalam Kejuruteraan Komputer, dengan GPA 4.66"
+          ]
         },
         {
-          "content-title": "Dean's List",
-          "content-body": ["Dean's List"]
+          "content-title": "Biasiswa ASEAN",
+          "content-body": [
+            "Dianugerahkan Biasiswa ASEAN untuk pendaftaran di NTU"
+          ]
+        },
+        {
+          "content-title": "Senarai Dekan",
+          "content-body": ["Senarai Dekan untuk Tahun Akademik 2021 dan 2023"]
         }
       ]
     }

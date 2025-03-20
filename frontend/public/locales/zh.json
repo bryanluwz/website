@@ -14,7 +14,7 @@
     "instagram": "Instagram",
     "resume": "简历",
     "email": "电子邮件",
-    "message": "消息",
+    "message": "联系我吧",
     "chat": "和我聊天！"
   },
   "404": {
@@ -28,77 +28,79 @@
   "introduction": {
     "welcome": "我是 Bryan",
     "title": "我是南洋理工大学计算机工程专业的最终年学生。",
-    "text": "我热衷于构建解决现实问题的软件，并且一直在寻找学习和成长的机会。"
+    "text": "我热衷于构建解决现实问题的软件，并且一直在寻找学习和成长的机会。",
+    "learn-more": "想了解更多吗"
   },
   "main-page-cards": {
-    "title": "Experiences",
+    "title": "经历",
+    "description": "以下是我的一些项目和经历",
     "card-0": {
-      "title": "Frontend Engineer",
-      "supertitle": "Internship",
+      "title": "前端工程师",
+      "supertitle": "实习",
+      "time": "2024年1月 - 2024年6月",
+      "company": "Univers Pte. Ltd. 新加坡",
       "content": [
         {
-          "content-title": "Responsibilities",
+          "content-title": "职责",
           "content-body": [
-            "Developed and maintained the frontend of the company's web application",
-            "Collaborated with the backend team to integrate new features",
-            "Optimized the application for performance and user experience"
+            "使用React、Typescript、Ant Design和ECharts开发和维护多个项目的前端代码库",
+            "与UI和后端团队合作，集成新功能和特性",
+            "为多个项目编写软件需求规范（SRS）",
+            "使用CI/CD如Jenkins自动化部署过程"
           ]
         }
       ]
     },
     "card-1": {
-      "title": "Full Stack Chatbot",
-      "supertitle": "Web Development",
+      "title": "全栈聊天机器人",
+      "supertitle": "Web开发 + AI",
+      "time": "2024年8月 - 2025年5月",
+      "company": "南洋理工大学",
       "content": [
         {
-          "content-title": "Skills",
+          "content-title": "职责",
           "content-body": [
-            "React",
-            "Node.js",
-            "Python",
-            "ExpressJS",
-            "Huggingface",
-            "transformers"
-          ]
-        },
-        {
-          "content-title": "Responsibilities",
-          "content-body": [
-            "Developed the frontend of the chatbot using React",
-            "Implemented the backend using Node.js and ExpressJS",
-            "Integrated the chatbot with Huggingface's transformers"
+            "使用React和Typescript开发聊天机器人的前端客户端",
+            "使用Node.js和ExpressJS实现具有RESTful API的后端服务器",
+            "通过AI Python服务器与PyTorch和Hugging Face Transformers集成聊天机器人"
           ]
         }
       ]
     },
     "card-2": {
-      "title": "Autonomous Vehicle Navigation",
-      "supertitle": "Embedded Programming",
+      "title": "自动驾驶汽车导航",
+      "supertitle": "嵌入式编程",
+      "time": "2023年8月 - 2023年11月",
+      "company": "南洋理工大学",
       "content": [
         {
-          "content-title": "Skills",
-          "content-body": ["C", "Embedded Systems", "FreeRTOS", "STM32"]
-        },
-        {
-          "content-title": "Responsibilities",
+          "content-title": "职责",
           "content-body": [
-            "Developed the navigation system for an autonomous vehicle",
-            "Integrated the navigation system with the vehicle's sensors",
-            "Optimized the navigation system for real-time performance"
+            "为STM32微控制器开发控制系统，用于与传感器和电机交互",
+            "实现PID控制算法，用于电机速度和转向角度控制",
+            "将控制系统与Raspberry Pi集成，实现自动驾驶导航",
+            "开发计算机视觉算法，用于车道检测和避障"
           ]
         }
       ]
     },
     "card-3": {
-      "title": "First Class Honours",
-      "supertitle": "Nanyang Technological University",
+      "title": "一等荣誉学位",
+      "supertitle": "计算机工程",
+      "time": "2021 - 2025",
+      "company": "南洋理工大学",
       "content": [
         {
-          "content-title": "ASEAN Scholar"
+          "content-title": "一等荣誉学位",
+          "content-body": ["以4.66的GPA在计算机工程专业获得一等荣誉学位"]
         },
         {
-          "content-title": "Dean's List",
-          "content-body": ["Dean's List"]
+          "content-title": "东南亚学者",
+          "content-body": ["获得ASEAN奖学金进入南洋理工大学"]
+        },
+        {
+          "content-title": "院长名单",
+          "content-body": ["2021年和2023学年的院长名单"]
         }
       ]
     }

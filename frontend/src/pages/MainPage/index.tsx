@@ -17,7 +17,7 @@ import { useNavigationStore } from "../../redux/features/Navigation/hooks";
 import { PagesEnum } from "../../apis/enums";
 
 export const MainPage: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { setCurrentRoute } = useNavigationStore();
   const { mainPageCards, getMainPageCards } = useMainPageStore();
 
@@ -87,7 +87,7 @@ export const MainPage: React.FC = () => {
         })}
       </Grid2>
     );
-  }, [mainPageCards]);
+  }, [mainPageCards, i18n.language]);
 
   return (
     <Stack

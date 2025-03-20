@@ -43,7 +43,7 @@
         {
           "content-title": "Responsibilities",
           "content-body": [
-            "Developed and maintained the frontend codebase of various projects using React, Typescript, Ant Design and Echarts",
+            "Developed and maintained the frontend codebase of various projects using React, Typescript, Ant Design and ECharts",
             "Collaborated with the UI and backend team to integrate new features and functionalities",
             "Created Software Requirements Specifications (SRS) for various projects",
             "Utilised CI/CD Pipelines, such as Jenkins to automate the deployment process"

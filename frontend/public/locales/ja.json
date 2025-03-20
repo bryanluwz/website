@@ -33,73 +33,76 @@
   },
   "main-page-cards": {
     "title": "経験",
+    "description": "プロジェクトとか経験とか",
     "card-0": {
       "title": "フロントエンドエンジニア",
       "supertitle": "インターンシップ",
+      "time": "2024年1月 - 2024年6月",
+      "company": "Univers Pte. Ltd. Singapore",
       "content": [
         {
-          "content-title": "",
+          "content-title": "責任",
           "content-body": [
-            "Developed and maintained the frontend of the company's web application",
-            "Collaborated with the backend team to integrate new features",
-            "Optimized the application for performance and user experience"
+            "React、Typescript、Ant Design、ECharts を使用して、さまざまなプロジェクトのフロントエンド コードベースを開発および保守しました",
+            "UI およびバックエンド チームと協力して、新しい機能と機能を統合しました",
+            "さまざまなプロジェクトのソフトウェア要件仕様 (SRS) を作成しました",
+            "Jenkins などの CI/CD パイプラインを使用して、デプロイメント プロセスを自動化しました"
           ]
         }
       ]
     },
     "card-1": {
-      "title": "フルスタックチャットボット",
-      "supertitle": "Web開発",
+      "title": "Full Stack チャットボット",
+      "supertitle": "Web開発 + AI",
+      "time": "2024年8月 - 2025年5月",
+      "company": "ナンヤン理工大学",
       "content": [
-        {
-          "content-title": "スキル",
-          "content-body": [
-            "React",
-            "Node.js",
-            "Python",
-            "ExpressJS",
-            "Huggingface",
-            "transformers"
-          ]
-        },
         {
           "content-title": "責任",
           "content-body": [
-            "Developed the frontend of the chatbot using React",
-            "Implemented the backend using Node.js and ExpressJS",
-            "Integrated the chatbot with Huggingface's transformers"
+            "ReactとTypescriptを使用してチャットボットのフロントエンドクライアントを開発",
+            "Node.jsとExpressJSを使用してRESTful APIを持つバックエンドサーバーを実装",
+            "AI Pythonサーバー（PyTorchおよびHugging Face Transformers）と統合してチャットボットを実装"
           ]
         }
       ]
     },
     "card-2": {
-      "title": "自律走行車ナビゲーション",
+      "title": "自動運転車ナビゲーション",
       "supertitle": "組み込みプログラミング",
+      "time": "2023年8月 - 2023年11月",
+      "company": "ナンヤン理工大学",
       "content": [
         {
-          "content-title": "Skills",
-          "content-body": ["C", "Embedded Systems", "FreeRTOS", "STM32"]
-        },
-        {
-          "content-title": "Responsibilities",
+          "content-title": "責任",
           "content-body": [
-            "Developed the navigation system for an autonomous vehicle",
-            "Integrated the navigation system with the vehicle's sensors",
-            "Optimized the navigation system for real-time performance"
+            "STM32マイクロコントローラーの制御を開発し、センサーとモーターとインターフェース",
+            "モーター速度と操舵角度制御のためにPID制御アルゴリズムを実装",
+            "Raspberry Piと統合し、自律ナビゲーションを実現",
+            "車線検出と障害物回避のためのコンピュータビジョンアルゴリズムを開発"
           ]
         }
       ]
     },
     "card-3": {
-      "title": "首席卒業",
-      "supertitle": "ナンヤん理工大学",
+      "title": "優等学位",
+      "supertitle": "コンピュータ工学",
+      "time": "2021年 - 2025年",
+      "company": "ナンヤン理工大学",
       "content": [
         {
-          "content-title": "ASEAN Scholar"
+          "content-title": "優等学位",
+          "content-body": [
+            "コンピュータ工学でファーストクラスの優等学位を取得、GPAは4.66"
+          ]
         },
         {
-          "content-title": "Dean's List",
-          "content-body": ["Dean's List"]
+          "content-title": "ASEAN学者",
+          "content-body": ["NTUへの入学のためにASEAN奨学金を授与されました"]
+        },
+        {
+          "content-title": "学長表彰",
+          "content-body": ["2021年度と2023年度の学長リスト"]
         }
       ]
     }
