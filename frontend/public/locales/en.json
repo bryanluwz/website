@@ -31,9 +31,9 @@
     "text": "I'm passionate about building software that solves real-world problems, and I'm always looking for opportunities to learn and grow."
   },
   "main-page-cards": {
-    "title": "Featured",
+    "title": "Experience",
     "card-0": {
-      "title": "Frontend Software Engineer",
+      "title": "Frontend Engineer",
       "supertitle": "Internship",
       "content": [
         {
@@ -48,7 +48,7 @@
     },
     "card-1": {
       "title": "Full Stack Chatbot",
-      "supertitle": "AI + LLM + Software Engineering",
+      "supertitle": "Web Development",
       "content": [
         {
           "content-title": "Skills",
@@ -91,7 +91,7 @@
     },
     "card-3": {
       "title": "First Class Honours",
-      "supertitle": "Academic Achievement",
+      "supertitle": "Nanyang Technological University",
       "content": [
         {
           "content-title": "ASEAN Scholar"

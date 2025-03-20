@@ -33,8 +33,14 @@ body {
   --medium-aquamarine: #76cdcd;
   --medium-turquoise: #2cced2;
 
+  --light-cyan: #e0ffff;
+  --lavender: #e6e6fa;
+  --mint-cream: #f5fffa;
+  --cornsilk: #fff8dc;
+
   /* Font */
-  --cta-font-family: "Inter", "Roboto", sans-serif;
+  /* --cta-font-family: "Inter", "Roboto", sans-serif; */
+  --cta-font-family: "Poppins", "Roboto", sans-serif;
   --font-family: "Poppins", "Roboto", sans-serif;
   --font-size: 0.5rem;
   --primary-font-color: var(--dark-slate-gray); /* Dark slate gray */

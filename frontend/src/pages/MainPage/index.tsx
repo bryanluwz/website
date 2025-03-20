@@ -9,7 +9,10 @@ import * as mainStyles from "../style.scss";
 import * as styles from "./style.scss";
 import { FadeWrapper } from "../../components/FadeWrapper";
 import { useMainPageStore } from "../../redux/features/MainPage/hooks";
-import { MainPageCardModel } from "../../apis/MainPage/typings";
+import {
+  MainPageCardContentModel,
+  MainPageCardModel,
+} from "../../apis/MainPage/typings";
 
 export const MainPage: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -24,26 +27,29 @@ export const MainPage: React.FC = () => {
     const numCards = mainPageCards.length;
 
     const calculateGridSize = (index: number) => {
-      // The order of the grid size for sm is 7, 5, 5, 7 repeating,
+      // The order of the grid size for md is 5, 7, 7, 5 repeating,
       // unless it's the last card and it is odd, then it's 12
-      // The order of the grid size fro xs is 12 repeating
-      const smGridSizes = [7, 5, 5, 7];
-      const xsGridSizes = [12, 12, 12, 12];
+      // The order of the grid size fro sm is 12 repeating
+      const mdGridSizes = [5, 7, 7, 5];
+      const smGridSizes = [12, 12, 12, 12];
 
       if (index === numCards - 1 && index % 2 === 0) {
         return {
           xs: 12,
           sm: 12,
+          md: 12,
         };
       } else if (index % 2 === 0) {
         return {
-          xs: xsGridSizes[index % 4],
+          xs: smGridSizes[index % 4],
           sm: smGridSizes[index % 4],
+          md: mdGridSizes[index % 4],
         };
       } else {
         return {
-          xs: xsGridSizes[index % 4],
-          sm: smGridSizes[(index + 1) % 4],
+          xs: smGridSizes[index % 4],
+          sm: smGridSizes[index % 4],
+          md: mdGridSizes[(index + 1) % 4],
         };
       }
     };
@@ -51,15 +57,24 @@ export const MainPage: React.FC = () => {
     return (
       <Grid2 container spacing={3} className={styles.cardGrid}>
         {mainPageCards.map((card: MainPageCardModel, index: number) => {
+          const cardContent = t(`main-page-cards.${card.content}`, {
+            returnObjects: true,
+          }) as unknown as MainPageCardContentModel[];
+          const formattedCardContent = cardContent.map((content: any) => ({
+            ...content,
+            contentTitle: content["content-title"],
+            contentBody: content["content-body"],
+          }));
+
           return (
             <Grid2 key={index} size={calculateGridSize(index)}>
               <FadeWrapper delay={0.5}>
                 <MainPageCard
-                  title={t(card.title ?? "title")}
-                  superTitle={t(card.supertitle ?? "supertitle")}
+                  title={t(`main-page-cards.${card.title}`)}
+                  superTitle={t(`main-page-cards.${card.supertitle}`)}
                   backgroundColor={card.backgroundColor}
                   image={card.image}
-                  content={card.content}
+                  content={formattedCardContent}
                 />
               </FadeWrapper>
             </Grid2>
@@ -87,10 +102,10 @@ export const MainPage: React.FC = () => {
       {/* Main page intro */}
       <Stack
         direction={{
-          xs: "column",
-          sm: "row",
+          sm: "column",
+          md: "row",
         }}
-        spacing={3}
+        spacing={4}
         className={mainStyles.pageIntro}
       >
         <Box

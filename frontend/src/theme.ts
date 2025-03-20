@@ -29,7 +29,7 @@ const themeOptions: ThemeOptions = {
       fontWeight: 600,
     },
     h3: {
-      fontSize: "clamp(1.875rem, 1.3rem + 2.5vw, 1.3rem)",
+      fontSize: "clamp(2rem, 1.8rem + 2.5vw, 1.8rem)",
       fontWeight: 600,
     },
     h2: {
