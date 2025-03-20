@@ -1,23 +1,110 @@
 {
-  "nav-work": "Work",
-  "nav-about": "About",
-  "nav-funsies": "Funsies",
-  "nav-contact": "Contact",
-  "footer-copyright": "© 2025 Bryan Lu",
-  "footer-sauce": "Sauce",
-  "footer-links": "Links",
-  "footer-linkedin": "LinkedIn",
-  "footer-github": "GitHub",
-  "footer-instagram": "Instagram",
-  "footer-resume": "Resume",
-  "footer-email": "Email",
-  "footer-message": "Message",
-  "footer-chat": "Chat with me!",
-  "404-title": "Oopsies!",
-  "404-text": "Are you at the right page?",
-  "wip-title": "You got me!",
-  "wip-text": "This page is still a work in progress...",
-  "welcome": "Hi! I'm Bryan.",
-  "introduction-title": "Final Year Computer Engineering Student at Nanyang Technological University.",
-  "introduction-text": "I'm passionate about building software that solves real-world problems, and I'm always looking for opportunities to learn and grow."
+  "navigation": {
+    "work": "Work",
+    "about": "About",
+    "funsies": "Funsies",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "© 2025 Bryan Lu",
+    "sauce": "Sauce",
+    "links": "Links",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "instagram": "Instagram",
+    "resume": "Resume",
+    "email": "Email",
+    "message": "Message",
+    "chat": "Chat with me!"
+  },
+  "404": {
+    "title": "Oopsies!",
+    "text": "Are you at the right page?"
+  },
+  "wip": {
+    "title": "You got me!",
+    "text": "This page is still a work in progress..."
+  },
+  "introduction": {
+    "welcome": "Hi! I'm Bryan.",
+    "title": "Final Year Computer Engineering Student at Nanyang Technological University.",
+    "text": "I'm passionate about building software that solves real-world problems, and I'm always looking for opportunities to learn and grow.",
+    "learn-more": "Learn more about me"
+  },
+  "main-page-cards": {
+    "title": "Experiences",
+    "description": "Here are some of my projects and experiences.",
+    "card-0": {
+      "title": "Frontend Engineer",
+      "supertitle": "Internship",
+      "time": "Jan 2024 - Jun 2024",
+      "company": "Univers Pte. Ltd. Singapore",
+      "content": [
+        {
+          "content-title": "Responsibilities",
+          "content-body": [
+            "Developed and maintained the frontend codebase of various projects using React, Typescript, Ant Design and ECharts",
+            "Collaborated with the UI and backend team to integrate new features and functionalities",
+            "Created Software Requirements Specifications (SRS) for various projects",
+            "Utilised CI/CD Pipelines, such as Jenkins to automate the deployment process"
+          ]
+        }
+      ]
+    },
+    "card-1": {
+      "title": "Full Stack Chatbot",
+      "supertitle": "Web Development + AI",
+      "time": "Aug 2024 - May 2025",
+      "company": "Nanyang Technological University",
+      "content": [
+        {
+          "content-title": "Responsibilities",
+          "content-body": [
+            "Developed the frontend client of the chatbot using React and Typescript",
+            "Implemented the backend server using Node.js and ExpressJS with RESTful APIs",
+            "Integrated the chatbot using an AI Python server with PyTorch and Hugging Face Transformers"
+          ]
+        }
+      ]
+    },
+    "card-2": {
+      "title": "Autonomous Vehicle Navigation",
+      "supertitle": "Embedded Programming",
+      "time": "Aug 2023 - Nov 2023",
+      "company": "Nanyang Technological University",
+      "content": [
+        {
+          "content-title": "Responsibilities",
+          "content-body": [
+            "Developed controls for STM32 Microcontroller to interface with sensors and motors",
+            "Implemented PID control algorithms for motor speed and steering angle control",
+            "Integrated the controls with the Raspberry Pi for autonomous navigation",
+            "Developed Computer Vision algorithms for lane detection and obstacle avoidance"
+          ]
+        }
+      ]
+    },
+    "card-3": {
+      "title": "First Class Honours",
+      "supertitle": "Computer Engineering",
+      "time": "2021 - 2025",
+      "company": "Nanyang Technological University",
+      "content": [
+        {
+          "content-title": "First Class Honours",
+          "content-body": [
+            "Graduated with First Class Honours in Computer Engineering, with GPA of 4.66"
+          ]
+        },
+        {
+          "content-title": "ASEAN Scholar",
+          "content-body": ["Awarded ASEAN Scholarship for matriculation in NTU"]
+        },
+        {
+          "content-title": "Dean's List",
+          "content-body": ["Dean's List for Academic Year 2021 and 2023"]
+        }
+      ]
+    }
+  }
 }

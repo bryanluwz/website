@@ -17,11 +17,11 @@ export const ErrorPage: React.FC = () => {
       <Box className={mainStyles.pageTitleWrapper}>
         <FadeWrapper>
           <Typography variant={"h1"} className={mainStyles.pageTitle}>
-            {t("404-title")}
+            {t("404.title")}
           </Typography>
         </FadeWrapper>
         <FadeWrapper delay={0.3}>
-          <Typography variant="h2">{t("404-text")}</Typography>
+          <Typography variant="h2">{t("404.text")}</Typography>
         </FadeWrapper>
       </Box>
     </Stack>

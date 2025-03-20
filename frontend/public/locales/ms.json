@@ -1,23 +1,106 @@
 {
-  "nav-work": "Kerja",
-  "nav-about": "Tentang",
-  "nav-funsies": "Main-main",
-  "nav-contact": "Hubungi",
-  "footer-copyright": "© 2025 Bryan Lu",
-  "footer-sauce": "Sos",
-  "footer-links": "Pautan",
-  "footer-linkedin": "LinkedIn",
-  "footer-github": "GitHub",
-  "footer-instagram": "Instagram",
-  "footer-resume": "Resume",
-  "footer-email": "E-mel",
-  "footer-message": "Mesej",
-  "footer-chat": "Bual dengan saya!",
-  "404-title": "Alamak!",
-  "404-text": "Salah alamat ke?",
-  "wip-title": "Apa ni?",
-  "wip-text": "Halaman ini masih tengah bina.",
-  "welcome": "Hai! Saya Bryan.",
-  "introduction-title": "Saya pelajar tahun akhir Kejuruteraan Komputer di Universiti Teknologi Nanyang.",
-  "introduction-text": "Saya bersemangat untuk membina perisian yang menyelesaikan masalah dunia sebenar dan sentiasa mencari peluang untuk belajar dan berkembang."
+  "navigation": {
+    "work": "Kerja",
+    "about": "Tentang",
+    "funsies": "Main-main",
+    "contact": "Hubungi"
+  },
+  "footer": {
+    "copyright": "© 2025 Bryan Lu",
+    "sauce": "Sos",
+    "links": "Pautan",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "instagram": "Instagram",
+    "resume": "Resume",
+    "email": "E-mel",
+    "message": "Mesej",
+    "chat": "Bual dengan saya!"
+  },
+  "404": { "title": "Alamak!", "text": "Salah alamat ke?" },
+  "wip": { "title": "Apa ni?", "text": "Halaman ini masih tengah bina." },
+  "introduction": {
+    "welcome": "Hai! Saya Bryan.",
+    "title": "Saya pelajar tahun akhir Kejuruteraan Komputer di Universiti Teknologi Nanyang.",
+    "text": "Saya bersemangat untuk membina perisian yang menyelesaikan masalah dunia sebenar dan sentiasa mencari peluang untuk belajar dan berkembang.",
+    "learn-more": "Ketahui lebih"
+  },
+  "main-page-cards": {
+    "title": "Pengalaman",
+    "description": "Berikut adalah beberapa projek dan pengalaman saya",
+    "card-0": {
+      "title": "Jurutera Frontend",
+      "supertitle": "Latihan Industri",
+      "time": "Jan 2024 - Jun 2024",
+      "company": "Univers Pte. Ltd. Singapura",
+      "content": [
+        {
+          "content-title": "Tanggungjawab",
+          "content-body": [
+            "Membangunkan dan menyelenggarakan kod frontend pelbagai projek menggunakan React, Typescript, Ant Design dan ECharts",
+            "Bekerjasama dengan pasukan UI dan backend untuk mengintegrasi ciri-ciri dan fungsi-fungsi baharu",
+            "Menulis Spesifikasi Keperluan Perisian (SRS) untuk pelbagai projek",
+            "Menggunakan Pipelines CI/CD, seperti Jenkins untuk mengautomasikan proses pengedaran"
+          ]
+        }
+      ]
+    },
+    "card-1": {
+      "title": "Chatbot Full Stack",
+      "supertitle": "Pembangunan Web + AI",
+      "time": "Ogos 2024 - Mei 2025",
+      "company": "Universiti Teknologi Nanyang",
+      "content": [
+        {
+          "content-title": "Tanggungjawab",
+          "content-body": [
+            "Membangunkan kod frontend chatbot menggunakan React dan Typescript",
+            "Melaksanakan server backend menggunakan Node.js dan ExpressJS dengan API RESTful",
+            "Mengintegrasikan chatbot menggunakan server AI Python dengan PyTorch dan Hugging Face Transformers"
+          ]
+        }
+      ]
+    },
+    "card-2": {
+      "title": "Navigasi Kenderaan Automatik",
+      "supertitle": "Sistem Terbenam",
+      "time": "Ogos 2023 - Nov 2023",
+      "company": "Universiti Teknologi Nanyang",
+      "content": [
+        {
+          "content-title": "Tanggungjawab",
+          "content-body": [
+            "Membangunkan kawalan untuk STM32 Microcontroller untuk berinteraksi dengan sensor dan motor",
+            "Melaksanakan algoritma kawalan PID untuk kelajuan motor dan kawalan sudut stereng",
+            "Mengintegrasikan kawalan dengan Raspberry Pi untuk navigasi automatik",
+            "Membangunkan algoritma Visi Komputer untuk pengesanan lorong dan penghindaran halangan"
+          ]
+        }
+      ]
+    },
+    "card-3": {
+      "title": "Ijazah Kelas Pertama",
+      "supertitle": "Kejuruteraan Komputer",
+      "time": "2021 - 2025",
+      "company": "Universiti Teknologi Nanyang",
+      "content": [
+        {
+          "content-title": "Ijazah Kelas Pertama",
+          "content-body": [
+            "Menamatkan pengajian dengan Ijazah Kelas Pertama dalam Kejuruteraan Komputer, dengan GPA 4.66"
+          ]
+        },
+        {
+          "content-title": "Biasiswa ASEAN",
+          "content-body": [
+            "Dianugerahkan Biasiswa ASEAN untuk pendaftaran di NTU"
+          ]
+        },
+        {
+          "content-title": "Senarai Dekan",
+          "content-body": ["Senarai Dekan untuk Tahun Akademik 2021 dan 2023"]
+        }
+      ]
+    }
+  }
 }

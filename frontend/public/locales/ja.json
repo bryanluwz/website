@@ -1,23 +1,110 @@
 {
-  "nav-work": "仕事",
-  "nav-about": "私について",
-  "nav-funsies": "楽しいこと",
-  "nav-contact": "連絡",
-  "footer-copyright": "© 2025 Bryan Lu",
-  "footer-sauce": "ソース",
-  "footer-links": "リンク",
-  "footer-linkedin": "LinkedIn",
-  "footer-github": "GitHub",
-  "footer-instagram": "Instagram",
-  "footer-resume": "履歴書",
-  "footer-email": "メール",
-  "footer-message": "メッセージ",
-  "footer-chat": "私とチャットしよう！",
-  "404-title": "あれ？",
-  "404-text": "間違ったページ？",
-  "wip-title": "ばれた！",
-  "wip-text": "まだ作業中…",
-  "welcome": "はい Bryan です",
-  "introduction-title": "私は南洋理工大学のコンピュータ工学の最終年の学生です。",
-  "introduction-text": "私は現実世界の問題を解決するソフトウェアの開発に情熱を持っており、常に学び成長する機会を探しています。"
+  "navigation": {
+    "work": "仕事",
+    "about": "私について",
+    "funsies": "遊ぼう",
+    "contact": "連絡"
+  },
+  "footer": {
+    "copyright": "© 2025 Bryan Lu",
+    "sauce": "ソース",
+    "links": "リンク",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "instagram": "Instagram",
+    "resume": "履歴書",
+    "email": "メール",
+    "message": "メッセージ",
+    "chat": "チャットしよう！"
+  },
+  "404": {
+    "title": "あれ？",
+    "text": "間違ったページ？"
+  },
+  "wip": {
+    "title": "ばれた",
+    "text": "まだ作業中…"
+  },
+  "introduction": {
+    "welcome": "はい Bryan です",
+    "title": "南洋理工大学のコンピュータ工学の最終年の学生です。",
+    "text": "現実世界の問題を解決するソフトウェアの開発に情熱を持っており、常に学び成長する機会を探しています。",
+    "learn-more": "もっと詳しく"
+  },
+  "main-page-cards": {
+    "title": "経験",
+    "description": "プロジェクトとか経験とか",
+    "card-0": {
+      "title": "フロントエンドエンジニア",
+      "supertitle": "インターンシップ",
+      "time": "2024年1月 - 2024年6月",
+      "company": "Univers Pte. Ltd. Singapore",
+      "content": [
+        {
+          "content-title": "責任",
+          "content-body": [
+            "React、Typescript、Ant Design、ECharts を使用して、さまざまなプロジェクトのフロントエンド コードベースを開発および保守しました",
+            "UI およびバックエンド チームと協力して、新しい機能と機能を統合しました",
+            "さまざまなプロジェクトのソフトウェア要件仕様 (SRS) を作成しました",
+            "Jenkins などの CI/CD パイプラインを使用して、デプロイメント プロセスを自動化しました"
+          ]
+        }
+      ]
+    },
+    "card-1": {
+      "title": "Full Stack チャットボット",
+      "supertitle": "Web開発 + AI",
+      "time": "2024年8月 - 2025年5月",
+      "company": "ナンヤン理工大学",
+      "content": [
+        {
+          "content-title": "責任",
+          "content-body": [
+            "ReactとTypescriptを使用してチャットボットのフロントエンドクライアントを開発",
+            "Node.jsとExpressJSを使用してRESTful APIを持つバックエンドサーバーを実装",
+            "AI Pythonサーバー（PyTorchおよびHugging Face Transformers）と統合してチャットボットを実装"
+          ]
+        }
+      ]
+    },
+    "card-2": {
+      "title": "自動運転車ナビゲーション",
+      "supertitle": "組み込みプログラミング",
+      "time": "2023年8月 - 2023年11月",
+      "company": "ナンヤン理工大学",
+      "content": [
+        {
+          "content-title": "責任",
+          "content-body": [
+            "STM32マイクロコントローラーの制御を開発し、センサーとモーターとインターフェース",
+            "モーター速度と操舵角度制御のためにPID制御アルゴリズムを実装",
+            "Raspberry Piと統合し、自律ナビゲーションを実現",
+            "車線検出と障害物回避のためのコンピュータビジョンアルゴリズムを開発"
+          ]
+        }
+      ]
+    },
+    "card-3": {
+      "title": "優等学位",
+      "supertitle": "コンピュータ工学",
+      "time": "2021年 - 2025年",
+      "company": "ナンヤン理工大学",
+      "content": [
+        {
+          "content-title": "優等学位",
+          "content-body": [
+            "コンピュータ工学でファーストクラスの優等学位を取得、GPAは4.66"
+          ]
+        },
+        {
+          "content-title": "ASEAN学者",
+          "content-body": ["NTUへの入学のためにASEAN奨学金を授与されました"]
+        },
+        {
+          "content-title": "学長表彰",
+          "content-body": ["2021年度と2023年度の学長リスト"]
+        }
+      ]
+    }
+  }
 }

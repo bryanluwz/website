@@ -17,11 +17,11 @@ export const WIPPage: React.FC = () => {
       <Box className={mainStyles.pageTitleWrapper}>
         <FadeWrapper>
           <Typography variant={"h1"} className={mainStyles.pageTitle}>
-            {t("wip-title")}
+            {t("wip.title")}
           </Typography>
         </FadeWrapper>
         <FadeWrapper delay={0.3}>
-          <Typography variant="h2">{t("wip-text")}</Typography>
+          <Typography variant="h2">{t("wip.text")}</Typography>
         </FadeWrapper>
       </Box>
     </Stack>

@@ -32,9 +32,14 @@ body {
   --yellow: #ffc300;
   --medium-aquamarine: #76cdcd;
   --medium-turquoise: #2cced2;
+  --pink: rgb(238, 192, 255);
+  --mint: rgb(193, 252, 244);
+  --rust: rgb(255, 204, 174);
+  --baby-blue: hsla(206, 84%, 86%, 1);
 
   /* Font */
-  --cta-font-family: "Inter", "Roboto", sans-serif;
+  /* --cta-font-family: "Inter", "Roboto", sans-serif; */
+  --cta-font-family: "Poppins", "Roboto", sans-serif;
   --font-family: "Poppins", "Roboto", sans-serif;
   --font-size: 0.5rem;
   --primary-font-color: var(--dark-slate-gray); /* Dark slate gray */

@@ -10,7 +10,7 @@
   background-color: var(--secondary-background-color);
 
   * {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-in-out;
   }
 
   .link {
@@ -19,7 +19,7 @@
 
     > * {
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.3s ease-in-out;
     }
 
     &:hover {
