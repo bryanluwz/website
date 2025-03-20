@@ -22,16 +22,17 @@
     "text": "Are you at the right page?"
   },
   "wip": {
-    "wip-title": "You got me!",
-    "wip-text": "This page is still a work in progress..."
+    "title": "You got me!",
+    "text": "This page is still a work in progress..."
   },
   "introduction": {
     "welcome": "Hi! I'm Bryan.",
     "title": "Final Year Computer Engineering Student at Nanyang Technological University.",
-    "text": "I'm passionate about building software that solves real-world problems, and I'm always looking for opportunities to learn and grow."
+    "text": "I'm passionate about building software that solves real-world problems, and I'm always looking for opportunities to learn and grow.",
+    "learn-more": "Learn more about me"
   },
   "main-page-cards": {
-    "title": "Experience",
+    "title": "Experiences",
     "card-0": {
       "title": "Frontend Engineer",
       "supertitle": "Internship",

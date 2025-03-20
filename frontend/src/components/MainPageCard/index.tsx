@@ -70,12 +70,12 @@ export const MainPageCard: React.FC<MainPageCardProps> = ({
       <>
         {isPopupCardOpen &&
           content.map((item, index) => (
-            <Stack direction={"column"}>
+            <Stack key={index} direction={"column"}>
               <Typography key={index} variant="h5">
                 {item.contentTitle}
               </Typography>
-              {item.contentBody?.map((content, index) => (
-                <Typography key={index} variant="subtitle1">
+              {item.contentBody?.map((content, _index) => (
+                <Typography key={_index} variant="subtitle1">
                   {content}
                 </Typography>
               ))}

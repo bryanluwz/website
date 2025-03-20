@@ -1,7 +1,7 @@
 import React from "react";
 import cx from "classnames";
 import { useTranslation } from "react-i18next";
-import { Box, Grid2, Stack, Typography } from "@mui/material";
+import { Box, Grid2, Link, Stack, Typography } from "@mui/material";
 
 import { MainPageCard } from "../../components/MainPageCard";
 import Mugshot from "../../../public/assets/mugshot.png";
@@ -13,9 +13,12 @@ import {
   MainPageCardContentModel,
   MainPageCardModel,
 } from "../../apis/MainPage/typings";
+import { useNavigationStore } from "../../redux/features/Navigation/hooks";
+import { PagesEnum } from "../../apis/enums";
 
 export const MainPage: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
+  const { setCurrentRoute } = useNavigationStore();
   const { mainPageCards, getMainPageCards } = useMainPageStore();
 
   React.useEffect(() => {
@@ -87,7 +90,7 @@ export const MainPage: React.FC = () => {
   return (
     <Stack
       direction={"column"}
-      spacing={"5rem"}
+      spacing={"4rem"}
       alignItems={"center"}
       width={"100%"}
     >
@@ -130,6 +133,18 @@ export const MainPage: React.FC = () => {
           </FadeWrapper>
           <FadeWrapper delay={0.3}>
             <Typography variant={"h5"}>{t("introduction.text")}</Typography>
+          </FadeWrapper>
+          <FadeWrapper delay={0.3}>
+            <Link
+              className={mainStyles.link}
+              onClick={() => {
+                setCurrentRoute(PagesEnum.about);
+              }}
+            >
+              <Typography variant="subtitle2">
+                {t("introduction.learn-more")} &#8594;
+              </Typography>
+            </Link>
           </FadeWrapper>
         </Stack>
       </Stack>

@@ -32,11 +32,10 @@ body {
   --yellow: #ffc300;
   --medium-aquamarine: #76cdcd;
   --medium-turquoise: #2cced2;
-
-  --light-cyan: #e0ffff;
-  --lavender: #e6e6fa;
-  --mint-cream: #f5fffa;
-  --cornsilk: #fff8dc;
+  --pink: hsla(284, 61%, 74%, 1);
+  --mint: hsla(172, 45%, 75%, 1);
+  --rust: hsla(22, 62%, 76%, 1);
+  --baby-blue: hsla(206, 84%, 86%, 1);
 
   /* Font */
   /* --cta-font-family: "Inter", "Roboto", sans-serif; */

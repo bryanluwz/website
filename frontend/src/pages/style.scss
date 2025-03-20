@@ -70,6 +70,22 @@
 
     .text {
       margin-top: 0rem;
+
+      .link {
+        text-decoration: none;
+        width: max-content;
+
+        > * {
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+          > * {
+            color: var(--primary-font-color);
+          }
+        }
+      }
     }
   }
 }

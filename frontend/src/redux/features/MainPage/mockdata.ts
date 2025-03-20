@@ -13,28 +13,28 @@ export const mockMainPageCards: {
 }[] = [
   {
     title: "card-0.title",
-    backgroundColor: "var(--lavender)",
+    backgroundColor: "var(--pink)",
     image: InternImage,
     supertitle: "card-0.supertitle",
     content: "card-0.content",
   },
   {
     title: "card-1.title",
-    backgroundColor: "var(--light-cyan)",
+    backgroundColor: "var(--mint)",
     image: ChatbotImage,
     supertitle: "card-1.supertitle",
     content: "card-1.content",
   },
   {
     title: "card-2.title",
-    backgroundColor: "var(--cornsilk)",
+    backgroundColor: "var(--rust)",
     image: CircuiBoardImage,
     supertitle: "card-2.supertitle",
     content: "card-2.content",
   },
   {
     title: "card-3.title",
-    backgroundColor: "var(--mint-cream)",
+    backgroundColor: "var(--baby-blue)",
     image: UniversityImage,
     supertitle: "card-3.supertitle",
     content: "card-3.content",
