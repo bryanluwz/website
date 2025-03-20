@@ -22,7 +22,80 @@
   "introduction": {
     "welcome": "Hai! Saya Bryan.",
     "title": "Saya pelajar tahun akhir Kejuruteraan Komputer di Universiti Teknologi Nanyang.",
-    "text": "Saya bersemangat untuk membina perisian yang menyelesaikan masalah dunia sebenar dan sentiasa mencari peluang untuk belajar dan berkembang."
+    "text": "Saya bersemangat untuk membina perisian yang menyelesaikan masalah dunia sebenar dan sentiasa mencari peluang untuk belajar dan berkembang.",
+    "learn-more": "Ketahui lebih"
   },
-  "main-page-cards": {}
+  "main-page-cards": {
+    "title": "Pengalaman",
+    "card-0": {
+      "title": "Jurutera Frontend",
+      "supertitle": "Latihan Industri",
+      "content": [
+        {
+          "content-title": "Tanggungjawab",
+          "content-body": [
+            "Developed and maintained the frontend of the company's web application",
+            "Collaborated with the backend team to integrate new features",
+            "Optimized the application for performance and user experience"
+          ]
+        }
+      ]
+    },
+    "card-1": {
+      "title": "Chatbot Full Stack",
+      "supertitle": "Pembangunan Web",
+      "content": [
+        {
+          "content-title": "Skills",
+          "content-body": [
+            "React",
+            "Node.js",
+            "Python",
+            "ExpressJS",
+            "Huggingface",
+            "transformers"
+          ]
+        },
+        {
+          "content-title": "Responsibilities",
+          "content-body": [
+            "Developed the frontend of the chatbot using React",
+            "Implemented the backend using Node.js and ExpressJS",
+            "Integrated the chatbot with Huggingface's transformers"
+          ]
+        }
+      ]
+    },
+    "card-2": {
+      "title": "Autonomous Vehicle Navigation",
+      "supertitle": "Embedded Programming",
+      "content": [
+        {
+          "content-title": "Skills",
+          "content-body": ["C", "Embedded Systems", "FreeRTOS", "STM32"]
+        },
+        {
+          "content-title": "Responsibilities",
+          "content-body": [
+            "Developed the navigation system for an autonomous vehicle",
+            "Integrated the navigation system with the vehicle's sensors",
+            "Optimized the navigation system for real-time performance"
+          ]
+        }
+      ]
+    },
+    "card-3": {
+      "title": "First Class Honours",
+      "supertitle": "Nanyang Technological University",
+      "content": [
+        {
+          "content-title": "ASEAN Scholar"
+        },
+        {
+          "content-title": "Dean's List",
+          "content-body": ["Dean's List"]
+        }
+      ]
+    }
+  }
 }

@@ -33,41 +33,36 @@
   },
   "main-page-cards": {
     "title": "Experiences",
+    "description": "Here are some of my projects and experiences.",
     "card-0": {
       "title": "Frontend Engineer",
       "supertitle": "Internship",
+      "time": "Jan 2024 - Jun 2024",
+      "company": "Univers Pte. Ltd. Singapore",
       "content": [
         {
           "content-title": "Responsibilities",
           "content-body": [
-            "Developed and maintained the frontend of the company's web application",
-            "Collaborated with the backend team to integrate new features",
-            "Optimized the application for performance and user experience"
+            "Developed and maintained the frontend codebase of various projects using React, Typescript, Ant Design and Echarts",
+            "Collaborated with the UI and backend team to integrate new features and functionalities",
+            "Created Software Requirements Specifications (SRS) for various projects",
+            "Utilised CI/CD Pipelines, such as Jenkins to automate the deployment process"
           ]
         }
       ]
     },
     "card-1": {
       "title": "Full Stack Chatbot",
-      "supertitle": "Web Development",
+      "supertitle": "Web Development + AI",
+      "time": "Aug 2024 - May 2025",
+      "company": "Nanyang Technological University",
       "content": [
-        {
-          "content-title": "Skills",
-          "content-body": [
-            "React",
-            "Node.js",
-            "Python",
-            "ExpressJS",
-            "Huggingface",
-            "transformers"
-          ]
-        },
         {
           "content-title": "Responsibilities",
           "content-body": [
-            "Developed the frontend of the chatbot using React",
-            "Implemented the backend using Node.js and ExpressJS",
-            "Integrated the chatbot with Huggingface's transformers"
+            "Developed the frontend client of the chatbot using React and Typescript",
+            "Implemented the backend server using Node.js and ExpressJS with RESTful APIs",
+            "Integrated the chatbot using an AI Python server with PyTorch and Hugging Face Transformers"
           ]
         }
       ]
@@ -75,31 +70,39 @@
     "card-2": {
       "title": "Autonomous Vehicle Navigation",
       "supertitle": "Embedded Programming",
+      "time": "Aug 2023 - Nov 2023",
+      "company": "Nanyang Technological University",
       "content": [
-        {
-          "content-title": "Skills",
-          "content-body": ["C", "Embedded Systems", "FreeRTOS", "STM32"]
-        },
         {
           "content-title": "Responsibilities",
           "content-body": [
-            "Developed the navigation system for an autonomous vehicle",
-            "Integrated the navigation system with the vehicle's sensors",
-            "Optimized the navigation system for real-time performance"
+            "Developed controls for STM32 Microcontroller to interface with sensors and motors",
+            "Implemented PID control algorithms for motor speed and steering angle control",
+            "Integrated the controls with the Raspberry Pi for autonomous navigation",
+            "Developed Computer Vision algorithms for lane detection and obstacle avoidance"
           ]
         }
       ]
     },
     "card-3": {
       "title": "First Class Honours",
-      "supertitle": "Nanyang Technological University",
+      "supertitle": "Computer Engineering",
+      "time": "2021 - 2025",
+      "company": "Nanyang Technological University",
       "content": [
         {
-          "content-title": "ASEAN Scholar"
+          "content-title": "First Class Honours",
+          "content-body": [
+            "Graduated with First Class Honours in Computer Engineering, with GPA of 4.66"
+          ]
+        },
+        {
+          "content-title": "ASEAN Scholar",
+          "content-body": ["Awarded ASEAN Scholarship for matriculation in NTU"]
         },
         {
           "content-title": "Dean's List",
-          "content-body": ["Dean's List"]
+          "content-body": ["Dean's List for Academic Year 2021 and 2023"]
         }
       ]
     }

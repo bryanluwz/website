@@ -26,12 +26,19 @@
       right: 0rem;
       width: auto;
       max-width: 100%;
-      max-height: 70%;
+      max-height: 68%;
       object-fit: cover;
-      // transition: transform 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
   }
 
+  @media screen and (max-width: 600px) {
+    .card-image-container {
+      .card-image {
+        max-height: 62%;
+      }
+    }
+  }
   .card-container {
     position: absolute;
     width: calc(100% - 6rem);

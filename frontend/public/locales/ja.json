@@ -2,7 +2,7 @@
   "navigation": {
     "work": "仕事",
     "about": "私について",
-    "funsies": "楽しいこと",
+    "funsies": "遊ぼう",
     "contact": "連絡"
   },
   "footer": {
@@ -15,20 +15,93 @@
     "resume": "履歴書",
     "email": "メール",
     "message": "メッセージ",
-    "chat": "私とチャットしよう！"
+    "chat": "チャットしよう！"
   },
   "404": {
     "title": "あれ？",
     "text": "間違ったページ？"
   },
   "wip": {
-    "title": "ばれた！",
+    "title": "ばれた",
     "text": "まだ作業中…"
   },
   "introduction": {
     "welcome": "はい Bryan です",
-    "title": "私は南洋理工大学のコンピュータ工学の最終年の学生です。",
-    "text": "私は現実世界の問題を解決するソフトウェアの開発に情熱を持っており、常に学び成長する機会を探しています。"
+    "title": "南洋理工大学のコンピュータ工学の最終年の学生です。",
+    "text": "現実世界の問題を解決するソフトウェアの開発に情熱を持っており、常に学び成長する機会を探しています。",
+    "learn-more": "もっと詳しく"
   },
-  "main-page-cards": {}
+  "main-page-cards": {
+    "title": "経験",
+    "card-0": {
+      "title": "フロントエンドエンジニア",
+      "supertitle": "インターンシップ",
+      "content": [
+        {
+          "content-title": "",
+          "content-body": [
+            "Developed and maintained the frontend of the company's web application",
+            "Collaborated with the backend team to integrate new features",
+            "Optimized the application for performance and user experience"
+          ]
+        }
+      ]
+    },
+    "card-1": {
+      "title": "フルスタックチャットボット",
+      "supertitle": "Web開発",
+      "content": [
+        {
+          "content-title": "スキル",
+          "content-body": [
+            "React",
+            "Node.js",
+            "Python",
+            "ExpressJS",
+            "Huggingface",
+            "transformers"
+          ]
+        },
+        {
+          "content-title": "責任",
+          "content-body": [
+            "Developed the frontend of the chatbot using React",
+            "Implemented the backend using Node.js and ExpressJS",
+            "Integrated the chatbot with Huggingface's transformers"
+          ]
+        }
+      ]
+    },
+    "card-2": {
+      "title": "自律走行車ナビゲーション",
+      "supertitle": "組み込みプログラミング",
+      "content": [
+        {
+          "content-title": "Skills",
+          "content-body": ["C", "Embedded Systems", "FreeRTOS", "STM32"]
+        },
+        {
+          "content-title": "Responsibilities",
+          "content-body": [
+            "Developed the navigation system for an autonomous vehicle",
+            "Integrated the navigation system with the vehicle's sensors",
+            "Optimized the navigation system for real-time performance"
+          ]
+        }
+      ]
+    },
+    "card-3": {
+      "title": "首席卒業",
+      "supertitle": "ナンヤん理工大学",
+      "content": [
+        {
+          "content-title": "ASEAN Scholar"
+        },
+        {
+          "content-title": "Dean's List",
+          "content-body": ["Dean's List"]
+        }
+      ]
+    }
+  }
 }

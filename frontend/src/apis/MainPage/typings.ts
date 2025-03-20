@@ -3,6 +3,8 @@ import { HTTPStatusBody } from "../typings";
 export interface MainPageCardModel {
   title?: string;
   supertitle?: string;
+  time?: string;
+  company?: string;
   backgroundColor?: string;
   image?: string;
   content?: MainPageCardContentModel[];

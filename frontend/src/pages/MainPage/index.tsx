@@ -75,6 +75,8 @@ export const MainPage: React.FC = () => {
                 <MainPageCard
                   title={t(`main-page-cards.${card.title}`)}
                   superTitle={t(`main-page-cards.${card.supertitle}`)}
+                  time={t(`main-page-cards.${card.time}`)}
+                  company={t(`main-page-cards.${card.company}`)}
                   backgroundColor={card.backgroundColor}
                   image={card.image}
                   content={formattedCardContent}
@@ -132,7 +134,9 @@ export const MainPage: React.FC = () => {
             <Typography variant={"h3"}>{t("introduction.title")}</Typography>
           </FadeWrapper>
           <FadeWrapper delay={0.3}>
-            <Typography variant={"h5"}>{t("introduction.text")}</Typography>
+            <Typography variant={"subtitle1"}>
+              {t("introduction.text")}
+            </Typography>
           </FadeWrapper>
           <FadeWrapper delay={0.3}>
             <Link
@@ -150,7 +154,12 @@ export const MainPage: React.FC = () => {
       </Stack>
       {/* Main page cards */}
       <FadeWrapper delay={0.5}>
-        <Typography variant="h2">{t("main-page-cards.title")}</Typography>
+        <Stack direction={"column"} spacing={0} alignItems={"center"}>
+          <Typography variant="h2">{t("main-page-cards.title")}</Typography>
+          <Typography variant="subtitle1">
+            {t("main-page-cards.description")}
+          </Typography>
+        </Stack>
       </FadeWrapper>
       {gridCards}
     </Stack>

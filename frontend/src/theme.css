@@ -32,9 +32,9 @@ body {
   --yellow: #ffc300;
   --medium-aquamarine: #76cdcd;
   --medium-turquoise: #2cced2;
-  --pink: hsla(284, 61%, 74%, 1);
-  --mint: hsla(172, 45%, 75%, 1);
-  --rust: hsla(22, 62%, 76%, 1);
+  --pink: rgb(238, 192, 255);
+  --mint: rgb(193, 252, 244);
+  --rust: rgb(255, 204, 174);
   --baby-blue: hsla(206, 84%, 86%, 1);
 
   /* Font */

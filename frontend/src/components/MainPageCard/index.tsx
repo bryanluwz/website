@@ -10,6 +10,8 @@ import { MainPageCardContentModel } from "../../apis/MainPage/typings";
 interface MainPageCardProps {
   title?: string;
   superTitle?: string; // if subtitle is under the title, then supertitle should be above right?
+  time?: string;
+  company?: string;
   backgroundColor?: string;
   image?: string;
   content?: MainPageCardContentModel[];
@@ -18,6 +20,8 @@ interface MainPageCardProps {
 export const MainPageCard: React.FC<MainPageCardProps> = ({
   title = "Title",
   superTitle = "Super Title",
+  time = "Time",
+  company = "Company",
   backgroundColor = "var(--secondary-background-color)",
   content = [],
   image,
@@ -69,18 +73,24 @@ export const MainPageCard: React.FC<MainPageCardProps> = ({
     return (
       <>
         {isPopupCardOpen &&
-          content.map((item, index) => (
-            <Stack key={index} direction={"column"}>
-              <Typography key={index} variant="h5">
-                {item.contentTitle}
-              </Typography>
-              {item.contentBody?.map((content, _index) => (
-                <Typography key={_index} variant="subtitle1">
-                  {content}
+          content.map((item, index) => {
+            const isContentTitleEmpty = !item?.contentTitle;
+            return (
+              <Stack key={index} direction={"column"}>
+                <Typography key={index} variant="h5">
+                  {item?.contentTitle}
                 </Typography>
-              ))}
-            </Stack>
-          ))}
+                {item.contentBody?.map((content, _index) => (
+                  <Stack key={_index} direction={"row"} spacing={1}>
+                    {!isContentTitleEmpty && (
+                      <Typography variant="subtitle1">&#8226;</Typography>
+                    )}
+                    <Typography variant="subtitle1">{content}</Typography>
+                  </Stack>
+                ))}
+              </Stack>
+            );
+          })}
         {isPopupCardOpen && content.length === 0 && (
           <Typography variant="subtitle1">
             {t("main-page-card-no-content")}
@@ -154,6 +164,8 @@ export const MainPageCard: React.FC<MainPageCardProps> = ({
             <Stack direction={"column"} spacing={0}>
               <Typography variant="subtitle1">{superTitle}</Typography>
               <Typography variant="h3">{title}</Typography>
+              <Typography variant="subtitle1">{time}</Typography>
+              <Typography variant="subtitle1">{company}</Typography>
             </Stack>
             <Stack direction={"column"} spacing={2}>
               {contentComponent}

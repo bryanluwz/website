@@ -30,5 +30,77 @@
     "title": "我是南洋理工大学计算机工程专业的最终年学生。",
     "text": "我热衷于构建解决现实问题的软件，并且一直在寻找学习和成长的机会。"
   },
-  "main-page-cards": {}
+  "main-page-cards": {
+    "title": "Experiences",
+    "card-0": {
+      "title": "Frontend Engineer",
+      "supertitle": "Internship",
+      "content": [
+        {
+          "content-title": "Responsibilities",
+          "content-body": [
+            "Developed and maintained the frontend of the company's web application",
+            "Collaborated with the backend team to integrate new features",
+            "Optimized the application for performance and user experience"
+          ]
+        }
+      ]
+    },
+    "card-1": {
+      "title": "Full Stack Chatbot",
+      "supertitle": "Web Development",
+      "content": [
+        {
+          "content-title": "Skills",
+          "content-body": [
+            "React",
+            "Node.js",
+            "Python",
+            "ExpressJS",
+            "Huggingface",
+            "transformers"
+          ]
+        },
+        {
+          "content-title": "Responsibilities",
+          "content-body": [
+            "Developed the frontend of the chatbot using React",
+            "Implemented the backend using Node.js and ExpressJS",
+            "Integrated the chatbot with Huggingface's transformers"
+          ]
+        }
+      ]
+    },
+    "card-2": {
+      "title": "Autonomous Vehicle Navigation",
+      "supertitle": "Embedded Programming",
+      "content": [
+        {
+          "content-title": "Skills",
+          "content-body": ["C", "Embedded Systems", "FreeRTOS", "STM32"]
+        },
+        {
+          "content-title": "Responsibilities",
+          "content-body": [
+            "Developed the navigation system for an autonomous vehicle",
+            "Integrated the navigation system with the vehicle's sensors",
+            "Optimized the navigation system for real-time performance"
+          ]
+        }
+      ]
+    },
+    "card-3": {
+      "title": "First Class Honours",
+      "supertitle": "Nanyang Technological University",
+      "content": [
+        {
+          "content-title": "ASEAN Scholar"
+        },
+        {
+          "content-title": "Dean's List",
+          "content-body": ["Dean's List"]
+        }
+      ]
+    }
+  }
 }
