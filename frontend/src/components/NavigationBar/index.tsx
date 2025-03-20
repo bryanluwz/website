@@ -62,9 +62,13 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
 
   React.useEffect(() => {
     updateIndicator();
-    document.title = `Bryan Lu ${String.fromCharCode(8226)} ${t(
-      pages.find((page) => page[1] === currentRoute)![0]
-    )}`;
+    const activeIndex = Math.max(
+      pages.findIndex((page) => page[1] === currentRoute),
+      0
+    );
+    const title = t(`navigation.${pages[activeIndex][0]}`);
+    document.title = `Bryan Lu ${String.fromCharCode(8226)} 
+    ${title}`;
   }, [pages, i18n.language]);
 
   React.useEffect(() => {
@@ -142,7 +146,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
             key={index}
             onClick={() => setCurrentRoute(value[1])}
           >
-            {t(value[0])}
+            {t(`navigation.${value[0]}`)}
           </Typography>
         ))}
         <Typography

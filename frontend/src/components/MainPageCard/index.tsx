@@ -5,18 +5,14 @@ import * as styles from "./style.scss";
 import cx from "classnames";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { MainPageCardContentModel } from "../../apis/MainPage/typings";
 
 interface MainPageCardProps {
   title?: string;
   superTitle?: string; // if subtitle is under the title, then supertitle should be above right?
   backgroundColor?: string;
   image?: string;
-  content?: {
-    [key: string]: {
-      title: string;
-      content: string;
-    };
-  };
+  content?: MainPageCardContentModel[];
 }
 
 export const MainPageCard: React.FC<MainPageCardProps> = ({
@@ -102,14 +98,16 @@ export const MainPageCard: React.FC<MainPageCardProps> = ({
             </Stack>
             <Stack direction={"column"} spacing={2}>
               {isPopupCardOpen &&
-                Object.entries(content).map((item, index) => (
+                content.map((item, index) => (
                   <Stack direction={"column"}>
                     <Typography key={index} variant="h5">
-                      {item[1].title}
+                      {item.contentTitle}
                     </Typography>
-                    <Typography key={index} variant="subtitle1">
-                      {item[1].content}
-                    </Typography>
+                    {item.contentBody.map((content, index) => (
+                      <Typography key={index} variant="subtitle1">
+                        {content}
+                      </Typography>
+                    ))}
                   </Stack>
                 ))}
               {isPopupCardOpen && content.length === 0 && (

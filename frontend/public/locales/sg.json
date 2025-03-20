@@ -1,23 +1,34 @@
 {
-  "nav-work": "Work",
-  "nav-about": "About",
-  "nav-funsies": "Funsies",
-  "nav-contact": "Contact",
-  "footer-copyright": "© 2025 Bryan Lu",
-  "footer-sauce": "Sos",
-  "footer-links": "Links",
-  "footer-linkedin": "Linkin",
-  "footer-github": "GitHub",
-  "footer-instagram": "Insta",
-  "footer-resume": "Resume",
-  "footer-email": "Email",
-  "footer-message": "Message me ah?",
-  "footer-chat": "Lai talk kok!",
-  "404-title": "Walao eh!",
-  "404-text": "Wrong page lah",
-  "wip-title": "Paiseh ah!",
-  "wip-text": "I still building this page...",
-  "welcome": "Ya, I'm Bryan.",
-  "introduction-title": "I Final Year Computer Engineering Student at NTU.",
-  "introduction-text": "I'm passionate about building software that solves real-world problems, and I'm always looking for opportunities to learn and grow."
+  "navigation": {
+    "work": "Work",
+    "about": "About",
+    "funsies": "Funsies",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "© 2025 Bryan Lu",
+    "sauce": "Sos",
+    "links": "Links",
+    "linkedin": "Linkin",
+    "github": "GitHub",
+    "instagram": "Insta",
+    "resume": "Resume",
+    "email": "Email",
+    "message": "Message me ah?",
+    "chat": "Lai talk kok!"
+  },
+  "404": {
+    "title": "Walao eh!",
+    "text": "Wrong page lah"
+  },
+  "wip": {
+    "title": "Paiseh ah!",
+    "text": "I still building this page..."
+  },
+  "introduction": {
+    "welcome": "Ya, I'm Bryan.",
+    "title": "I Final Year Computer Engineering Student at NTU.",
+    "text": "I'm passionate about building software that solves real-world problems, and I'm always looking for opportunities to learn and grow."
+  },
+  "main-page-cards": {}
 }

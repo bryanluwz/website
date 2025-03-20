@@ -1,28 +1,106 @@
 {
-  "nav-work": "Work",
-  "nav-about": "About",
-  "nav-funsies": "Funsies",
-  "nav-contact": "Contact",
-  "footer-copyright": "© 2025 Bryan Lu",
-  "footer-sauce": "Sauce",
-  "footer-links": "Links",
-  "footer-linkedin": "LinkedIn",
-  "footer-github": "GitHub",
-  "footer-instagram": "Instagram",
-  "footer-resume": "Resume",
-  "footer-email": "Email",
-  "footer-message": "Message",
-  "footer-chat": "Chat with me!",
-  "404-title": "Oopsies!",
-  "404-text": "Are you at the right page?",
-  "wip-title": "You got me!",
-  "wip-text": "This page is still a work in progress...",
-  "welcome": "Hi! I'm Bryan.",
-  "introduction-title": "Final Year Computer Engineering Student at Nanyang Technological University.",
-  "introduction-text": "I'm passionate about building software that solves real-world problems, and I'm always looking for opportunities to learn and grow.",
-  "main-page-card-title": "Featured",
-  "main-page-card-no-content": "No content available.",
-  "main-page-card-1-title": "",
-  "main-page-card-1-supertitle": "",
-  "main-page-card-1-text": ""
+  "navigation": {
+    "work": "Work",
+    "about": "About",
+    "funsies": "Funsies",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "© 2025 Bryan Lu",
+    "sauce": "Sauce",
+    "links": "Links",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "instagram": "Instagram",
+    "resume": "Resume",
+    "email": "Email",
+    "message": "Message",
+    "chat": "Chat with me!"
+  },
+  "404": {
+    "title": "Oopsies!",
+    "text": "Are you at the right page?"
+  },
+  "wip": {
+    "wip-title": "You got me!",
+    "wip-text": "This page is still a work in progress..."
+  },
+  "introduction": {
+    "welcome": "Hi! I'm Bryan.",
+    "title": "Final Year Computer Engineering Student at Nanyang Technological University.",
+    "text": "I'm passionate about building software that solves real-world problems, and I'm always looking for opportunities to learn and grow."
+  },
+  "main-page-cards": {
+    "title": "Featured",
+    "card-0": {
+      "title": "Frontend Software Engineer",
+      "supertitle": "Internship",
+      "content": [
+        {
+          "content-title": "Responsibilities",
+          "content-body": [
+            "Developed and maintained the frontend of the company's web application",
+            "Collaborated with the backend team to integrate new features",
+            "Optimized the application for performance and user experience"
+          ]
+        }
+      ]
+    },
+    "card-1": {
+      "title": "Full Stack Chatbot",
+      "supertitle": "AI + LLM + Software Engineering",
+      "content": [
+        {
+          "content-title": "Skills",
+          "content-body": [
+            "React",
+            "Node.js",
+            "Python",
+            "ExpressJS",
+            "Huggingface",
+            "transformers"
+          ]
+        },
+        {
+          "content-title": "Responsibilities",
+          "content-body": [
+            "Developed the frontend of the chatbot using React",
+            "Implemented the backend using Node.js and ExpressJS",
+            "Integrated the chatbot with Huggingface's transformers"
+          ]
+        }
+      ]
+    },
+    "card-2": {
+      "title": "Autonomous Vehicle Navigation",
+      "supertitle": "Embedded Programming",
+      "content": [
+        {
+          "content-title": "Skills",
+          "content-body": ["C", "Embedded Systems", "FreeRTOS", "STM32"]
+        },
+        {
+          "content-title": "Responsibilities",
+          "content-body": [
+            "Developed the navigation system for an autonomous vehicle",
+            "Integrated the navigation system with the vehicle's sensors",
+            "Optimized the navigation system for real-time performance"
+          ]
+        }
+      ]
+    },
+    "card-3": {
+      "title": "First Class Honours",
+      "supertitle": "Academic Achievement",
+      "content": [
+        {
+          "content-title": "ASEAN Scholar"
+        },
+        {
+          "content-title": "Dean's List",
+          "content-body": ["Dean's List"]
+        }
+      ]
+    }
+  }
 }
