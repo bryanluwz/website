@@ -77,6 +77,7 @@ export const MainPage: React.FC = () => {
                   superTitle={t(`main-page-cards.${card.supertitle}`)}
                   time={t(`main-page-cards.${card.time}`)}
                   company={t(`main-page-cards.${card.company}`)}
+                  link={card.link}
                   backgroundColor={card.backgroundColor}
                   image={card.image}
                   content={formattedCardContent}
