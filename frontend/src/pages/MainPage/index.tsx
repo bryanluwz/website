@@ -3,7 +3,7 @@ import cx from "classnames";
 import { useTranslation } from "react-i18next";
 import { Box, Grid2, Link, Stack, Typography } from "@mui/material";
 
-import { MainPageCard } from "../../components/PageCard";
+import { PageCard } from "../../components/PageCard";
 import Mugshot from "../../../public/assets/mugshot.png";
 import * as mainStyles from "../style.scss";
 import * as styles from "./style.scss";
@@ -71,9 +71,9 @@ export const MainPage: React.FC = () => {
           }));
 
           return (
-            <Grid2 key={index} size={calculateGridSize(index)}>
+            <Grid2 key={`main-${index}`} size={calculateGridSize(index)}>
               <FadeWrapper delay={0.5}>
-                <MainPageCard
+                <PageCard
                   title={t(`main-page-cards.${card.title}`)}
                   superTitle={t(`main-page-cards.${card.supertitle}`)}
                   time={t(`main-page-cards.${card.time}`)}

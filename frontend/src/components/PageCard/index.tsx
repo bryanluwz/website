@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Link, Stack, Typography } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 
 import * as styles from "./style.scss";
 import cx from "classnames";
@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { PageCardContentModel } from "../../apis/MainPage/typings";
 import { CustomTypography } from "../CustomTypography";
 
-interface MainPageCardProps {
+interface PageCardProps {
   title?: string;
   superTitle?: string; // if subtitle is under the title, then supertitle should be above right?
   time?: string;
@@ -18,7 +18,7 @@ interface MainPageCardProps {
   content?: PageCardContentModel[];
 }
 
-export const MainPageCard: React.FC<MainPageCardProps> = ({
+export const PageCard: React.FC<PageCardProps> = ({
   title = "Title",
   superTitle = "Super Title",
   time = "Time",

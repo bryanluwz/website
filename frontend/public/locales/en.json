@@ -126,7 +126,14 @@
     },
     "interests": {
       "title": "Interests",
-      "text": "Playing video games and idk what else"
+      "text": "I like video games and eating nice food.",
+      "images": [
+        { "title": "Expensive Pasta, Singapore" },
+        { "title": "Kartoffelpuffer, Leipzig" },
+        { "title": "Sarawak Laksa, Kuching" },
+        { "title": "Cable Car, Mt. Titlis" },
+        { "title": "Birbs, Mondsee" }
+      ]
     }
   }
 }

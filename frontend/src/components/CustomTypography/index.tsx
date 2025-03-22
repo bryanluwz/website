@@ -33,8 +33,12 @@ export const CustomTypography: React.FC<CustomTypographyProps> = ({
   };
 
   React.useEffect(() => {
-    setParseLinksState({ ...defaultParseLinks, ...parseLinks });
-  }, [parseLinks]);
+    setParseLinksState((prevState) => ({
+      ...defaultParseLinks,
+      ...prevState,
+      ...parseLinks,
+    }));
+  }, []);
 
   // Vibe coding here, but I think I know how this work
   const extractLinks = (text: string) => {
@@ -50,7 +54,7 @@ export const CustomTypography: React.FC<CustomTypographyProps> = ({
 
       // Push the Link component with Typography for the link text + icon
       parts.push(
-        <Box key={index} sx={{ display: "inline-block" }}>
+        <Box key={`link-box-${index}`} sx={{ display: "inline-block" }}>
           <Link
             {...parseLinksState.linkProps}
             href={linkUrl}
@@ -63,7 +67,6 @@ export const CustomTypography: React.FC<CustomTypographyProps> = ({
             rel={parseLinksState.newPage ? "noopener noreferrer" : undefined}
           >
             <Typography
-              key={index}
               {...props}
               component={"span"}
               style={{
@@ -77,7 +80,6 @@ export const CustomTypography: React.FC<CustomTypographyProps> = ({
             </Typography>
           </Link>
           <Link
-            key={index}
             href={linkUrl}
             {...parseLinksState.linkProps}
             target={parseLinksState.newPage ? "_blank" : undefined}
@@ -107,12 +109,16 @@ export const CustomTypography: React.FC<CustomTypographyProps> = ({
   const typographies = React.useMemo(() => {
     if (Array.isArray(children)) {
       return children.map((child, index) => (
-        <Typography key={index} {...props}>
+        <Typography key={`typographies-${index}-${Math.random()}`} {...props}>
           {child}
         </Typography>
       ));
     } else {
-      return [<Typography {...props}>{children}</Typography>];
+      return [
+        <Typography key={`typographies-${Math.random()}`} {...props}>
+          {children}
+        </Typography>,
+      ];
     }
   }, [children, props]);
 
@@ -124,7 +130,11 @@ export const CustomTypography: React.FC<CustomTypographyProps> = ({
         const text = typography.props.children as string;
         const parts = extractLinks(text);
         return (
-          <Typography key={index} {...typography.props}>
+          <Typography
+            component={"span"}
+            key={`parsed-typographies-${index}-${Math.random()}`}
+            {...typography.props}
+          >
             {parts}
           </Typography>
         );
@@ -133,5 +143,6 @@ export const CustomTypography: React.FC<CustomTypographyProps> = ({
     return output;
   }, [typographies, parseLinksState]);
 
+  // The Math.random() is to make sure there is no key collision (stupid warning)
   return <>{parsedTypographies}</>;
 };
