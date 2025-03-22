@@ -62,7 +62,7 @@
 
         &:hover {
           filter: brightness(1) contrast(1);
-          transform: scale(1.01);
+          transform: scale(1.03);
           box-shadow: 0px 50px 100px -20px rgba(0, 0, 0, 0.15);
         }
       }
@@ -74,6 +74,8 @@
       .link {
         text-decoration: none;
         width: max-content;
+        display: block;
+        position: relative;
 
         > * {
           cursor: pointer;
@@ -84,6 +86,27 @@
           > * {
             color: var(--primary-font-color);
           }
+        }
+
+        // WHy isnt the color coloring
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 100%;
+          height: 2px;
+          background-color: var(--secondary-font-color);
+          transform: scaleX(0);
+          transform-origin: bottom right;
+          transition: transform 0.3s ease-in-out,
+            background-color 0.5s ease-in-out;
+        }
+
+        &:hover::after {
+          background-color: var(--primary-font-color);
+          transform: scaleX(1);
+          transform-origin: bottom left;
         }
       }
     }

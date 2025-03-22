@@ -163,10 +163,19 @@ export const MainPageCard: React.FC<MainPageCardProps> = ({
             onClick={() => setIsPopupCardOpen(true)}
             spacing={2}
           >
-            <Stack direction={"column"} spacing={0}>
+            <Stack
+              direction={"column"}
+              spacing={0}
+              alignItems={isPopupCardOpen ? "flex-start" : "flex-end"}
+            >
               <Typography variant="subtitle1">{superTitle}</Typography>
               {link ? (
-                <Link href={link} target="_blank" rel="noopener noreferrer">
+                <Link
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                >
                   <Typography variant="h3">{title}</Typography>
                 </Link>
               ) : (
