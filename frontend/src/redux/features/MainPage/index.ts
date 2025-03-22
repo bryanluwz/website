@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { MainPageCardModel } from "../../../apis/MainPage/typings";
+import { PageCardModel } from "../../../apis/MainPage/typings";
 import { mockMainPageCards } from "./mockdata";
 
 // Define the state interface
 interface MainPageState {
-  mainPageCards: MainPageCardModel[];
+  mainPageCards: PageCardModel[];
 }
 
 const initialState: MainPageState = {

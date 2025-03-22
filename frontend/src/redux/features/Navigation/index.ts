@@ -3,11 +3,11 @@ import { PagesEnum } from "../../../apis/enums";
 
 // Define the state interface
 interface NavigationState {
-  currentRoute: PagesEnum;
+  currentRoute: PagesEnum | undefined;
 }
 
 const initialState: NavigationState = {
-  currentRoute: PagesEnum["nav-work"],
+  currentRoute: undefined,
 };
 
 const navigationSlice = createSlice({

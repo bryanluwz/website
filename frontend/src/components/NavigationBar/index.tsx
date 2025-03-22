@@ -30,6 +30,9 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
   };
 
   React.useEffect(() => {
+    if (!currentRoute) {
+      return;
+    }
     handleNavigation(currentRoute);
   }, [currentRoute]);
 
@@ -62,11 +65,10 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
 
   React.useEffect(() => {
     updateIndicator();
-    const activeIndex = Math.max(
-      pages.findIndex((page) => page[1] === currentRoute),
-      0
-    );
-    const title = t(`navigation.${pages[activeIndex][0]}`);
+    const activeIndex = pages.findIndex((page) => page[1] === currentRoute);
+    const pageName = pages[activeIndex] ?? pages[0];
+
+    const title = t(`navigation.${pageName[0]}`);
     document.title = `Bryan Lu ${String.fromCharCode(8226)} 
     ${title}`;
   }, [pages, i18n.language]);

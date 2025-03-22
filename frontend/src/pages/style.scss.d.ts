@@ -1,3 +1,4 @@
+export declare const centered: string;
 export declare const dropDown: string;
 export declare const image: string;
 export declare const link: string;

@@ -1,17 +1,16 @@
 import { HTTPStatusBody } from "../typings";
 
-export interface MainPageCardModel {
+export interface PageCardModel {
   title?: string;
   supertitle?: string;
-  link?: string;
   time?: string;
   company?: string;
   backgroundColor?: string;
   image?: string;
-  content?: MainPageCardContentModel[];
+  content?: PageCardContentModel[];
 }
 
-export interface MainPageCardContentModel {
+export interface PageCardContentModel {
   contentTitle: string;
   contentBody: string[];
 }

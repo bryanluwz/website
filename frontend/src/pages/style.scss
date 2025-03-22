@@ -26,6 +26,7 @@
 
   .page-title-wrapper {
     width: 90%;
+    margin-top: var(--margin-md);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,6 +48,12 @@
     align-items: center;
     justify-content: stretch;
     gap: var(--margin-sm);
+    transition: all 0.3s ease-in-out;
+
+    &.centered {
+      width: clamp(20rem, 80%, 40rem);
+      justify-content: center;
+    }
 
     .image {
       border-radius: var(--margin-md);
@@ -55,7 +62,8 @@
       user-select: none;
       display: block;
       display: flex;
-      width: clamp(15rem, 30vw, 20rem);
+      width: 20rem;
+      min-height: 20rem;
 
       &.linked-image {
         cursor: pointer;
@@ -71,11 +79,18 @@
     .text {
       margin-top: 0rem;
 
+      .centered {
+        width: 100%;
+        text-align: center;
+      }
+
       .link {
         text-decoration: none;
         width: max-content;
-        display: block;
+        display: inline-block;
         position: relative;
+        color: inherit;
+        font: inherit;
 
         > * {
           cursor: pointer;
@@ -88,12 +103,11 @@
           }
         }
 
-        // WHy isnt the color coloring
         &::after {
           content: "";
           position: absolute;
           left: 0;
-          bottom: -2px;
+          bottom: 3px;
           width: 100%;
           height: 2px;
           background-color: var(--secondary-font-color);
