@@ -185,8 +185,6 @@ export const MainPageCard: React.FC<MainPageCardProps> = ({
                   parseLinks: true,
                   addLinkIcon: true,
                   linkProps: {
-                    target: "_blank",
-                    rel: "noopener noreferrer",
                     onClick: (e) => e.stopPropagation(),
                   },
                 }}

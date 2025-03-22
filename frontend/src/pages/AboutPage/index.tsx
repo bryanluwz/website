@@ -71,23 +71,23 @@ export const AboutPage: React.FC = () => {
           </FadeWrapper>
         </Stack>
       </Stack>
-      {/* My personal values + backstory + where im from + my favourite food + beef with penang */}
+      {/* My personal values + backstory + where im from  */}
       <Stack
         direction={{
           sm: "column",
           md: "row",
         }}
         spacing={4}
-        className={mainStyles.pageIntro}
+        className={cx(mainStyles.pageIntro, mainStyles.centered)}
       >
-        <Stack direction={"column"} spacing={2} className={mainStyles.text}>
+        <Stack direction={"column"} spacing={5} className={mainStyles.text}>
           <FadeWrapper delay={0.3}>
-            <CustomTypography variant={"h3"}>
+            <CustomTypography variant={"h3"} className={mainStyles.centered}>
               {t("about.more-info.title")}
             </CustomTypography>
           </FadeWrapper>
           <FadeWrapper delay={0.3}>
-            <Stack direction={"column"} spacing={2}>
+            <Stack direction={"column"} spacing={3}>
               <CustomTypography
                 variant={"body1"}
                 parseLinks={{
@@ -102,7 +102,68 @@ export const AboutPage: React.FC = () => {
           </FadeWrapper>
         </Stack>
       </Stack>
-      {/* Some random images and stuff */}
+      {/* Some interesting facts or something */}
+      <Stack
+        direction={{
+          sm: "column",
+          md: "row",
+        }}
+        spacing={4}
+        className={cx(mainStyles.pageIntro, mainStyles.centered)}
+      >
+        <Stack direction={"column"} spacing={5} className={mainStyles.text}>
+          <FadeWrapper delay={0.3}>
+            <CustomTypography variant={"h3"} className={mainStyles.centered}>
+              {t("about.interests.title")}
+            </CustomTypography>
+          </FadeWrapper>
+          <FadeWrapper delay={0.3}>
+            <Stack direction={"column"} spacing={3}>
+              <CustomTypography
+                variant={"body1"}
+                parseLinks={{
+                  parseLinks: true,
+                  addLinkIcon: true,
+                  linkProps: { className: mainStyles.link },
+                }}
+              >
+                {t("about.interests.text", { returnObjects: true })}
+              </CustomTypography>
+            </Stack>
+          </FadeWrapper>
+        </Stack>
+      </Stack>
+      {/* Some interesting images and stuff */}
+      <Stack
+        direction={{
+          sm: "column",
+          md: "row",
+        }}
+        spacing={4}
+        className={cx(mainStyles.pageIntro, mainStyles.centered)}
+      >
+        <Stack direction={"column"} spacing={5} className={mainStyles.text}>
+          <FadeWrapper delay={0.3}>
+            <CustomTypography variant={"h3"} className={mainStyles.centered}>
+              {t("about.interests.title")}
+            </CustomTypography>
+          </FadeWrapper>
+          <FadeWrapper delay={0.3}>
+            <Stack direction={"column"} spacing={3}>
+              <CustomTypography
+                variant={"body1"}
+                parseLinks={{
+                  parseLinks: true,
+                  addLinkIcon: true,
+                  linkProps: { className: mainStyles.link },
+                }}
+              >
+                {t("about.interests.text", { returnObjects: true })}
+              </CustomTypography>
+            </Stack>
+          </FadeWrapper>
+        </Stack>
+      </Stack>
     </Stack>
   );
 };

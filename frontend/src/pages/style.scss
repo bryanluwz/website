@@ -48,6 +48,12 @@
     align-items: center;
     justify-content: stretch;
     gap: var(--margin-sm);
+    transition: all 0.3s ease-in-out;
+
+    &.centered {
+      width: clamp(20rem, 80%, 40rem);
+      justify-content: center;
+    }
 
     .image {
       border-radius: var(--margin-md);
@@ -72,6 +78,11 @@
 
     .text {
       margin-top: 0rem;
+
+      .centered {
+        width: 100%;
+        text-align: center;
+      }
 
       .link {
         text-decoration: none;

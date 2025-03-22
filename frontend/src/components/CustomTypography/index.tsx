@@ -5,9 +5,9 @@ import {
   Link,
   LinkProps,
   Icon,
+  Box,
 } from "@mui/material";
 import LinkIcon from "@mui/icons-material/Link";
-import { link } from "../PageCard/style.scss";
 
 interface CustomTypographyProps extends TypographyProps {
   children: any;
@@ -15,14 +15,27 @@ interface CustomTypographyProps extends TypographyProps {
     parseLinks?: boolean;
     addLinkIcon?: boolean;
     linkProps?: LinkProps;
+    newPage?: boolean;
   };
 }
 
 export const CustomTypography: React.FC<CustomTypographyProps> = ({
   children,
-  parseLinks = { parseLinks: true, addLinkIcon: true, linkProps: {} },
+  parseLinks = {},
   ...props
 }) => {
+  const [parseLinksState, setParseLinksState] = React.useState(parseLinks);
+  const defaultParseLinks = {
+    parseLinks: true,
+    addLinkIcon: true,
+    linkProps: {},
+    newPage: true,
+  };
+
+  React.useEffect(() => {
+    setParseLinksState({ ...defaultParseLinks, ...parseLinks });
+  }, [parseLinks]);
+
   // Vibe coding here, but I think I know how this work
   const extractLinks = (text: string) => {
     const linkRegex = /\[(.*?)\]\((.*?)\)/g;
@@ -37,15 +50,17 @@ export const CustomTypography: React.FC<CustomTypographyProps> = ({
 
       // Push the Link component with Typography for the link text + icon
       parts.push(
-        <>
+        <Box key={index} sx={{ display: "inline-block" }}>
           <Link
-            {...parseLinks.linkProps}
+            {...parseLinksState.linkProps}
             href={linkUrl}
             sx={{
               "&::after": {
                 display: "none",
               },
             }}
+            target={parseLinksState.newPage ? "_blank" : undefined}
+            rel={parseLinksState.newPage ? "noopener noreferrer" : undefined}
           >
             <Typography
               key={index}
@@ -61,12 +76,18 @@ export const CustomTypography: React.FC<CustomTypographyProps> = ({
               </Icon>
             </Typography>
           </Link>
-          <Link key={index} href={linkUrl} {...parseLinks.linkProps}>
+          <Link
+            key={index}
+            href={linkUrl}
+            {...parseLinksState.linkProps}
+            target={parseLinksState.newPage ? "_blank" : undefined}
+            rel={parseLinksState.newPage ? "noopener noreferrer" : undefined}
+          >
             <Typography {...props} component={"span"}>
               {linkText}
             </Typography>
           </Link>
-        </>
+        </Box>
       );
 
       // Update the last index to ensure we don't repeat parts of the string
@@ -98,7 +119,7 @@ export const CustomTypography: React.FC<CustomTypographyProps> = ({
   // Then we parse the links by iterating through the typographies
   const parsedTypographies = React.useMemo(() => {
     let output = typographies;
-    if (parseLinks.parseLinks) {
+    if (parseLinksState.parseLinks) {
       output = typographies.map((typography, index) => {
         const text = typography.props.children as string;
         const parts = extractLinks(text);
@@ -110,7 +131,7 @@ export const CustomTypography: React.FC<CustomTypographyProps> = ({
       });
     }
     return output;
-  }, [typographies, parseLinks]);
+  }, [typographies, parseLinksState]);
 
   return <>{parsedTypographies}</>;
 };
