@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Link, Stack, Typography } from "@mui/material";
 
 import * as styles from "./style.scss";
 import cx from "classnames";
@@ -12,6 +12,7 @@ interface MainPageCardProps {
   superTitle?: string; // if subtitle is under the title, then supertitle should be above right?
   time?: string;
   company?: string;
+  link?: string;
   backgroundColor?: string;
   image?: string;
   content?: MainPageCardContentModel[];
@@ -22,6 +23,7 @@ export const MainPageCard: React.FC<MainPageCardProps> = ({
   superTitle = "Super Title",
   time = "Time",
   company = "Company",
+  link,
   backgroundColor = "var(--secondary-background-color)",
   content = [],
   image,
@@ -161,9 +163,24 @@ export const MainPageCard: React.FC<MainPageCardProps> = ({
             onClick={() => setIsPopupCardOpen(true)}
             spacing={2}
           >
-            <Stack direction={"column"} spacing={0}>
+            <Stack
+              direction={"column"}
+              spacing={0}
+              alignItems={isPopupCardOpen ? "flex-start" : "flex-end"}
+            >
               <Typography variant="subtitle1">{superTitle}</Typography>
-              <Typography variant="h3">{title}</Typography>
+              {link ? (
+                <Link
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <Typography variant="h3">{title}</Typography>
+                </Link>
+              ) : (
+                <Typography variant="h3">{title}</Typography>
+              )}
               <Typography variant="subtitle1">{time}</Typography>
               <Typography variant="subtitle1">{company}</Typography>
             </Stack>

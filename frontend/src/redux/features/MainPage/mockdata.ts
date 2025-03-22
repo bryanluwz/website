@@ -1,14 +1,14 @@
-import { MainPageCardModel } from "../../../apis/MainPage/typings";
 import ChatbotImage from "../../../../public/assets/main-page/chatbot.png";
 import InternImage from "../../../../public/assets/main-page/intern.png";
 import UniversityImage from "../../../../public/assets/main-page/ntu.png";
-import CircuiBoardImage from "../../../../public/assets/main-page/circuit-board.png";
+import CircuitBoardImage from "../../../../public/assets/main-page/circuit-board.png";
 
 export const mockMainPageCards: {
   title: string;
   supertitle: string;
   time: string;
   company: string;
+  link?: string;
   backgroundColor: string;
   image: string;
   content: string;
@@ -18,6 +18,7 @@ export const mockMainPageCards: {
     backgroundColor: "var(--pink)",
     time: "card-0.time",
     company: "card-0.company",
+    link: "",
     image: InternImage,
     supertitle: "card-0.supertitle",
     content: "card-0.content",
@@ -27,6 +28,7 @@ export const mockMainPageCards: {
     backgroundColor: "var(--mint)",
     time: "card-1.time",
     company: "card-1.company",
+    link: "https://ec2-54-169-177-146.ap-southeast-1.compute.amazonaws.com/",
     image: ChatbotImage,
     supertitle: "card-1.supertitle",
     content: "card-1.content",
@@ -36,7 +38,7 @@ export const mockMainPageCards: {
     backgroundColor: "var(--rust)",
     time: "card-2.time",
     company: "card-2.company",
-    image: CircuiBoardImage,
+    image: CircuitBoardImage,
     supertitle: "card-2.supertitle",
     content: "card-2.content",
   },
