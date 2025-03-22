@@ -27,8 +27,8 @@
   },
   "introduction": {
     "welcome": "Hi! I'm Bryan.",
-    "title": "Final Year Computer Engineering Student at Nanyang Technological University.",
-    "text": "I'm passionate about building software that solves real-world problems, and I'm always looking for opportunities to learn and grow.",
+    "title": "Final-year NTU Student • Aspiring Professional",
+    "text": "Web developer & software engineer, building practical solutions for real-world problems.",
     "learn-more": "Learn more about me"
   },
   "main-page-cards": {
@@ -52,7 +52,7 @@
       ]
     },
     "card-1": {
-      "title": "Full Stack Chatbot",
+      "title": "[Full Stack Chatbot](https://ec2-54-169-177-146.ap-southeast-1.compute.amazonaws.com/)",
       "supertitle": "Web Development + AI",
       "time": "Aug 2024 - May 2025",
       "company": "Nanyang Technological University",
@@ -105,6 +105,28 @@
           "content-body": ["Dean's List for Academic Year 2021 and 2023"]
         }
       ]
+    }
+  },
+  "about": {
+    "welcome": "I'm Bryan.",
+    "introduction": {
+      "title": "Soon-to-be graduate in Singapore",
+      "text": [
+        "Over the past few years, I've had the opportunity to work on a variety of projects and experiences, ranging from web application development to embedded programming.",
+        "Bla bla bla placeholder text."
+      ]
+    },
+    "more-info": {
+      "title": "More about me",
+      "text": [
+        "I've always been fascinated by technology and its potential to change the world. I started coding in high school and fell in love with the process of building software.",
+        "Check out my first major project, my first website built with ReactJS hosted on [Github Pages](https://bryanluwz.github.io/).",
+        "Since then, I've been on a journey to learn and grow as a software engineer, and I'm excited to see where this journey takes me."
+      ]
+    },
+    "interests": {
+      "title": "Interests",
+      "text": "Apart from coding, I enjoy reading, playing the guitar, and exploring new places. I'm also a big fan of coffee and can often be found at my favourite cafe, working on my latest project."
     }
   }
 }

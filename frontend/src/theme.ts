@@ -40,7 +40,7 @@ const themeOptions: ThemeOptions = {
     h1: {
       fontSize: "clamp(3.2rem, 0.6rem + 8.25vw, 8.5rem)",
       fontFamily: "var(--cta-font-family)",
-      fontWeight: 600,
+      fontWeight: 800,
     },
     body1: {
       fontSize: "clamp(1rem, .8rem + .5vw, 1.375rem)",

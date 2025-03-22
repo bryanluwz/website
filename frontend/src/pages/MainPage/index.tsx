@@ -3,18 +3,19 @@ import cx from "classnames";
 import { useTranslation } from "react-i18next";
 import { Box, Grid2, Link, Stack, Typography } from "@mui/material";
 
-import { MainPageCard } from "../../components/MainPageCard";
+import { MainPageCard } from "../../components/PageCard";
 import Mugshot from "../../../public/assets/mugshot.png";
 import * as mainStyles from "../style.scss";
 import * as styles from "./style.scss";
 import { FadeWrapper } from "../../components/FadeWrapper";
 import { useMainPageStore } from "../../redux/features/MainPage/hooks";
 import {
-  MainPageCardContentModel,
-  MainPageCardModel,
+  PageCardContentModel,
+  PageCardModel,
 } from "../../apis/MainPage/typings";
 import { useNavigationStore } from "../../redux/features/Navigation/hooks";
 import { PagesEnum } from "../../apis/enums";
+import { CustomTypography } from "../../components/CustomTypography";
 
 export const MainPage: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -59,10 +60,10 @@ export const MainPage: React.FC = () => {
 
     return (
       <Grid2 container spacing={3} className={styles.cardGrid}>
-        {mainPageCards.map((card: MainPageCardModel, index: number) => {
+        {mainPageCards.map((card: PageCardModel, index: number) => {
           const cardContent = t(`main-page-cards.${card.content}`, {
             returnObjects: true,
-          }) as unknown as MainPageCardContentModel[];
+          }) as unknown as PageCardContentModel[];
           const formattedCardContent = cardContent.map((content: any) => ({
             ...content,
             contentTitle: content["content-title"],
@@ -77,7 +78,6 @@ export const MainPage: React.FC = () => {
                   superTitle={t(`main-page-cards.${card.supertitle}`)}
                   time={t(`main-page-cards.${card.time}`)}
                   company={t(`main-page-cards.${card.company}`)}
-                  link={card.link}
                   backgroundColor={card.backgroundColor}
                   image={card.image}
                   content={formattedCardContent}
@@ -100,9 +100,9 @@ export const MainPage: React.FC = () => {
       {/* Page title */}
       <Box className={mainStyles.pageTitleWrapper}>
         <FadeWrapper>
-          <Typography variant={"h1"} className={mainStyles.pageTitle}>
+          <CustomTypography variant={"h1"} className={mainStyles.pageTitle}>
             {t("introduction.welcome")}
-          </Typography>
+          </CustomTypography>
         </FadeWrapper>
       </Box>
       {/* Main page intro */}
@@ -132,12 +132,14 @@ export const MainPage: React.FC = () => {
         </Box>
         <Stack direction={"column"} spacing={2} className={mainStyles.text}>
           <FadeWrapper delay={0.3}>
-            <Typography variant={"h3"}>{t("introduction.title")}</Typography>
+            <CustomTypography variant={"h3"}>
+              {t("introduction.title")}
+            </CustomTypography>
           </FadeWrapper>
           <FadeWrapper delay={0.3}>
-            <Typography variant={"subtitle1"}>
+            <CustomTypography variant={"body1"}>
               {t("introduction.text")}
-            </Typography>
+            </CustomTypography>
           </FadeWrapper>
           <FadeWrapper delay={0.3}>
             <Link
@@ -146,20 +148,23 @@ export const MainPage: React.FC = () => {
                 setCurrentRoute(PagesEnum.about);
               }}
             >
-              <Typography variant="subtitle2">
-                {t("introduction.learn-more")} &#8594;
-              </Typography>
+              <CustomTypography variant="subtitle2">
+                {t("introduction.learn-more") + " →"}
+              </CustomTypography>
             </Link>
           </FadeWrapper>
         </Stack>
       </Stack>
+      {/* TODO: Add skills here */}
       {/* Main page cards */}
       <FadeWrapper delay={0.5}>
         <Stack direction={"column"} spacing={0} alignItems={"center"}>
-          <Typography variant="h2">{t("main-page-cards.title")}</Typography>
-          <Typography variant="subtitle1">
+          <CustomTypography variant="h2">
+            {t("main-page-cards.title")}
+          </CustomTypography>
+          <CustomTypography variant="subtitle1">
             {t("main-page-cards.description")}
-          </Typography>
+          </CustomTypography>
         </Stack>
       </FadeWrapper>
       {gridCards}
