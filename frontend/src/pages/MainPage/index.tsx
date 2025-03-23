@@ -19,6 +19,7 @@ import InternImage from "../../../public/assets/main-page/intern.png";
 import ChatbotImage from "../../../public/assets/main-page/chatbot.png";
 import CircuitBoardImage from "../../../public/assets/main-page/circuit-board.png";
 import UniversityImage from "../../../public/assets/main-page/ntu.png";
+import { SkillCard } from "../../components/SkillCard";
 
 const pageCardsImages = [
   InternImage,
@@ -31,7 +32,7 @@ export const MainPage: React.FC = () => {
   const { t, i18n } = useTranslation();
   const { setCurrentRoute } = useNavigationStore();
 
-  const gridCards = React.useMemo(() => {
+  const pageCards = React.useMemo(() => {
     const numCards = pageCardsImages.length;
 
     const calculateGridSize = (index: number) => {
@@ -104,6 +105,31 @@ export const MainPage: React.FC = () => {
     );
   }, [pageCardsImages, i18n.language]);
 
+  const skillCards = React.useMemo(() => {
+    const skills: { title: string; skills: string[] }[] = [
+      t("skills.frontend", { returnObjects: true }),
+      t("skills.backend", { returnObjects: true }),
+      t("skills.ai", { returnObjects: true }),
+      t("skills.others", { returnObjects: true }),
+    ] as unknown as { title: string; skills: string[] }[];
+
+    return (
+      <Box className={styles.cardGrid}>
+        {skills.map((skill, index) => {
+          const skillTitle = skill.title;
+          const skills = skill.skills;
+          return (
+            <SkillCard
+              key={`skill-${index}`}
+              skills={skills}
+              skillTitle={skillTitle}
+            />
+          );
+        })}
+      </Box>
+    );
+  }, [i18n.language]);
+
   return (
     <Stack
       direction={"column"}
@@ -116,6 +142,9 @@ export const MainPage: React.FC = () => {
         <FadeWrapper>
           <CustomTypography variant={"h1"} className={mainStyles.pageTitle}>
             {t("introduction.welcome")}
+          </CustomTypography>
+          <CustomTypography variant={"h2"}>
+            {t("introduction.welcome-subtitle")}
           </CustomTypography>
         </FadeWrapper>
       </Box>
@@ -152,7 +181,7 @@ export const MainPage: React.FC = () => {
           </FadeWrapper>
           <FadeWrapper delay={0.3}>
             <CustomTypography variant={"body1"}>
-              {t("introduction.text")}
+              {t("introduction.text", { returnObjects: true })}
             </CustomTypography>
           </FadeWrapper>
           <FadeWrapper delay={0.3}>
@@ -169,7 +198,16 @@ export const MainPage: React.FC = () => {
           </FadeWrapper>
         </Stack>
       </Stack>
-      {/* TODO: Add skills here */}
+      {/* Skills */}
+      <FadeWrapper delay={0.5}>
+        <Stack direction={"column"} spacing={0} alignItems={"center"}>
+          <CustomTypography variant="h2">{t("skills.title")}</CustomTypography>
+          <CustomTypography variant="subtitle1">
+            {t("skills.description")}
+          </CustomTypography>
+        </Stack>
+      </FadeWrapper>
+      {skillCards}
       {/* Main page cards */}
       <FadeWrapper delay={0.5}>
         <Stack direction={"column"} spacing={0} alignItems={"center"}>
@@ -181,7 +219,7 @@ export const MainPage: React.FC = () => {
           </CustomTypography>
         </Stack>
       </FadeWrapper>
-      {gridCards}
+      {pageCards}
     </Stack>
   );
 };

@@ -62,6 +62,7 @@ export const CustomTypography: React.FC<CustomTypographyProps> = ({
               "&::after": {
                 display: "none",
               },
+              paddingRight: "var(--margin-xxs)",
             }}
             target={parseLinksState.newPage ? "_blank" : undefined}
             rel={parseLinksState.newPage ? "noopener noreferrer" : undefined}
@@ -71,7 +72,6 @@ export const CustomTypography: React.FC<CustomTypographyProps> = ({
               component={"span"}
               style={{
                 verticalAlign: "middle",
-                paddingRight: "var(--margin-xxs)",
               }}
             >
               <Icon>
