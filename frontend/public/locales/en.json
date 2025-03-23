@@ -26,14 +26,69 @@
     "text": "This page is still a work in progress..."
   },
   "introduction": {
-    "welcome": "Hi! I'm Bryan.",
+    "welcome": "Bryan Lu.",
+    "welcome-subtitle": "I'm a software engineer.",
     "title": "Final-year NTU Student • Aspiring Professional",
-    "text": "Web developer & software engineer, building practical solutions for real-world problems.",
+    "text": [
+      "Frontend, backend, or full stack.",
+      "I'm a versatile and innovative web developer and software engineer."
+    ],
     "learn-more": "Learn more about me"
+  },
+  "skills": {
+    "title": "Skills",
+    "description": "Here are some of the technologies and tools I've worked with",
+    "frontend": {
+      "title": "Frontend",
+      "skills": [
+        "React",
+        "Typescript",
+        "HTML",
+        "CSS",
+        "SASS",
+        "Ant Design",
+        "ECharts"
+      ]
+    },
+    "backend": {
+      "title": "Backend",
+      "skills": [
+        "Node.js",
+        "ExpressJS",
+        "RESTful APIs",
+        "MongoDB",
+        "PostgreSQL",
+        "Docker",
+        "Jenkins"
+      ]
+    },
+    "ai": {
+      "title": "AI",
+      "skills": [
+        "PyTorch",
+        "Hugging Face Transformers",
+        "BERT",
+        "GPT-3",
+        "Chatbot Development"
+      ]
+    },
+    "others": {
+      "title": "Others",
+      "skills": [
+        "Git",
+        "CI/CD Pipelines",
+        "Agile Development",
+        "Software Requirements Specifications",
+        "Embedded Programming",
+        "STM32 Microcontroller",
+        "Raspberry Pi",
+        "Computer Vision"
+      ]
+    }
   },
   "main-page-cards": {
     "title": "Experiences",
-    "description": "Here are some of my projects and experiences.",
+    "description": "Here are some of my projects and experiences",
     "card-0": {
       "title": "Frontend Engineer",
       "supertitle": "Internship",
@@ -113,7 +168,7 @@
       "title": "Soon-to-be graduate in Singapore",
       "text": [
         "Over the past few years, I've had the opportunity to work on a variety of projects and gain various experiences, ranging from web application development to embedded programming.",
-        "Always tinkering, always learning. The journey's been wild, and there's more to come."
+        "Always tinkering, always learning. The journey's been wild, and there's always more to come."
       ]
     },
     "more-info": {

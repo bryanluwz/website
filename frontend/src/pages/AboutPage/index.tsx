@@ -32,29 +32,36 @@ export const AboutPage: React.FC = () => {
     const numCards = imageCardsImages.length;
 
     const calculateGridSize = (index: number) => {
-      // The order of the grid size for md is 5, 7, 7, 5 repeating,
-      // unless it's the last card and it is odd, then it's 12
-      // The order of the grid size fro sm is 12 repeating
-      const mdGridSizes = [5, 7, 7, 5];
+      // If this index is in a row that has 3 cards, then it should be 3, 5, 3, 5, 3, 5
+      // If this index is in a row that has 2 cards, then it should be 5, 7, 7, 5
+      // If this index is in a row that has 1 card, then it should be 12
+      const mdGridSizes_3 = [4, 5, 3, 5, 3, 4];
+      const mdGridSizes_2 = [5, 7];
       const smGridSizes = [12, 12, 12, 12];
 
-      if (index === numCards - 1 && index % 2 === 0) {
-        return {
-          xs: 12,
-          sm: 12,
-          md: 12,
-        };
-      } else if (index % 2 === 0) {
+      if (
+        numCards % 3 === 2 &&
+        (index === numCards - 2 || index === numCards - 1)
+      ) {
+        // Two cards leftover in last row
         return {
           xs: smGridSizes[index % 4],
           sm: smGridSizes[index % 4],
-          md: mdGridSizes[index % 4],
+          md: mdGridSizes_2[index % 2],
+        };
+      } else if (numCards % 3 === 1 && index === numCards - 1) {
+        // One card leftover in last row
+        return {
+          xs: smGridSizes[index % 4],
+          sm: smGridSizes[index % 4],
+          md: smGridSizes[index % 4],
         };
       } else {
+        // Three cards int this row
         return {
           xs: smGridSizes[index % 4],
           sm: smGridSizes[index % 4],
-          md: mdGridSizes[(index + 1) % 4],
+          md: mdGridSizes_3[index % 6],
         };
       }
     };

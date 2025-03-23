@@ -20,9 +20,13 @@
   "404": { "title": "Alamak!", "text": "Salah alamat ke?" },
   "wip": { "title": "Apa ni?", "text": "Halaman ini masih tengah bina." },
   "introduction": {
-    "welcome": "Hai! Saya Bryan.",
-    "title": "Saya pelajar tahun akhir Kejuruteraan Komputer di Universiti Teknologi Nanyang.",
-    "text": "Saya bersemangat untuk membina perisian yang menyelesaikan masalah dunia sebenar dan sentiasa mencari peluang untuk belajar dan berkembang.",
+    "welcome": "Bryan Lu.",
+    "welcome-subtitle": "Saya seorang jurutera perisian.",
+    "title": "Pelajar NTU Tahun Akhir • Profesional yang Beraspirasi",
+    "text": [
+      "Frontend, backend, atau full stack.",
+      "Saya seorang pemaju web dan jurutera perisian yang serba boleh dan inovatif."
+    ],
     "learn-more": "Ketahui lebih"
   },
   "main-page-cards": {

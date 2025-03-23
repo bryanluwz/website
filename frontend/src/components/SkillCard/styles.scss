@@ -1,0 +1,25 @@
+.card-wrapper {
+  transition: top 0.4s ease-in-out, left 0.4s ease-in-out,
+    transform 0.4s ease-in-out;
+  width: 100%;
+  height: auto;
+
+  .card-container {
+    margin: var(--margin-sm);
+    padding: var(--margin-sm);
+    border-radius: var(--margin-lg);
+    align-items: center;
+    background-color: var(--secondary-background-color);
+    backdrop-filter: blur(10px);
+
+    .card-title {
+      border-radius: 1rem;
+      // pointer-events: none;
+    }
+
+    .chip {
+      margin: 0.5rem;
+      padding: 0.5rem;
+    }
+  }
+}
