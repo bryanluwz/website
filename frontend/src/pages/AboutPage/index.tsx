@@ -109,7 +109,7 @@ export const AboutPage: React.FC = () => {
           // href="https://www.linkedin.com/in/bryanluwz/"
           target="_blank"
           rel="noopener noreferrer"
-          className={cx(mainStyles.image, mainStyles.linkedImage)}
+          className={mainStyles.image}
         >
           <FadeWrapper delay={0.3}>
             <Box

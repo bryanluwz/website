@@ -1,34 +1,38 @@
 import React from "react";
 import cx from "classnames";
 import { useTranslation } from "react-i18next";
-import { Box, Grid2, Link, Stack, Typography } from "@mui/material";
+
+import { Box, Grid2, Link, Stack } from "@mui/material";
 
 import { PageCard } from "../../components/PageCard";
-import Mugshot from "../../../public/assets/mugshot.png";
+import { FadeWrapper } from "../../components/FadeWrapper";
+import { CustomTypography } from "../../components/CustomTypography";
+import { PageCardContentModel } from "../../apis/MainPage/typings";
+import { PagesEnum } from "../../apis/enums";
+import { useNavigationStore } from "../../redux/features/Navigation/hooks";
+
 import * as mainStyles from "../style.scss";
 import * as styles from "./style.scss";
-import { FadeWrapper } from "../../components/FadeWrapper";
-import { useMainPageStore } from "../../redux/features/MainPage/hooks";
-import {
-  PageCardContentModel,
-  PageCardModel,
-} from "../../apis/MainPage/typings";
-import { useNavigationStore } from "../../redux/features/Navigation/hooks";
-import { PagesEnum } from "../../apis/enums";
-import { CustomTypography } from "../../components/CustomTypography";
+
+import Mugshot from "../../../public/assets/mugshot.png";
+import InternImage from "../../../public/assets/main-page/intern.png";
+import ChatbotImage from "../../../public/assets/main-page/chatbot.png";
+import CircuitBoardImage from "../../../public/assets/main-page/circuit-board.png";
+import UniversityImage from "../../../public/assets/main-page/ntu.png";
+
+const pageCardsImages = [
+  InternImage,
+  ChatbotImage,
+  CircuitBoardImage,
+  UniversityImage,
+];
 
 export const MainPage: React.FC = () => {
   const { t, i18n } = useTranslation();
   const { setCurrentRoute } = useNavigationStore();
-  const { mainPageCards, getMainPageCards } = useMainPageStore();
-
-  React.useEffect(() => {
-    getMainPageCards();
-  }, []);
 
   const gridCards = React.useMemo(() => {
-    if (!mainPageCards) return null;
-    const numCards = mainPageCards.length;
+    const numCards = pageCardsImages.length;
 
     const calculateGridSize = (index: number) => {
       // The order of the grid size for md is 5, 7, 7, 5 repeating,
@@ -58,10 +62,20 @@ export const MainPage: React.FC = () => {
       }
     };
 
+    const calculateBackgroundColor = (index: number) => {
+      const colors = [
+        "var(--pink)",
+        "var(--mint)",
+        "var(--rust)",
+        "var(--baby-blue)",
+      ];
+      return colors[index % 4];
+    };
+
     return (
       <Grid2 container spacing={3} className={styles.cardGrid}>
-        {mainPageCards.map((card: PageCardModel, index: number) => {
-          const cardContent = t(`main-page-cards.${card.content}`, {
+        {pageCardsImages.map((image: string, index: number) => {
+          const cardContent = t(`main-page-cards.card-${index}.content`, {
             returnObjects: true,
           }) as unknown as PageCardContentModel[];
           const formattedCardContent = cardContent.map((content: any) => ({
@@ -74,12 +88,12 @@ export const MainPage: React.FC = () => {
             <Grid2 key={`main-${index}`} size={calculateGridSize(index)}>
               <FadeWrapper delay={0.5}>
                 <PageCard
-                  title={t(`main-page-cards.${card.title}`)}
-                  superTitle={t(`main-page-cards.${card.supertitle}`)}
-                  time={t(`main-page-cards.${card.time}`)}
-                  company={t(`main-page-cards.${card.company}`)}
-                  backgroundColor={card.backgroundColor}
-                  image={card.image}
+                  title={t(`main-page-cards.card-${index}.title`)}
+                  superTitle={t(`main-page-cards.card-${index}.supertitle`)}
+                  time={t(`main-page-cards.card-${index}.time`)}
+                  company={t(`main-page-cards.card-${index}.company`)}
+                  backgroundColor={calculateBackgroundColor(index)}
+                  image={image}
                   content={formattedCardContent}
                 />
               </FadeWrapper>
@@ -88,7 +102,7 @@ export const MainPage: React.FC = () => {
         })}
       </Grid2>
     );
-  }, [mainPageCards, i18n.language]);
+  }, [pageCardsImages, i18n.language]);
 
   return (
     <Stack
