@@ -5,14 +5,12 @@ import en from "../public/locales/en.json";
 import zh from "../public/locales/zh.json";
 import ms from "../public/locales/ms.json";
 import ja from "../public/locales/ja.json";
-import sg from "../public/locales/sg.json";
 
 const resources = {
   en: { translation: en },
   zh: { translation: zh },
   ms: { translation: ms },
   ja: { translation: ja },
-  sg: { translation: sg },
 };
 
 export type TSupportedLanguages = keyof typeof resources;
@@ -21,7 +19,6 @@ export const SupportedLanguages = {
   zh: "CHN",
   ms: "MAL",
   ja: "JAP",
-  sg: "SGP",
 };
 
 // Try to get the language from localStorage
