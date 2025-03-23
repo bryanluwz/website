@@ -46,7 +46,7 @@
       ]
     },
     "card-1": {
-      "title": "Chatbot Full Stack",
+      "title": "[Chatbot Full Stack](https://ec2-54-169-177-146.ap-southeast-1.compute.amazonaws.com/)",
       "supertitle": "Pembangunan Web + AI",
       "time": "Ogos 2024 - Mei 2025",
       "company": "Universiti Teknologi Nanyang",
@@ -100,6 +100,38 @@
           "content-title": "Senarai Dekan",
           "content-body": ["Senarai Dekan untuk Tahun Akademik 2021 dan 2023"]
         }
+      ]
+    }
+  },
+  "about": {
+    "welcome": "Saya Bryan.",
+    "introduction": {
+      "title": "Bakal graduan di Singapura",
+      "text": [
+        "Tahun-tahun kebelakangan ini, saya telah berpeluang bekerja dalam pelbagai projek dan mendapati pelbagai pengalaman — daripada pembangunan aplikasi web hingga pengaturcaraan tertanam.",
+        "Sentiasa mencuba dan sentiasa belajar. Perjalananku memang mencabar, dan saya menanti yang banyak lagi akan datang."
+      ]
+    },
+    "more-info": {
+      "title": "Lebih tentang saya",
+      "text": [
+        "Saya sentiasa terpesona dengan teknologi dan potensinya untuk mengubah dunia. Saya mula belajar pengaturcaraan sejak sekolah menengah dan terus jatuh cinta dengan proses membangunkan perisian.",
+        "Tengok-tengok projek pertama saya, iaitu laman web sendiri yang dibina dengan ReactJS dan dihoskan di [Github Pages](https://bryanluwz.github.io/).",
+        "Sejaknya, saya meneruskan perjalanan untuk belajar dan berkembang sebagai jurutera perisian, dan tak sabar untuk melihat ke mana perjalanan ini akan membawaku."
+      ]
+    },
+    "interests": {
+      "title": "Makan-makan dan Main-main",
+      "text": [
+        "Makan dululah! Sama ada makan Laksa Sarawak di Kuching, ataupun pasta mewah di Singapura, setiap hidangan merupakan pengembaraan yang berbeza.",
+        "Saya jarang akan merancang perlancongan, tetapi kalau diajak, saya tidak akan menolak. Menikmati pemandangan Mondsee dengan burung-burung atau menaiki kereta kabel di Gunung Titlis, saya hanya ikut aliran dan menikmati perjalanan init."
+      ],
+      "images": [
+        { "title": "Pasta Mahal, Singapura" },
+        { "title": "Kartoffelpuffer, Leipzig" },
+        { "title": "Laksa Sarawak, Kuching" },
+        { "title": "Kereta Kabel, Gunung Titlis" },
+        { "title": "Burung, Mondsee" }
       ]
     }
   }
