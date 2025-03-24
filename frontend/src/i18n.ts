@@ -23,9 +23,10 @@ export const SupportedLanguages = {
 
 // Try to get the language from localStorage
 const storedLanguage = localStorage.getItem("language");
+const browserLang = navigator.language.split("-")[0] || "en";
 
 // Default to 'en' if nothing is stored
-const initialLanguage = storedLanguage || "en";
+const initialLanguage = storedLanguage || browserLang || "en";
 
 i18n.use(initReactI18next).init({
   resources: resources,

@@ -24,7 +24,7 @@
 
     &:hover {
       > * {
-        color: var(--primary-font-color);
+        color: var(--primary-font-color-dark, var(--primary-font-color));
       }
     }
   }

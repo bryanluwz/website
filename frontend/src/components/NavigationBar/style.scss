@@ -37,18 +37,25 @@
       z-index: 1;
       cursor: pointer;
       user-select: none;
+      display: flex;
+      align-items: center;
 
       &.language {
         &:hover {
           color: var(--primary-font-color);
         }
+        [data-theme="dark"] & {
+          &:hover {
+            color: var(--primary-font-color-dark);
+          }
+        }
       }
     }
 
     .nav-bar-indicator {
-      border-radius: 100px;
+      border-radius: 50px;
       position: absolute;
-      backdrop-filter: blur(5px);
+      // backdrop-filter: blur(5px);
       background: var(--secondary-background-color);
       z-index: 0;
     }

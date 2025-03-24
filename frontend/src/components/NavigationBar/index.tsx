@@ -4,13 +4,15 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import { Stack } from "@mui/system";
-import { Box, Typography } from "@mui/material";
+import { Box, Icon, Typography } from "@mui/material";
 import cx from "classnames";
 
 import { useTranslation } from "react-i18next";
 import { SupportedLanguages } from "../../i18n";
 import { useNavigationStore } from "../../redux/features/Navigation/hooks";
 import { PagesEnum } from "../../apis/enums";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 import * as styles from "./style.scss";
 
 interface NavigationBarProps {}
@@ -131,6 +133,43 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
     i18n.changeLanguage(langs[nextLangIndex]);
   };
 
+  // Handle dark mode
+  const [darkMode, setDarkMode] = React.useState(false);
+
+  React.useEffect(() => {
+    // Check local storage you mei you
+    const darkMode = localStorage.getItem("darkMode");
+    if (darkMode) {
+      if (darkMode == "true") {
+        document.documentElement.setAttribute("data-theme", "dark");
+        setDarkMode(true);
+      } else {
+        document.documentElement.setAttribute("data-theme", "light");
+        setDarkMode(false);
+      }
+    } else {
+      // Check prefers color scheme
+      const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+      if (prefersDarkMode.matches) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        setDarkMode(true);
+      } else {
+        document.documentElement.setAttribute("data-theme", "light");
+        setDarkMode(false);
+      }
+    }
+  }, []);
+
+  const handleDarkModeChange = () => {
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    document.documentElement.setAttribute(
+      "data-theme",
+      newDarkMode ? "dark" : "light"
+    );
+    localStorage.setItem("darkMode", newDarkMode ? "true" : "false");
+  };
+
   return (
     <Box className={styles.wrapper}>
       <Stack
@@ -139,6 +178,13 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
         className={styles.navBar}
         sx={navBarStyles}
       >
+        <Icon
+          color="secondary"
+          className={cx(styles.navBarElement, styles.language)}
+          onClick={handleDarkModeChange}
+        >
+          {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
+        </Icon>
         {pages.map((value, index) => (
           // I dont know why this woudlnt work work CustomTypography
           <Typography
@@ -158,6 +204,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
         >
           {SupportedLanguages[i18n.language as keyof typeof SupportedLanguages]}
         </Typography>
+
         <motion.div
           className={styles.navBarIndicator}
           layoutId="activeIndicator"

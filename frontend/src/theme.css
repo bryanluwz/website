@@ -42,35 +42,61 @@ body {
   --cta-font-family: "Poppins", "Roboto", sans-serif;
   --font-family: "Poppins", "Roboto", sans-serif;
   --font-size: 0.5rem;
+
   --primary-font-color: var(--dark-slate-gray); /* Dark slate gray */
   --secondary-font-color: var(--light-slate-gray); /* Light slate gay */
+
   --cta-color: var(--salmon); /* Sialmen */
   --attn-color: var(--tomato); /* Tomato */
   --counter-cta-color: var(--medium-aquamarine); /* Medium Aquamarine */
   --secondary-color: var(--medium-turquoise); /* Medium Turquoise */
   --secondary-background-color: #fafafa80;
+  --white: #f0f0f0;
 
   /* Defaults */
   color: var(--primary-font-color);
   font-family: var(--font-family);
 }
 
-/* Customise scrollbar */
-/* ::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary-background-color);
-} */
-
-/* Customise selection */
-
 ::selection {
   background: var(--primary-font-color);
-  color: #f0f0f0;
+  color: var(--white);
+}
+
+[data-theme="dark"] {
+  --background-drop-color: hsla(
+    220,
+    20%,
+    10%,
+    0.7
+  ); /* Slightly deeper backdrop */
+  --background-gradient-start-1: #4d675a; /* Dark muted green */
+  --background-gradient-start-2: #db9fb1; /* Deep desaturated reddish-brown */
+
+  --dark-slate-gray: #2a3b4d; /* Adjusted to a richer blue-gray */
+  --light-slate-gray: #8a97a6; /* Softer gray for text contrast */
+  --tomato: #ff6b6b; /* Slightly brighter for better visibility */
+  --salmon: #e57373;
+  --indian-red: #d9534f;
+  --light-lime: #c4e17f;
+  --yellow: #ffb400;
+  --medium-aquamarine: #62c5c5;
+  --medium-turquoise: #20b2aa;
+  --pink: #d291bc;
+  --mint: #73c9c9;
+  --rust: #d88c6c;
+  --baby-blue: #6a9fb5;
+
+  /* Font Colors */
+  --primary-font-color-dark: #d4d7dd; /* Light for better contrast */
+  color: var(--primary-font-color-dark);
+  --secondary-font-color: #aeb6bf; /* Slightly muted gray */
+  --primary-font-color: var(--dark-slate-gray); /* Dark slate gray */
+
+  --cta-color: var(--salmon);
+  --attn-color: var(--tomato);
+  --counter-cta-color: var(--medium-aquamarine);
+  --secondary-color: var(--medium-turquoise);
+  --secondary-background-color: #fafafa20; /* Dark background */
+  --white: #e0e0e0; /* Softer white for dark mode */
 }
