@@ -16,6 +16,9 @@ const themeOptions: ThemeOptions = {
   // },
   typography: {
     fontFamily: `var(--font-family)`,
+    allVariants: {
+      transition: "color 0.3s ease, font-size 0.3s ease",
+    },
     h6: {
       fontSize: "clamp(1rem, .8rem + .5vw, 1.1rem)",
       fontWeight: 600,
@@ -34,7 +37,6 @@ const themeOptions: ThemeOptions = {
     },
     h2: {
       fontSize: "clamp(2rem, 2rem + 2.5vw, 2.2rem)",
-      // fontFamily: "var(--cta-font-family)",
       fontWeight: 600,
     },
     h1: {
@@ -58,6 +60,18 @@ const themeOptions: ThemeOptions = {
       color: "var(--secondary-font-color)",
       fontSize: "clamp(0.8rem, .8rem + .5vw, 1rem)",
       fontWeight: 500,
+    },
+  },
+  components: {
+    MuiIcon: {
+      styleOverrides: {
+        colorPrimary: {
+          color: "var(--primary-font-color)",
+        },
+        colorSecondary: {
+          color: "var(--secondary-font-color)",
+        },
+      },
     },
   },
   // components: {

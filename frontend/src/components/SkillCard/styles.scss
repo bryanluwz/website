@@ -11,7 +11,8 @@
     background-color: var(--secondary-background-color);
 
     > * {
-      transition: all 0.4s ease-in-out;
+      // Color probably cannot work but who cares
+      transition: color 0.3s ease, all 0.4s ease-in-out;
     }
 
     .chip-container {
@@ -19,8 +20,14 @@
     }
 
     .chip {
-      // background-color: hsla(206, 84%, 86%, 1);
+      background-color: var(--secondary-background-color);
       padding: 0;
+      color: var(--primary-font-color-dark);
+
+      [data-theme="light"] & {
+        // MUI original chip bg color
+        background-color: rgba(0, 0, 0, 0.08);
+      }
     }
   }
 }
