@@ -29,6 +29,60 @@
     ],
     "learn-more": "Ketahui lebih"
   },
+  "skills": {
+    "title": "Kemahiran",
+    "description": "Berikutlah beberapa teknologi dan alat-alat yang pernah digunakan",
+    "frontend": {
+      "title": "Pembangunan Frontend",
+      "skills": [
+        "HTML",
+        "CSS",
+        "SASS",
+        "SCSS",
+        "LESS",
+        "React",
+        "Javascript",
+        "Typescript",
+        "Reka Bentuk UI / UX",
+        "Ant Design",
+        "ECharts",
+        "Material UI (MUI)",
+        "Reka Bentuk Responsif"
+      ]
+    },
+    "backend": {
+      "title": "Pembangunan Backend",
+      "skills": ["Node.js", "ExpressJS", "Python", "RESTful APIs", "SQLite"]
+    },
+    "ai": {
+      "title": "AI & Pembelajaran Mesin",
+      "skills": [
+        "Pemprosesan Bahasa Semulajadi",
+        "Model Bahasa Besar",
+        "Rangkaian Saraf",
+        "PyTorch",
+        "Hugging Face Transformers",
+        "Penglihatan Komputer"
+      ]
+    },
+    "others": {
+      "title": "DevOps & Lain-lain",
+      "skills": [
+        "Git",
+        "Docker",
+        "C",
+        "C++",
+        "Java",
+        "Skrip Shell",
+        "Jenkins",
+        "Pembangunan Agile",
+        "Spesifikasi Keperluan Perisian",
+        "Pengaturcaraan Tertanam",
+        "STM32 Mikrodenyar",
+        "Raspberry Pi"
+      ]
+    }
+  },
   "main-page-cards": {
     "title": "Pengalaman",
     "description": "Berikut adalah beberapa projek dan pengalaman saya",
@@ -119,7 +173,7 @@
     "more-info": {
       "title": "Lebih tentang saya",
       "text": [
-        "Saya sentiasa terpesona dengan teknologi dan potensinya untuk mengubah dunia. Saya mula belajar pengaturcaraan sejak sekolah menengah dan terus jatuh cinta dengan proses membangunkan perisian.",
+        "Dibesarkan di Kuching, Malaysia, saya sentiasa terpesona dengan teknologi dan potensinya untuk mengubah dunia. Saya mula belajar pengaturcaraan sejak sekolah menengah dan terus jatuh cinta dengan proses membangunkan perisian.",
         "Tengok-tengok projek pertama saya, iaitu laman web sendiri yang dibina dengan ReactJS dan dihoskan di [Github Pages](https://bryanluwz.github.io/).",
         "Sejaknya, saya meneruskan perjalanan untuk belajar dan berkembang sebagai jurutera perisian, dan tak sabar untuk melihat ke mana perjalanan ini akan membawaku."
       ]

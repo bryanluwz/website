@@ -27,7 +27,12 @@ export const ImageCard: React.FC<ImageCardProps> = ({
         className={cx(styles.cardImage, {
           [styles.link]: !!link,
         })}
-        onClick={!!link ? () => navigate(link) : undefined}
+        onClick={() => {
+          if (link) {
+            navigate(link);
+          }
+          setIsCardHovered(!isCardHovered);
+        }}
         initial={{ transform: "scale(1)" }}
         animate={{ transform: "scale(1)" }}
         onHoverStart={() => setIsCardHovered(true)}

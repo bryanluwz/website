@@ -35,6 +35,60 @@
     ],
     "learn-more": "想了解更多吗"
   },
+  "skills": {
+    "title": "技能",
+    "description": "以下是我曾使用过的技术与工具",
+    "frontend": {
+      "title": "前端开发",
+      "skills": [
+        "HTML",
+        "CSS",
+        "SASS",
+        "SCSS",
+        "LESS",
+        "React",
+        "Javascript",
+        "Typescript",
+        "UI / UX 设计",
+        "Ant Design",
+        "ECharts",
+        "Material UI (MUI)",
+        "响应式设计"
+      ]
+    },
+    "backend": {
+      "title": "后端开发",
+      "skills": ["Node.js", "ExpressJS", "Python", "RESTful APIs", "SQLite"]
+    },
+    "ai": {
+      "title": "AI & 机器学习",
+      "skills": [
+        "自然语言处理",
+        "大语言模型",
+        "神经网络",
+        "PyTorch",
+        "Hugging Face Transformers",
+        "计算机视觉"
+      ]
+    },
+    "others": {
+      "title": "DevOps & 其他技能",
+      "skills": [
+        "Git",
+        "Docker",
+        "C",
+        "C++",
+        "Java",
+        "Shell 脚本",
+        "Jenkins",
+        "敏捷开发",
+        "软件需求规范",
+        "嵌入式编程",
+        "STM32 微控制器",
+        "Raspberry Pi"
+      ]
+    }
+  },
   "main-page-cards": {
     "title": "经历",
     "description": "以下是我的一些项目和经历",
@@ -110,7 +164,7 @@
     }
   },
   "about": {
-    "welcome": "我是 Bryan。",
+    "welcome": "我是 Bryan.",
     "introduction": {
       "title": "新加坡来临毕业生",
       "text": [
@@ -121,7 +175,7 @@
     "more-info": {
       "title": "关于我",
       "text": [
-        "一直以来，我对科技及其世界改革潜力充满了兴趣。自从高中时段开始编写程式，喜欢上了构建软件的过程。",
+        "在马来西亚古晋长大的我，对科技及其世界改革潜力充满了兴趣。自从高中时段开始编写程式，喜欢上了构建软件的过程。",
         "瞧瞧我最初的个人项目—使用 ReactJS 构建的个人网站，托管于[Github Pages](https://bryanluwz.github.io/)。",
         "自从那时起，我一直在学习与成长，期待未来能够成为更优秀的软件工程师。"
       ]

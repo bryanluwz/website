@@ -16,27 +16,39 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skillTitle, skills }) => {
     <Box className={styles.cardWrapper}>
       <Grid2
         container
-        direction={"row"}
+        direction={{ xs: "column", sm: "row", md: "row" }}
         className={styles.cardContainer}
         spacing={2}
       >
         <Grid2
           size={{
-            xs: 4,
+            xs: 12,
             sm: 4,
-            md: 4,
+            md: 3,
           }}
         >
-          <CustomTypography variant="h6">{skillTitle}</CustomTypography>
+          <CustomTypography variant="h6" sx={{ textAlign: "center" }}>
+            {skillTitle}
+          </CustomTypography>
         </Grid2>
         <Grid2
           size={{
-            xs: 8,
+            xs: 12,
             sm: 8,
-            md: 8,
+            md: 9,
           }}
         >
-          <Stack direction={"row"} className={styles.cardTitle} flexWrap="wrap">
+          <Stack
+            direction={"row"}
+            className={styles.chipContainer}
+            flexWrap="wrap"
+            justifyContent={{
+              xs: "center",
+              sm: "flex-start",
+              md: "flex-start",
+            }}
+            gap={1}
+          >
             {skills.map((skill, index) => (
               <SkillChip key={`skill-${index}`} skill={skill} />
             ))}

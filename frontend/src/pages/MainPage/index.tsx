@@ -87,7 +87,7 @@ export const MainPage: React.FC = () => {
 
           return (
             <Grid2 key={`main-${index}`} size={calculateGridSize(index)}>
-              <FadeWrapper delay={0.5}>
+              <FadeWrapper>
                 <PageCard
                   title={t(`main-page-cards.card-${index}.title`)}
                   superTitle={t(`main-page-cards.card-${index}.supertitle`)}
@@ -114,26 +114,28 @@ export const MainPage: React.FC = () => {
     ] as unknown as { title: string; skills: string[] }[];
 
     return (
-      <Box className={styles.cardGrid}>
-        {skills.map((skill, index) => {
-          const skillTitle = skill.title;
-          const skills = skill.skills;
-          return (
-            <SkillCard
-              key={`skill-${index}`}
-              skills={skills}
-              skillTitle={skillTitle}
-            />
-          );
-        })}
-      </Box>
+      <FadeWrapper>
+        <Stack className={styles.cardGrid} spacing={"var(--margin-sm)"}>
+          {skills.map((skill, index) => {
+            const skillTitle = skill.title;
+            const skills = skill.skills;
+            return (
+              <SkillCard
+                key={`skill-${index}`}
+                skills={skills}
+                skillTitle={skillTitle}
+              />
+            );
+          })}
+        </Stack>
+      </FadeWrapper>
     );
   }, [i18n.language]);
 
   return (
     <Stack
       direction={"column"}
-      spacing={"4rem"}
+      spacing={"3rem"}
       alignItems={"center"}
       width={"100%"}
     >
@@ -199,27 +201,37 @@ export const MainPage: React.FC = () => {
         </Stack>
       </Stack>
       {/* Skills */}
-      <FadeWrapper delay={0.5}>
-        <Stack direction={"column"} spacing={0} alignItems={"center"}>
+      <Stack
+        direction={"column"}
+        spacing={"var(--margin-sm)"}
+        textAlign={"center"}
+        className={mainStyles.pageContentTitle}
+      >
+        <FadeWrapper>
           <CustomTypography variant="h2">{t("skills.title")}</CustomTypography>
           <CustomTypography variant="subtitle1">
             {t("skills.description")}
           </CustomTypography>
-        </Stack>
-      </FadeWrapper>
-      {skillCards}
+        </FadeWrapper>
+        {skillCards}
+      </Stack>
       {/* Main page cards */}
-      <FadeWrapper delay={0.5}>
-        <Stack direction={"column"} spacing={0} alignItems={"center"}>
+      <Stack
+        direction={"column"}
+        spacing={"var(--margin-sm)"}
+        textAlign={"center"}
+        className={mainStyles.pageContentTitle}
+      >
+        <FadeWrapper>
           <CustomTypography variant="h2">
             {t("main-page-cards.title")}
           </CustomTypography>
           <CustomTypography variant="subtitle1">
             {t("main-page-cards.description")}
           </CustomTypography>
-        </Stack>
-      </FadeWrapper>
-      {pageCards}
+        </FadeWrapper>
+        {pageCards}
+      </Stack>
     </Stack>
   );
 };
