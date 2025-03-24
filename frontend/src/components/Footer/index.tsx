@@ -1,7 +1,10 @@
-import { Grid2, Link, Stack, Typography } from "@mui/material";
 import React from "react";
-import * as styles from "./style.scss";
 import { useTranslation } from "react-i18next";
+import { Grid2, Link, Stack } from "@mui/material";
+import { CustomTypography } from "../CustomTypography";
+
+import * as styles from "./style.scss";
+import Resume from "../../../public/assets/Resume.pdf";
 
 export const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -11,65 +14,81 @@ export const Footer: React.FC = () => {
       <Grid2 size={{ xs: 1, sm: 0 }} display={{ xs: "none", sm: "block" }} />
       <Grid2 size={{ xs: 10, sm: 5 }} display={{ xs: "none", sm: "block" }}>
         <Stack direction="row" spacing={1}>
-          <Typography variant="subtitle2">{t("footer.copyright")}</Typography>
-          <Typography variant="subtitle2">&#8226;</Typography>
+          <CustomTypography variant="subtitle2">
+            {t("footer.copyright")}
+          </CustomTypography>
+          <CustomTypography variant="subtitle2">&#8226;</CustomTypography>
           <Link
             className={styles.link}
             target="_blank"
             href="https://github.com/bryanluwz/website"
           >
-            <Typography variant="subtitle2">{t("footer.sauce")}</Typography>
+            <CustomTypography variant="subtitle2">
+              {t("footer.sauce")}
+            </CustomTypography>
           </Link>
         </Stack>
       </Grid2>
       <Grid2 size={{ xs: 5, sm: 3 }}>
         <Stack direction="column" spacing={{ xs: 1, sm: 2 }}>
-          <Typography variant="body2">{t("footer.links")}</Typography>
+          <CustomTypography variant="body2">
+            {t("footer.links")}
+          </CustomTypography>
           <Stack direction="column" spacing={1}>
             <Link
               className={styles.link}
               target="_blank"
               href="https://www.linkedin.com/in/bryanluwz/"
             >
-              <Typography variant="subtitle2">
+              <CustomTypography variant="subtitle2">
                 {t("footer.linkedin")}
-              </Typography>
+              </CustomTypography>
             </Link>
             <Link
               className={styles.link}
               target="_blank"
               href="https://github.com/bryanluwz"
             >
-              <Typography variant="subtitle2">{t("footer.github")}</Typography>
+              <CustomTypography variant="subtitle2">
+                {t("footer.github")}
+              </CustomTypography>
             </Link>
             <Link
               className={styles.link}
               target="_blank"
               href="https://www.instagram.com/bryanluwezhern/"
             >
-              <Typography variant="subtitle2">
+              <CustomTypography variant="subtitle2">
                 {t("footer.instagram")}
-              </Typography>
+              </CustomTypography>
             </Link>
             <Link
               className={styles.link}
               target="_blank"
               href="mailto:bryanlu.my@gmail.com"
             >
-              <Typography variant="subtitle2">{t("footer.email")}</Typography>
+              <CustomTypography variant="subtitle2">
+                {t("footer.email")}
+              </CustomTypography>
             </Link>
-            <Link className={styles.link}>
-              <Typography variant="subtitle2">{t("footer.resume")}</Typography>
+            <Link className={styles.link} target="_blank" href={Resume}>
+              <CustomTypography variant="subtitle2">
+                {t("footer.resume")}
+              </CustomTypography>
             </Link>
           </Stack>
         </Stack>
       </Grid2>
       <Grid2 size={{ xs: 5, sm: 2 }}>
         <Stack direction="column" spacing={{ xs: 1, sm: 2 }}>
-          <Typography variant="body2">{t("footer.message")}</Typography>
+          <CustomTypography variant="body2">
+            {t("footer.message")}
+          </CustomTypography>
           <Stack direction={"column"} spacing={1}>
             <Link className={styles.link}>
-              <Typography variant="subtitle2">{t("footer.chat")}</Typography>
+              <CustomTypography variant="subtitle2">
+                {t("footer.chat")}
+              </CustomTypography>
             </Link>
           </Stack>
         </Stack>
@@ -78,14 +97,14 @@ export const Footer: React.FC = () => {
       <Grid2 size={{ xs: 1, sm: 0 }} display={{ sm: "none" }} />
       <Grid2 size={{ xs: 10, sm: 5 }} display={{ sm: "none" }}>
         <Stack direction="row" spacing={1}>
-          <Typography variant="subtitle2">{t("footer.copyright")}</Typography>
-          <Typography variant="subtitle2">&#8226;</Typography>
-          <Link
-            className={styles.link}
-            target="_blank"
-            href="https://github.com/bryanluwz/website"
-          >
-            <Typography variant="subtitle2">{t("footer.sauce")}</Typography>
+          <CustomTypography variant="subtitle2">
+            {t("footer.copyright")}
+          </CustomTypography>
+          <CustomTypography variant="subtitle2">&#8226;</CustomTypography>
+          <Link className={styles.link} target="_blank" href={Resume}>
+            <CustomTypography variant="subtitle2">
+              {t("footer.sauce")}
+            </CustomTypography>
           </Link>
         </Stack>
       </Grid2>

@@ -107,7 +107,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 120) {
+      if (window.scrollY > 100) {
         setNavBarStyles({
           backgroundColor: "var(--secondary-background-color) !important",
           backdropFilter: "blur(50px)",
@@ -140,6 +140,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
         sx={navBarStyles}
       >
         {pages.map((value, index) => (
+          // I dont know why this woudlnt work work CustomTypography
           <Typography
             variant="h6"
             ref={(el) => (navRefs.current[index] = el)}

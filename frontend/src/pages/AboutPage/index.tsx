@@ -201,7 +201,6 @@ export const AboutPage: React.FC = () => {
         </Stack>
       </Stack>
       {/* Some interesting images and stuff */}
-
       <Stack
         direction={"column"}
         spacing={"var(--margin-sm)"}

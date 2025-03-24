@@ -71,10 +71,6 @@
         "Computer Vision"
       ]
     },
-    "programming-languages": {
-      "title": "Programming Languages",
-      "skills": []
-    },
     "others": {
       "title": "DevOps & Others",
       "skills": [
@@ -181,7 +177,7 @@
     "more-info": {
       "title": "More about me",
       "text": [
-        "I've always been fascinated by technology and its potential to change the world. I started coding in high school and fell in love with the process of building software.",
+        "Growing up in Kuching, Malaysia, I've always been fascinated by technology and its potential to change the world. I started coding in high school and fell in love with the process of building software.",
         "Check out my first major project, my first website built with ReactJS hosted on [Github Pages](https://bryanluwz.github.io/).",
         "Since then, I've been on a journey to learn and grow as a software engineer, and I'm excited to see where this journey takes me."
       ]
