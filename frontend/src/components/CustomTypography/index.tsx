@@ -131,6 +131,7 @@ export const CustomTypography: React.FC<CustomTypographyProps> = ({
         const parts = extractLinks(text);
         return (
           <Typography
+            component={"div"}
             key={`parsed-typographies-${index}-${Math.random()}`}
             {...typography.props}
           >

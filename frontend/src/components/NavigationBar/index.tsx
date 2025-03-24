@@ -74,7 +74,6 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
   }, [pages, i18n.language]);
 
   React.useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
     updateIndicator();
   }, [currentRoute]);
 

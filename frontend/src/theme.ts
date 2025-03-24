@@ -21,7 +21,7 @@ const themeOptions: ThemeOptions = {
       fontWeight: 600,
     },
     h5: {
-      fontSize: "clamp(1.2rem, 1rem + .5vw, 1rem)",
+      fontSize: "clamp(1rem, 1rem + .5vw, 1.2rem)",
       fontWeight: 600,
     },
     h4: {
@@ -29,21 +29,21 @@ const themeOptions: ThemeOptions = {
       fontWeight: 600,
     },
     h3: {
-      fontSize: "clamp(2rem, 1.8rem + 2.5vw, 1.8rem)",
+      fontSize: "clamp(1.8rem, 1.8rem + 2.5vw, 2rem)",
       fontWeight: 600,
     },
     h2: {
-      fontSize: "clamp(2.5rem, 2rem + 2.5vw, 2rem)",
+      fontSize: "clamp(2rem, 2rem + 2.5vw, 2.2rem)",
       // fontFamily: "var(--cta-font-family)",
       fontWeight: 600,
     },
     h1: {
-      fontSize: "clamp(3.2rem, 0.6rem + 8.25vw, 8.5rem)",
+      fontSize: "clamp(4rem, 0.6rem + 8.25vw, 8.5rem)",
       fontFamily: "var(--cta-font-family)",
       fontWeight: 800,
     },
     body1: {
-      fontSize: "clamp(1rem, .8rem + .5vw, 1.375rem)",
+      fontSize: "clamp(0.8rem, .8rem + .5vw, 1.2rem)",
       fontWeight: 400,
     },
     body2: {

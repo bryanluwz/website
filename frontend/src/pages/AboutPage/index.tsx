@@ -35,8 +35,8 @@ export const AboutPage: React.FC = () => {
       // If this index is in a row that has 3 cards, then it should be 3, 5, 3, 5, 3, 5
       // If this index is in a row that has 2 cards, then it should be 5, 7, 7, 5
       // If this index is in a row that has 1 card, then it should be 12
-      const mdGridSizes_3 = [4, 5, 3, 5, 3, 4];
-      const mdGridSizes_2 = [5, 7];
+      const mdGridSizes_3 = [4, 4, 4, 4, 4, 4];
+      const mdGridSizes_2 = [6, 6];
       const smGridSizes = [12, 12, 12, 12];
 
       if (
@@ -70,7 +70,7 @@ export const AboutPage: React.FC = () => {
       <Grid2 container spacing={3} className={mainPageStyles.cardGrid}>
         {imageCardsImages.map((image, index) => (
           <Grid2 key={`about-${index}`} size={calculateGridSize(index)}>
-            <FadeWrapper delay={0.5}>
+            <FadeWrapper>
               <ImageCard
                 title={t(`about.interests.images.${index}.title`)}
                 src={image}
