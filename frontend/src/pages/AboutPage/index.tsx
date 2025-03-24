@@ -176,10 +176,7 @@ export const AboutPage: React.FC = () => {
       </Stack>
       {/* Some interesting facts or something */}
       <Stack
-        direction={{
-          sm: "column",
-          md: "row",
-        }}
+        direction={"column"}
         spacing={4}
         className={cx(mainStyles.pageIntro, mainStyles.centered)}
       >
@@ -204,7 +201,15 @@ export const AboutPage: React.FC = () => {
         </Stack>
       </Stack>
       {/* Some interesting images and stuff */}
-      {gridCards}
+
+      <Stack
+        direction={"column"}
+        spacing={"var(--margin-sm)"}
+        textAlign={"center"}
+        className={mainStyles.pageContentTitle}
+      >
+        {gridCards}
+      </Stack>
     </Stack>
   );
 };

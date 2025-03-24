@@ -27,7 +27,7 @@
   },
   "introduction": {
     "welcome": "Bryan Lu.",
-    "welcome-subtitle": "I'm a software engineer.",
+    "welcome-subtitle": "I'm a software engineer",
     "title": "Final-year NTU Student • Aspiring Professional",
     "text": [
       "Frontend, backend, or full stack.",
@@ -39,50 +39,57 @@
     "title": "Skills",
     "description": "Here are some of the technologies and tools I've worked with",
     "frontend": {
-      "title": "Frontend",
+      "title": "Frontend Development",
       "skills": [
-        "React",
-        "Typescript",
         "HTML",
         "CSS",
         "SASS",
+        "SCSS",
+        "LESS",
+        "React",
+        "Javascript",
+        "Typescript",
+        "UI / UX Design",
         "Ant Design",
-        "ECharts"
+        "ECharts",
+        "Material UI (MUI)",
+        "Responsive Design"
       ]
     },
     "backend": {
-      "title": "Backend",
-      "skills": [
-        "Node.js",
-        "ExpressJS",
-        "RESTful APIs",
-        "MongoDB",
-        "PostgreSQL",
-        "Docker",
-        "Jenkins"
-      ]
+      "title": "Backend Development",
+      "skills": ["Node.js", "ExpressJS", "Python", "RESTful APIs", "SQLite"]
     },
     "ai": {
-      "title": "AI",
+      "title": "AI & Machine Learning",
       "skills": [
+        "NLP",
+        "LLM",
+        "Neural Networks",
         "PyTorch",
         "Hugging Face Transformers",
-        "BERT",
-        "GPT-3",
-        "Chatbot Development"
+        "Computer Vision"
       ]
     },
+    "programming-languages": {
+      "title": "Programming Languages",
+      "skills": []
+    },
     "others": {
-      "title": "Others",
+      "title": "DevOps & Others",
       "skills": [
         "Git",
-        "CI/CD Pipelines",
+        "Docker",
+        "C",
+        "C++",
+        "Java",
+        "Shell Scripting",
+        "Jenkins",
         "Agile Development",
         "Software Requirements Specifications",
         "Embedded Programming",
         "STM32 Microcontroller",
-        "Raspberry Pi",
-        "Computer Vision"
+        "Raspberry Pi"
       ]
     }
   },
