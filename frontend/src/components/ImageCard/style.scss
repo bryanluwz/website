@@ -28,10 +28,11 @@
     margin: var(--margin-sm);
     padding: var(--margin-sm);
     position: absolute;
-    color: var(
-      --primary-font-color
-    ); // Notice the different color for fonts and background here
-    background-color: var(--secondary-background-color-dark);
+    color: var(--primary-font-color);
+    background-color: var(
+      --secondary-background-color-dark,
+      var(--secondary-background-color)
+    );
     border-radius: 1rem;
     backdrop-filter: blur(10px);
     pointer-events: none;

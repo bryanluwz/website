@@ -197,7 +197,9 @@
       ]
     }
   },
-  "contact": {
-    "title": "BryanBot"
+  "chatbot": {
+    "title": "Bryan Bot",
+    "subtitle": "Ask me anything!",
+    "input-placeholder": "Type your message here..."
   }
 }

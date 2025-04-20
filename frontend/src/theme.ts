@@ -61,6 +61,10 @@ const themeOptions: ThemeOptions = {
       fontSize: "clamp(0.8rem, .8rem + .5vw, 1rem)",
       fontWeight: 500,
     },
+    caption: {
+      fontSize: "clamp(0.8rem, .8rem + .5vw, 1rem)",
+      fontWeight: 400,
+    },
   },
   components: {
     MuiIcon: {

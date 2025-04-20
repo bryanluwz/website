@@ -50,6 +50,9 @@ body {
   --attn-color: var(--tomato); /* Tomato */
   --counter-cta-color: var(--medium-aquamarine); /* Medium Aquamarine */
   --secondary-color: var(--medium-turquoise); /* Medium Turquoise */
+  --primary-background-color: var(
+    --background-drop-color
+  ); /* Background drop color */
   --secondary-background-color: #fafafa80;
   --white: #f0f0f0;
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Stack } from "@mui/material";
 import { Route, Routes, useLocation } from "react-router-dom";
+import cx from "classnames";
 
 import { useNavigationStore } from "../redux/features/Navigation/hooks";
 
@@ -61,7 +62,11 @@ export const App = () => {
         <Footer />
       </Stack>
       {/* This would be anchored at the bottom right of the page */}
-      <Box className={styles.chatbotContainer}>
+      <Box
+        className={cx(styles.chatbotContainer, {
+          [styles.hidden]: !isChatbotOpen,
+        })}
+      >
         <ChatbotComponent isOpen={isChatbotOpen} />
       </Box>
     </>
