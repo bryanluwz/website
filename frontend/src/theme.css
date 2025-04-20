@@ -98,5 +98,6 @@ body {
   --counter-cta-color: var(--medium-aquamarine);
   --secondary-color: var(--medium-turquoise);
   --secondary-background-color: #fafafa20; /* Dark background */
+  --secondary-background-color-dark: #fafafa80; /* Lighter background for dark mode */
   --white: #e0e0e0; /* Softer white for dark mode */
 }
