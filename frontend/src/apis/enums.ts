@@ -4,3 +4,8 @@ export enum PagesEnum {
   "funsies" = "funsies",
   "contact" = "contact",
 }
+
+export enum ChatbotRoleEnum {
+  "user" = "user",
+  "system" = "system",
+}
