@@ -194,5 +194,8 @@
         { "title": "鸟鸟们，蒙德湖" }
       ]
     }
+  },
+  "chatbot": {
+    "default-message": "Niaho"
   }
 }

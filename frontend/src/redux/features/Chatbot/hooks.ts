@@ -1,5 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addMessage, setLoading, setError } from ".";
+import {
+  addMessage,
+  removeLastMessage,
+  clearMessages,
+  setLoading,
+  setError,
+} from ".";
 import { ChatbotRoleEnum } from "../../../apis/enums";
 import { RootState } from "../../store";
 
@@ -13,6 +19,12 @@ export const useChatbotStore = () => {
   const addChatbotMessage = (message: string, role: ChatbotRoleEnum) => {
     dispatch(addMessage({ role, content: message }));
   };
+  const removeLastMessage = () => {
+    dispatch(removeLastMessage());
+  };
+  const clearMessages = () => {
+    dispatch(clearMessages());
+  };
   const setChatbotLoading = (loading: boolean) => {
     dispatch(setLoading(loading));
   };
@@ -25,6 +37,8 @@ export const useChatbotStore = () => {
     isLoading,
     error,
     addChatbotMessage,
+    removeLastMessage,
+    clearMessages,
     setChatbotLoading,
     setChatbotError,
   };

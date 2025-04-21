@@ -198,8 +198,14 @@
     }
   },
   "chatbot": {
-    "title": "Bryan Bot",
-    "subtitle": "Ask me anything!",
-    "input-placeholder": "Type your message here..."
+    "title": "BryanGPT",
+    "subtitle": "Ask me anything! (not functional yet)",
+    "input-placeholder": "Type your message here...",
+    "default-message": "Hello! I'm Bryan!",
+    "preset-questions": [
+      "Just saying hello!",
+      "We'd like to know you better!",
+      "We'd like to get into contact with you!"
+    ]
   }
 }

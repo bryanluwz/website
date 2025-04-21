@@ -1,14 +1,23 @@
 import React from "react";
-import { Box, IconButton, Stack, TextField } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-import MenuIcon from "@mui/icons-material/Menu";
-import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import { CustomTypography } from "../CustomTypography";
-
+import cx from "classnames";
 import { useTranslation } from "react-i18next";
 import { useNavigationStore } from "../../redux/features/Navigation/hooks";
 import { useChatbotStore } from "../../redux/features/Chatbot/hooks";
-import cx from "classnames";
+
+import {
+  Box,
+  IconButton,
+  Menu,
+  MenuItem,
+  Stack,
+  TextField,
+} from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import MenuIcon from "@mui/icons-material/Menu";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+
+import { CustomTypography } from "../CustomTypography";
+import { FadeWrapper } from "../FadeWrapper";
 
 import { ChatbotRoleEnum } from "../../apis/enums";
 import ChatbotAvatar from "../../../public/assets/mugshot_square.png";
@@ -27,7 +36,6 @@ export const ChatbotComponent: React.FC<ChatbotComponentProps> = ({
     useChatbotStore();
 
   const scrollToBottomRef = React.useRef<HTMLDivElement>(null);
-  const [inputValue, setInputValue] = React.useState<string>("");
 
   React.useEffect(() => {
     if (messages.length > 0) {
@@ -36,22 +44,23 @@ export const ChatbotComponent: React.FC<ChatbotComponentProps> = ({
         block: "end",
         inline: "nearest",
       });
-      return;
     }
-    // Add a default message when the component mounts
-    const defaultMessage = {
-      role: ChatbotRoleEnum.system,
-      content: t("chatbot.defaultMessage"),
-    };
-    addChatbotMessage(defaultMessage.content, defaultMessage.role);
-  }, [messages, isOpen, i18n.language]);
+  }, [messages, isOpen]);
 
-  const handleSubmit = () => {
+  const handleInputSubmit = () => {
     if (inputValue.trim() === "") return;
-    addChatbotMessage(inputValue, ChatbotRoleEnum.user);
+    handleSubmitWithValue(inputValue);
+    setInputValue("");
+  };
+
+  const handlePresetQuestionsSubmit = (value: string) => {
+    handleSubmitWithValue(value);
+  };
+
+  const handleSubmitWithValue = (value: string) => {
+    addChatbotMessage(value, ChatbotRoleEnum.user);
     setChatbotLoading(true);
 
-    setInputValue("");
     setTimeout(() => {
       const responseMessage = {
         role: ChatbotRoleEnum.system,
@@ -62,122 +71,164 @@ export const ChatbotComponent: React.FC<ChatbotComponentProps> = ({
     }, 1000);
   };
 
-  const messagesComponent = React.useMemo(() => {
-    const individualMessageList = messages.map((message, index) => {
-      const isUserMessage = message.role === ChatbotRoleEnum.user;
-      return (
-        <Stack
-          className={cx(styles.messageBox, [
-            {
-              [styles.user]: isUserMessage,
-            },
-          ])}
-          key={index}
-          direction={"row"}
-          sx={{
-            justifyContent: isUserMessage ? "flex-end" : "flex-start",
-            marginBottom: 1,
-          }}
-        >
-          <CustomTypography variant="caption">
-            {message.content}
+  // Header stuff
+  const headerComponent = React.useMemo(() => {
+    return (
+      <Stack
+        className={styles.header}
+        direction={"row"}
+        sx={{
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+        spacing={2}
+      >
+        <Box
+          className={styles.image}
+          component={"img"}
+          src={ChatbotAvatar}
+          alt="Chatbot"
+        />
+        <Stack className={styles.text}>
+          <CustomTypography variant="h6">{t("chatbot.title")}</CustomTypography>
+          <CustomTypography variant="body2">
+            {t("chatbot.subtitle")}
           </CustomTypography>
         </Stack>
+        <IconButton className={styles.icon} onClick={toggleChatbot}>
+          <CloseIcon />
+        </IconButton>
+      </Stack>
+    );
+  }, [isOpen, i18n.language]);
+
+  // Messages stuff
+  const messagesComponent = React.useMemo(() => {
+    // Add a default message when message empty or only have one message (aka the default message)
+    const defaultMessage = {
+      role: ChatbotRoleEnum.system,
+      content: t("chatbot.default-message"),
+    };
+
+    const extendedMessages = [defaultMessage, ...messages];
+
+    const individualMessageList = extendedMessages.map((message, index) => {
+      const isUserMessage = message.role === ChatbotRoleEnum.user;
+      return (
+        <FadeWrapper
+          sx={{ display: "flex", flexDirection: "column" }}
+          key={index}
+        >
+          <Stack
+            className={cx(styles.messageBox, [
+              {
+                [styles.user]: isUserMessage,
+              },
+            ])}
+            direction={"row"}
+            sx={{
+              justifyContent: isUserMessage ? "flex-end" : "flex-start",
+              marginBottom: 1,
+            }}
+          >
+            <CustomTypography variant="caption">
+              {message.content}
+            </CustomTypography>
+          </Stack>
+        </FadeWrapper>
       );
     });
+
+    // Preset questions for user to click on (only show when not loading)
+    const presetQuestions = t("chatbot.preset-questions", {
+      returnObjects: true,
+    }) as string[];
+    const presetQuestionsComponent = isLoading ? null : (
+      <>
+        {presetQuestions.map((question, index) => (
+          <FadeWrapper key={index} delay={index * 0.1}>
+            <Box className={cx(styles.messageBox, styles.preset)}>
+              <CustomTypography
+                variant="caption"
+                onClick={() => handlePresetQuestionsSubmit(question)}
+              >
+                {question}
+              </CustomTypography>
+            </Box>
+          </FadeWrapper>
+        ))}
+      </>
+    );
+
     return (
       <Stack className={styles.content} spacing={1}>
         {individualMessageList}
+        {presetQuestionsComponent}
+        {/* Scroll to bottom div */}
         <div ref={scrollToBottomRef} />
       </Stack>
     );
-  }, [messages, i18n.language]);
+  }, [messages, isLoading, i18n.language]);
+
+  // Input stuff
+  const [inputValue, setInputValue] = React.useState<string>("");
+
+  const inputComponent = React.useMemo(() => {
+    return (
+      <Stack
+        className={styles.inputBox}
+        direction={"row"}
+        sx={{
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+        spacing={1}
+      >
+        <TextField
+          variant="standard"
+          placeholder={t("chatbot.input-placeholder")}
+          size="small"
+          fullWidth
+          sx={{
+            input: {
+              // Taken from theme.ts
+              color:
+                "var(--primary-font-color-dark, var(--primary-font-color))",
+              fontSize: "clamp(0.8rem, .8rem + .5vw, 1rem)",
+              fontWeight: 400,
+            },
+          }}
+          disabled={isLoading}
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleInputSubmit();
+            }
+          }}
+        />
+        {/* Submit button for user to send their question */}
+        <IconButton disabled={isLoading} onClick={() => handleInputSubmit}>
+          <ArrowUpwardIcon />
+        </IconButton>
+      </Stack>
+    );
+  }, [inputValue, isLoading, i18n.language]);
 
   const chatboxComponent = React.useMemo(() => {
     if (!isOpen) return null;
 
     return (
-      <Stack className={styles.container}>
-        {/* Title of chat and also close button */}
-        <Stack
-          className={styles.header}
-          direction={"row"}
-          sx={{
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-          spacing={2}
-        >
-          <Box
-            className={styles.image}
-            component={"img"}
-            src={ChatbotAvatar}
-            alt="Chatbot"
-          />
-          <Stack className={styles.text}>
-            <CustomTypography variant="h6">
-              {t("chatbot.title")}
-            </CustomTypography>
-            <CustomTypography variant="body2">
-              {t("chatbot.subtitle")}
-            </CustomTypography>
-          </Stack>
-          <IconButton className={styles.icon} onClick={toggleChatbot}>
-            <CloseIcon />
-          </IconButton>
+      <FadeWrapper>
+        <Stack className={styles.container}>
+          {/* Title of chat and also close button */}
+          {headerComponent}
+          {/* Chatbot content (messages) goes here */}
+          {messagesComponent}
+          {/* Chat input (list of qns, input box, submit button) */}
+          {inputComponent}
         </Stack>
-        {/* Chatbot content (messages) goes here */}
-        {messagesComponent}
-        {/* Chat input (list of qns, input box, submit button) */}
-        <Stack
-          className={styles.inputBox}
-          direction={"row"}
-          sx={{
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-          spacing={1}
-        >
-          {/* hamburger menu to show pre set qns */}
-          <IconButton disabled={isLoading} onClick={() => {}}>
-            <MenuIcon />
-          </IconButton>
-          <TextField
-            variant="standard"
-            placeholder={t("chatbot.input-placeholder")}
-            size="small"
-            fullWidth
-            sx={{
-              input: {
-                // Taken from theme.ts
-                color:
-                  "var(--primary-font-color-dark, var(--primary-font-color))",
-                fontSize: "clamp(0.8rem, .8rem + .5vw, 1rem)",
-                fontWeight: 400,
-              },
-            }}
-            disabled={isLoading}
-            value={inputValue}
-            onChange={(e) => {
-              setInputValue(e.target.value);
-            }}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                handleSubmit();
-              }
-            }}
-          />
-          {/* Submit button for user to send their question */}
-          <IconButton
-            disabled={isLoading}
-            onClick={() => {
-              handleSubmit();
-            }}
-          >
-            <ArrowUpwardIcon />
-          </IconButton>
-        </Stack>
-      </Stack>
+      </FadeWrapper>
     );
   }, [isOpen, i18n.language, messages, inputValue]);
 
