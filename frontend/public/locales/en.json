@@ -196,5 +196,16 @@
         { "title": "Birbs, Mondsee" }
       ]
     }
+  },
+  "chatbot": {
+    "title": "BryanGPT",
+    "subtitle": "Ask me anything!",
+    "input-placeholder": "Type your message here...",
+    "default-message": "Hello! I'm Bryan!",
+    "preset-questions": [
+      "Just saying hello!",
+      "We'd like to know you better!",
+      "We'd like to get into contact with you!"
+    ]
   }
 }

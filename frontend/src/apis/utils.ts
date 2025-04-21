@@ -21,6 +21,12 @@ export const handleError = (error: any) => {
   console.error(error);
 };
 
+export const fetch = async (url: string, options: RequestInit = {}) => {
+  const response = await window.fetch(url, options);
+
+  return response;
+};
+
 export const fetchWithAuth = async (url: string, options: RequestInit = {}) => {
   const token = localStorage.getItem("token");
 

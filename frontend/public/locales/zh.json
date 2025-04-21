@@ -194,5 +194,15 @@
         { "title": "鸟鸟们，蒙德湖" }
       ]
     }
+  },
+  "chatbot": {
+    "subtitle": "问我任何问题！",
+    "input-placeholder": "向这输入",
+    "default-message": "你好！我是 Bryan！",
+    "preset-questions": [
+      "我吃饱没事做，只想聊天。",
+      "想更了解你！",
+      "想联系你！"
+    ]
   }
 }

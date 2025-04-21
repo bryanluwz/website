@@ -18,25 +18,30 @@ import * as styles from "./style.scss";
 interface NavigationBarProps {}
 
 const pages = Object.entries(PagesEnum);
+const nonRoutablePages = [PagesEnum.contact];
 
 export const NavigationBar: React.FC<NavigationBarProps> = () => {
-  const { currentRoute, setCurrentRoute } = useNavigationStore();
+  const { currentRoute, setCurrentRoute, toggleChatbot } = useNavigationStore();
   const { t, i18n } = useTranslation();
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleNavigation = (route: PagesEnum) => {
+    if (nonRoutablePages.includes(route)) {
+      switch (route) {
+        case PagesEnum.contact:
+          toggleChatbot();
+          break;
+        default:
+          break;
+      }
+      return;
+    }
+
     dispatch(setCurrentRoute(route));
     navigate(route);
   };
-
-  React.useEffect(() => {
-    if (!currentRoute) {
-      return;
-    }
-    handleNavigation(currentRoute);
-  }, [currentRoute]);
 
   // Set indicator styles
   const [indicatorStyle, setIndicatorStyle] = React.useState({
@@ -192,7 +197,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
             ref={(el) => (navRefs.current[index] = el)}
             className={styles.navBarElement}
             key={index}
-            onClick={() => setCurrentRoute(value[1])}
+            onClick={() => handleNavigation(value[1])}
           >
             {t(`navigation.${value[0]}`)}
           </Typography>

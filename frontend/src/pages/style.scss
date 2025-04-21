@@ -99,7 +99,7 @@
 
         &:hover {
           > * {
-            color: var(--primary-font-color);
+            color: var(--primary-font-color-dark, var(--primary-font-color));
           }
         }
 
@@ -118,7 +118,10 @@
         }
 
         &:hover::after {
-          background-color: var(--primary-font-color);
+          background-color: var(
+            --primary-font-color-dark,
+            var(--primary-font-color)
+          );
           transform: scaleX(1);
           transform-origin: bottom left;
         }
@@ -128,6 +131,35 @@
 
   .page-content-title {
     width: 80%;
+  }
+}
+
+.chatbot-container {
+  position: fixed;
+  bottom: var(--margin-md);
+  right: var(--margin-md);
+  padding: var(--margin-xs);
+  width: 30rem;
+  max-width: calc(100% - 2 * var(--margin-xs));
+  height: 40rem;
+  max-height: 80vh;
+  z-index: 2;
+
+  &.hidden {
+    display: none;
+  }
+
+  display: flex;
+  > * {
+    flex: 1;
+  }
+
+  @media screen and (max-width: 600px) {
+    min-width: calc(100% - 2 * var(--margin-xs));
+    min-height: calc(90dvh - 2 * var(--margin-xs));
+    padding: var(--margin-xs);
+    bottom: 0;
+    right: 0;
   }
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Stack } from "@mui/material";
 import { Route, Routes, useLocation } from "react-router-dom";
+import cx from "classnames";
 
 import { useNavigationStore } from "../redux/features/Navigation/hooks";
 
@@ -13,6 +14,7 @@ import { NavigationBar } from "../components/NavigationBar";
 import { Footer } from "../components/Footer";
 import { PagesEnum } from "../apis/enums";
 import * as styles from "./style.scss";
+import ChatbotComponent from "../components/ChatbotComponent";
 
 const ScrollToTopBeforeRender = ({
   children,
@@ -30,7 +32,7 @@ const ScrollToTopBeforeRender = ({
 
 export const App = () => {
   const location = useLocation();
-  const { setCurrentRoute } = useNavigationStore();
+  const { setCurrentRoute, isChatbotOpen } = useNavigationStore();
 
   React.useEffect(() => {
     const normalizedPath = location.pathname.startsWith("/")
@@ -44,20 +46,30 @@ export const App = () => {
   }, [location.pathname]);
 
   return (
-    <Stack direction={"column"} className={styles.mainContainer} spacing={2}>
-      <NavigationBar />
-      <Box sx={{ flexGrow: 1 }}>
-        <ScrollToTopBeforeRender>
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/funsies" element={<WIPPage />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
-        </ScrollToTopBeforeRender>
+    <>
+      <Stack direction={"column"} className={styles.mainContainer} spacing={2}>
+        <NavigationBar />
+        <Box sx={{ flexGrow: 1 }}>
+          <ScrollToTopBeforeRender>
+            <Routes>
+              <Route path="/" element={<MainPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/funsies" element={<WIPPage />} />
+              <Route path="*" element={<ErrorPage />} />
+            </Routes>
+          </ScrollToTopBeforeRender>
+        </Box>
+        <Footer />
+      </Stack>
+      {/* This would be anchored at the bottom right of the page */}
+      <Box
+        className={cx(styles.chatbotContainer, {
+          [styles.hidden]: !isChatbotOpen,
+        })}
+      >
+        <ChatbotComponent isOpen={isChatbotOpen} />
       </Box>
-      <Footer />
-    </Stack>
+    </>
   );
 };
 

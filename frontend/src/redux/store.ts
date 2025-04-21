@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import navigationReducer from "./features/Navigation";
+import chatbotReducer from "./features/Chatbot";
 
 export const store = configureStore({
   reducer: {
     navigation: navigationReducer,
+    chatbot: chatbotReducer,
   },
 });
 

@@ -192,5 +192,15 @@
         { "title": "Burung, Mondsee" }
       ]
     }
+  },
+  "chatbot": {
+    "subtitle": "Tanya saya!",
+    "input-placeholder": "Taipkan mesej anda di sini...",
+    "default-message": "Hai! Saya Bryan!",
+    "preset-questions": [
+      "Tak ada apa-apa, nak bual-bual saja.",
+      "Saya hendak tahu lebih tentang anda!",
+      "Kami ingin menghubungi anda!"
+    ]
   }
 }

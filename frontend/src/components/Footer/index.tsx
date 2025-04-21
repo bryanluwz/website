@@ -5,9 +5,11 @@ import { CustomTypography } from "../CustomTypography";
 
 import * as styles from "./style.scss";
 import Resume from "../../../public/assets/Resume.pdf";
+import { useNavigationStore } from "../../redux/features/Navigation/hooks";
 
 export const Footer: React.FC = () => {
   const { t } = useTranslation();
+  const { toggleChatbot } = useNavigationStore();
 
   return (
     <Grid2 container spacing={2} className={styles.container}>
@@ -85,7 +87,7 @@ export const Footer: React.FC = () => {
             {t("footer.message")}
           </CustomTypography>
           <Stack direction={"column"} spacing={1}>
-            <Link className={styles.link}>
+            <Link className={styles.link} onClick={toggleChatbot}>
               <CustomTypography variant="subtitle2">
                 {t("footer.chat")}
               </CustomTypography>
