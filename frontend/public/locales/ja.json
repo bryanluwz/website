@@ -196,5 +196,15 @@
         { "title": "鳥たち、モンド湖" }
       ]
     }
+  },
+  "chatbot": {
+    "subtitle": "何も聞いてもいいよ！",
+    "input-placeholder": "ここに入力してね",
+    "default-message": "こんにちは！私はBryanです！",
+    "preset-questions": [
+      "暇から、ただおしゃべりしたいだけ。",
+      "もっと詳しく知りたいです！",
+      "連絡をしたいです！"
+    ]
   }
 }

@@ -219,16 +219,14 @@ export const ChatbotComponent: React.FC<ChatbotComponentProps> = ({
     if (!isOpen) return null;
 
     return (
-      <FadeWrapper>
-        <Stack className={styles.container}>
-          {/* Title of chat and also close button */}
-          {headerComponent}
-          {/* Chatbot content (messages) goes here */}
-          {messagesComponent}
-          {/* Chat input (list of qns, input box, submit button) */}
-          {inputComponent}
-        </Stack>
-      </FadeWrapper>
+      <Stack className={styles.container}>
+        {/* Title of chat and also close button */}
+        {headerComponent}
+        {/* Chatbot content (messages) goes here */}
+        {messagesComponent}
+        {/* Chat input (list of qns, input box, submit button) */}
+        {inputComponent}
+      </Stack>
     );
   }, [isOpen, i18n.language, messages, inputValue]);
 

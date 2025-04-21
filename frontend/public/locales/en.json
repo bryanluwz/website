@@ -199,7 +199,7 @@
   },
   "chatbot": {
     "title": "BryanGPT",
-    "subtitle": "Ask me anything! (not functional yet)",
+    "subtitle": "Ask me anything!",
     "input-placeholder": "Type your message here...",
     "default-message": "Hello! I'm Bryan!",
     "preset-questions": [
