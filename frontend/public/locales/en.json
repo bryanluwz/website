@@ -206,6 +206,7 @@
       "Just saying hello!",
       "We'd like to know you better!",
       "We'd like to get into contact with you!"
-    ]
+    ],
+    "error-message": "Sorry, there's something wrong with the server. Please try again some other time."
   }
 }
