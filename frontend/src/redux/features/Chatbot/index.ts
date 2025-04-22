@@ -1,6 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ChatbotRoleEnum } from "../../../apis/enums";
 import { ChatbotMessageModel } from "../../../apis/Chatbot/typings";
+import { chatbotApi } from "../../../apis/Chatbot";
+import { checkStatus } from "../../../apis/utils";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
 // Define the state interface
 interface ChatbotState {
@@ -34,13 +36,37 @@ const chatbotSlice = createSlice({
     setError: (state, action: PayloadAction<string | null>) => {
       state.error = action.payload;
     },
-    postMessage: (state, action: PayloadAction<ChatbotMessageModel>) => {
-      // Do something here
-      // const response =
-      // state.addMessage(response);
-    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(postMessage.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(postMessage.fulfilled, (state, action) => {
+        state.isLoading = false;
+        // use action.payload if needed
+      })
+      .addCase(postMessage.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload as string;
+      });
   },
 });
+
+export const postMessage = createAsyncThunk(
+  "chatbot/postMessage",
+  async (messages: ChatbotMessageModel[], { rejectWithValue }) => {
+    try {
+      const response = await chatbotApi({ messages });
+      return checkStatus(response).data.response;
+      // await new Promise((resolve) => setTimeout(resolve, 1000));
+      // return "Mocked response from chatbot API";
+    } catch (err) {
+      return rejectWithValue("Error occurred while sending message");
+    }
+  }
+);
 
 export const {
   addMessage,

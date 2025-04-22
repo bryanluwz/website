@@ -4,6 +4,7 @@ export declare const header: string;
 export declare const icon: string;
 export declare const image: string;
 export declare const inputBox: string;
+export declare const loadingIcon: string;
 export declare const messageBox: string;
 export declare const preset: string;
 export declare const text: string;
