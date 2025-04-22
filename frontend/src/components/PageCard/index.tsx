@@ -174,11 +174,6 @@ export const PageCard: React.FC<PageCardProps> = ({
               <CustomTypography variant="subtitle1">
                 {superTitle}
               </CustomTypography>
-
-              {/* href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()} */}
               <CustomTypography
                 variant="h3"
                 parseLinks={{

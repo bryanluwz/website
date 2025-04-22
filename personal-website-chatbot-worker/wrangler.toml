@@ -1,1 +1,2 @@
 name = "personal-website-chatbot-worker"
+main = "src/index.ts"

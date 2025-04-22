@@ -11,5 +11,5 @@ export const chatbotApi = async (body: ChatbotApiRequestModel) => {
     body: JSON.stringify(body),
   });
 
-  return response as unknown as ChatbotApiResponseModel;
+  return response.json() as unknown as ChatbotApiResponseModel;
 };

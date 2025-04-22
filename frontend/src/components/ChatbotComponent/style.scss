@@ -80,11 +80,37 @@
           var(--primary-font-color-dark, var(--primary-font-color));
         box-sizing: border-box;
       }
+
+      a {
+        text-decoration: none;
+        width: max-content;
+        color: var(--primary-font-color);
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 3px;
+          width: 100%;
+          height: 1px;
+          background-color: var(--primary-font-color);
+          transform: scaleX(0);
+          transform-origin: bottom right;
+          transition: transform 0.3s ease-in-out;
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      }
     }
   }
 
   .input-box {
     padding: var(--margin-sm);
+    max-height: 30%;
 
     transition: all 0.3s ease-in-out;
 

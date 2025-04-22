@@ -7,6 +7,7 @@ import { useChatbotStore } from "../../redux/features/Chatbot/hooks";
 import {
   Box,
   CircularProgress,
+  FilledInput,
   IconButton,
   Stack,
   TextField,
@@ -30,13 +31,8 @@ export const ChatbotComponent: React.FC<ChatbotComponentProps> = ({
 }) => {
   const { t, i18n } = useTranslation();
   const { toggleChatbot } = useNavigationStore();
-  const {
-    messages,
-    addChatbotMessage,
-    isLoading,
-    setChatbotLoading,
-    postChatbotMessage,
-  } = useChatbotStore();
+  const { messages, addChatbotMessage, isLoading, postChatbotMessage } =
+    useChatbotStore();
 
   const scrollToBottomRef = React.useRef<HTMLDivElement>(null);
 
@@ -68,6 +64,7 @@ export const ChatbotComponent: React.FC<ChatbotComponentProps> = ({
     ];
     addChatbotMessage(value, ChatbotRoleEnum.user);
     const response = await postChatbotMessage(newMessages);
+
     if (response) {
       const botResponse = response;
       addChatbotMessage(botResponse, ChatbotRoleEnum.system);
@@ -131,14 +128,27 @@ export const ChatbotComponent: React.FC<ChatbotComponentProps> = ({
                 [styles.user]: isUserMessage,
               },
             ])}
-            direction={"row"}
+            direction={"column"}
+            spacing={2}
             sx={{
               justifyContent: isUserMessage ? "flex-end" : "flex-start",
               marginBottom: 1,
             }}
           >
-            <CustomTypography variant="caption">
-              {message.content}
+            <CustomTypography
+              variant="caption"
+              parseLinks={{
+                parseLinks: true,
+                addLinkIcon: true,
+                linkProps: {
+                  onClick: (e) => e.stopPropagation(),
+                },
+              }}
+              sx={{
+                wordBreak: "break-word",
+              }}
+            >
+              {message.content.split("\n")}
             </CustomTypography>
           </Stack>
         </FadeWrapper>
@@ -206,7 +216,9 @@ export const ChatbotComponent: React.FC<ChatbotComponentProps> = ({
           size="small"
           fullWidth
           sx={{
-            input: {
+            maxHeight: "6rem",
+            overflowY: "auto",
+            textarea: {
               // Taken from theme.ts
               color:
                 "var(--primary-font-color-dark, var(--primary-font-color))",
@@ -214,6 +226,7 @@ export const ChatbotComponent: React.FC<ChatbotComponentProps> = ({
               fontWeight: 400,
             },
           }}
+          multiline
           disabled={isLoading}
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
@@ -224,7 +237,7 @@ export const ChatbotComponent: React.FC<ChatbotComponentProps> = ({
           }}
         />
         {/* Submit button for user to send their question */}
-        <IconButton disabled={isLoading} onClick={() => handleInputSubmit}>
+        <IconButton disabled={isLoading} onClick={handleInputSubmit}>
           <ArrowUpwardIcon />
         </IconButton>
       </Stack>

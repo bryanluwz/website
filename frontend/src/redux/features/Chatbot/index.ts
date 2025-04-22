@@ -60,8 +60,6 @@ export const postMessage = createAsyncThunk(
     try {
       const response = await chatbotApi({ messages });
       return checkStatus(response).data.response;
-      // await new Promise((resolve) => setTimeout(resolve, 1000));
-      // return "Mocked response from chatbot API";
     } catch (err) {
       return rejectWithValue("Error occurred while sending message");
     }
