@@ -6,14 +6,12 @@ import { useChatbotStore } from "../../redux/features/Chatbot/hooks";
 
 import {
   Box,
+  CircularProgress,
   IconButton,
-  Menu,
-  MenuItem,
   Stack,
   TextField,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import MenuIcon from "@mui/icons-material/Menu";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 import { CustomTypography } from "../CustomTypography";
@@ -32,8 +30,13 @@ export const ChatbotComponent: React.FC<ChatbotComponentProps> = ({
 }) => {
   const { t, i18n } = useTranslation();
   const { toggleChatbot } = useNavigationStore();
-  const { messages, addChatbotMessage, isLoading, setChatbotLoading } =
-    useChatbotStore();
+  const {
+    messages,
+    addChatbotMessage,
+    isLoading,
+    setChatbotLoading,
+    postChatbotMessage,
+  } = useChatbotStore();
 
   const scrollToBottomRef = React.useRef<HTMLDivElement>(null);
 
@@ -57,18 +60,21 @@ export const ChatbotComponent: React.FC<ChatbotComponentProps> = ({
     handleSubmitWithValue(value);
   };
 
-  const handleSubmitWithValue = (value: string) => {
+  const handleSubmitWithValue = async (value: string) => {
+    const currentMessages = messages;
+    const newMessages = [
+      ...currentMessages,
+      { role: ChatbotRoleEnum.user, content: value },
+    ];
     addChatbotMessage(value, ChatbotRoleEnum.user);
-    setChatbotLoading(true);
-
-    setTimeout(() => {
-      const responseMessage = {
-        role: ChatbotRoleEnum.system,
-        content: t("chatbot.dummy-response"),
-      };
-      addChatbotMessage(responseMessage.content, responseMessage.role);
-      setChatbotLoading(false);
-    }, 1000);
+    const response = await postChatbotMessage(newMessages);
+    if (response) {
+      const botResponse = response;
+      addChatbotMessage(botResponse, ChatbotRoleEnum.system);
+    } else {
+      const errorMessage = t("chatbot.error-message");
+      addChatbotMessage(errorMessage, ChatbotRoleEnum.system);
+    }
   };
 
   // Header stuff
@@ -160,11 +166,21 @@ export const ChatbotComponent: React.FC<ChatbotComponentProps> = ({
       </>
     );
 
+    // Loading icon when loading
+    const loadingComponent = isLoading ? (
+      <CircularProgress
+        size={20}
+        className={styles.loadingIcon}
+        disableShrink
+      />
+    ) : null;
+
     return (
       <Stack className={styles.content} spacing={1}>
         {individualMessageList}
         {presetQuestionsComponent}
         {/* Scroll to bottom div */}
+        {loadingComponent}
         <div ref={scrollToBottomRef} />
       </Stack>
     );

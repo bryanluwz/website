@@ -21,8 +21,10 @@ export const handleError = (error: any) => {
   console.error(error);
 };
 
-export const fetch = async (url: string, options: RequestInit = {}) => {
-  const response = await window.fetch(url, options);
+export const _fetch = async (url: string, options: RequestInit = {}) => {
+  const response = await fetch(url, {
+    ...options,
+  });
 
   return response;
 };
