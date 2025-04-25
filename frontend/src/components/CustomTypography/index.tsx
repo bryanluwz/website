@@ -55,30 +55,33 @@ export const CustomTypography: React.FC<CustomTypographyProps> = ({
       // Push the Link component with Typography for the link text + icon
       parts.push(
         <Box key={`link-box-${index}`} sx={{ display: "inline-block" }}>
-          <Link
-            {...parseLinksState.linkProps}
-            href={linkUrl}
-            sx={{
-              "&::after": {
-                display: "none",
-              },
-              paddingRight: "var(--margin-xxs)",
-            }}
-            target={parseLinksState.newPage ? "_blank" : undefined}
-            rel={parseLinksState.newPage ? "noopener noreferrer" : undefined}
-          >
-            <Typography
-              {...props}
-              component={"span"}
-              style={{
-                verticalAlign: "middle",
+          {parseLinksState.addLinkIcon && (
+            <Link
+              {...parseLinksState.linkProps}
+              href={linkUrl}
+              sx={{
+                "&::after": {
+                  display: "none",
+                },
+                paddingRight: "var(--margin-xxs)",
+                ...parseLinksState.linkProps?.sx,
               }}
+              target={parseLinksState.newPage ? "_blank" : undefined}
+              rel={parseLinksState.newPage ? "noopener noreferrer" : undefined}
             >
-              <Icon>
-                <LinkIcon />
-              </Icon>
-            </Typography>
-          </Link>
+              <Typography
+                {...props}
+                component={"span"}
+                style={{
+                  verticalAlign: "middle",
+                }}
+              >
+                <Icon>
+                  <LinkIcon />
+                </Icon>
+              </Typography>
+            </Link>
+          )}
           <Link
             href={linkUrl}
             {...parseLinksState.linkProps}

@@ -139,7 +139,7 @@ export const ChatbotComponent: React.FC<ChatbotComponentProps> = ({
               variant="caption"
               parseLinks={{
                 parseLinks: true,
-                addLinkIcon: true,
+                addLinkIcon: false,
                 linkProps: {
                   onClick: (e) => e.stopPropagation(),
                 },
@@ -237,7 +237,10 @@ export const ChatbotComponent: React.FC<ChatbotComponentProps> = ({
           }}
         />
         {/* Submit button for user to send their question */}
-        <IconButton disabled={isLoading} onClick={handleInputSubmit}>
+        <IconButton
+          disabled={isLoading || inputValue.length === 0}
+          onClick={handleInputSubmit}
+        >
           <ArrowUpwardIcon />
         </IconButton>
       </Stack>
