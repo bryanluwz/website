@@ -14,6 +14,7 @@ import { PagesEnum } from "../../apis/enums";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import * as styles from "./style.scss";
+import { setCookie } from "../../utils";
 
 interface NavigationBarProps {}
 
@@ -21,7 +22,13 @@ const pages = Object.entries(PagesEnum);
 const nonRoutablePages = [PagesEnum.contact];
 
 export const NavigationBar: React.FC<NavigationBarProps> = () => {
-  const { currentRoute, setCurrentRoute, toggleChatbot } = useNavigationStore();
+  const {
+    currentRoute,
+    isDarkMode: darkMode,
+    setCurrentRoute,
+    toggleChatbot,
+    setDarkMode,
+  } = useNavigationStore();
   const { t, i18n } = useTranslation();
 
   const dispatch = useDispatch();
@@ -139,32 +146,6 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
   };
 
   // Handle dark mode
-  const [darkMode, setDarkMode] = React.useState(false);
-
-  React.useEffect(() => {
-    // Check local storage you mei you
-    const darkMode = localStorage.getItem("darkMode");
-    if (darkMode) {
-      if (darkMode == "true") {
-        document.documentElement.setAttribute("data-theme", "dark");
-        setDarkMode(true);
-      } else {
-        document.documentElement.setAttribute("data-theme", "light");
-        setDarkMode(false);
-      }
-    } else {
-      // Check prefers color scheme
-      const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
-      if (prefersDarkMode.matches) {
-        document.documentElement.setAttribute("data-theme", "dark");
-        setDarkMode(true);
-      } else {
-        document.documentElement.setAttribute("data-theme", "light");
-        setDarkMode(false);
-      }
-    }
-  }, []);
-
   const handleDarkModeChange = () => {
     const newDarkMode = !darkMode;
     setDarkMode(newDarkMode);
@@ -172,7 +153,8 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
       "data-theme",
       newDarkMode ? "dark" : "light"
     );
-    localStorage.setItem("darkMode", newDarkMode ? "true" : "false");
+
+    setCookie("darkMode", String(newDarkMode));
   };
 
   return (

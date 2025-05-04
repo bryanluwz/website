@@ -15,6 +15,7 @@ import { Footer } from "../components/Footer";
 import { PagesEnum } from "../apis/enums";
 import * as styles from "./style.scss";
 import ChatbotComponent from "../components/ChatbotComponent";
+import { getCookie } from "../utils";
 
 const ScrollToTopBeforeRender = ({
   children,
@@ -32,13 +33,35 @@ const ScrollToTopBeforeRender = ({
 
 export const App = () => {
   const location = useLocation();
-  const { setCurrentRoute, isChatbotOpen } = useNavigationStore();
+  const { setCurrentRoute, isChatbotOpen, setDarkMode } = useNavigationStore();
 
   React.useEffect(() => {
     const normalizedPath = location.pathname.startsWith("/")
       ? location.pathname.slice(1)
       : location.pathname;
     setCurrentRoute(normalizedPath as PagesEnum);
+  }, []);
+
+  React.useEffect(() => {
+    const cookieVal = getCookie("darkMode");
+
+    if (cookieVal === "true") {
+      document.documentElement.setAttribute("data-theme", "dark");
+      setDarkMode(true);
+    } else if (cookieVal === "false") {
+      document.documentElement.setAttribute("data-theme", "light");
+      setDarkMode(false);
+    } else {
+      // fallback to system
+      const prefersDarkMode = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      document.documentElement.setAttribute(
+        "data-theme",
+        prefersDarkMode ? "dark" : "light"
+      );
+      setDarkMode(prefersDarkMode);
+    }
   }, []);
 
   React.useEffect(() => {

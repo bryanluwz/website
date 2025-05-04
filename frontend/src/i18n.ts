@@ -5,6 +5,7 @@ import en from "../public/locales/en.json";
 import zh from "../public/locales/zh.json";
 import ms from "../public/locales/ms.json";
 import ja from "../public/locales/ja.json";
+import { getCookie, setCookie } from "./utils";
 
 const resources = {
   en: { translation: en },
@@ -21,25 +22,23 @@ export const SupportedLanguages = {
   ja: "JAP",
 };
 
-// Try to get the language from localStorage
-const storedLanguage = localStorage.getItem("language");
-const browserLang = navigator.language.split("-")[0] || "en";
-
-// Default to 'en' if nothing is stored
-const initialLanguage = storedLanguage || browserLang || "en";
+// Grab language from cookie or browser or fallback
+const cookieLang = getCookie("language");
+const browserLang = navigator.language.split("-")[0];
+const initialLanguage = cookieLang || browserLang || "en";
 
 i18n.use(initReactI18next).init({
-  resources: resources,
-  lng: initialLanguage, // Set initial language from localStorage or fallback to 'en'
+  resources,
+  lng: initialLanguage,
   fallbackLng: "en",
   interpolation: {
-    escapeValue: false, // React already escapes content
+    escapeValue: false,
   },
 });
 
-// Save the selected language in localStorage when changed
+// Set cookie when language changes
 i18n.on("languageChanged", (lng) => {
-  localStorage.setItem("language", lng);
+  setCookie("language", lng);
 });
 
 export default i18n;

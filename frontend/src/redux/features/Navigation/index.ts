@@ -5,11 +5,13 @@ import { PagesEnum } from "../../../apis/enums";
 interface NavigationState {
   currentRoute: PagesEnum | undefined;
   isChatbotOpen: boolean;
+  isDarkMode: boolean;
 }
 
 const initialState: NavigationState = {
   currentRoute: undefined,
   isChatbotOpen: false,
+  isDarkMode: false,
 };
 
 const navigationSlice = createSlice({
@@ -22,8 +24,12 @@ const navigationSlice = createSlice({
     toggleChatbot: (state) => {
       state.isChatbotOpen = !state.isChatbotOpen;
     },
+    setDarkMode: (state, action: PayloadAction<boolean>) => {
+      state.isDarkMode = action.payload;
+    },
   },
 });
 
-export const { setCurrentRoute, toggleChatbot } = navigationSlice.actions;
+export const { setCurrentRoute, toggleChatbot, setDarkMode } =
+  navigationSlice.actions;
 export default navigationSlice.reducer;

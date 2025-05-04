@@ -29,3 +29,18 @@ export const urlToFile = async (url: string, filename: string) => {
 
   return file;
 };
+
+export const getCookie = (name: string): string | null => {
+  const match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+  return match ? decodeURIComponent(match[2]) : null;
+};
+
+export const setCookie = (
+  name: string,
+  value: string,
+  maxAgeSec = 60 * 60 * 24
+) => {
+  document.cookie = `${name}=${encodeURIComponent(
+    value
+  )}; max-age=${maxAgeSec}; path=/`;
+};
