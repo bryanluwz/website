@@ -21,8 +21,8 @@ interface PageCardProps {
 export const PageCard: React.FC<PageCardProps> = ({
   title = "Title",
   superTitle = "Super Title",
-  time = "Time",
-  company = "Company",
+  time = "",
+  company = "",
   backgroundColor = "var(--secondary-background-color)",
   content = [],
   image,
@@ -34,6 +34,9 @@ export const PageCard: React.FC<PageCardProps> = ({
   const [isCardHovered, setIsCardHovered] = React.useState(false);
 
   const handleOpenPopupCard = () => {
+    if (!content || content.length === 0) {
+      return;
+    }
     setIsPopupCardOpen(true);
   };
 
@@ -137,7 +140,7 @@ export const PageCard: React.FC<PageCardProps> = ({
           ref={cardRef}
           style={{ backgroundColor }}
           className={cx(styles.cardContainer, {
-            [styles.link]: !isPopupCardOpen,
+            [styles.link]: !isPopupCardOpen && content?.length > 0,
           })}
           transition={{
             type: "spring",
@@ -163,7 +166,6 @@ export const PageCard: React.FC<PageCardProps> = ({
             className={cx(styles.card, {
               [styles.focused]: isPopupCardOpen,
             })}
-            onClick={() => setIsPopupCardOpen(true)}
             spacing={2}
           >
             <Stack

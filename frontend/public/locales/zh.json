@@ -205,5 +205,9 @@
       "想联系你！"
     ],
     "error-message": "抱歉，伺服器出现问题。请稍后再试。"
+  },
+  "funsies": {
+    "welcome": "来玩啊",
+    "welcome-subtitle": "这些是我吃饱没事做的作品"
   }
 }
