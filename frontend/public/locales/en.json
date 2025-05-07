@@ -208,5 +208,18 @@
       "We'd like to get into contact with you!"
     ],
     "error-message": "Sorry, there's something wrong with the server. Please try again some other time."
+  },
+  "funsies": {
+    "welcome": "Let's play!",
+    "welcome-subtitle": "Here are some of my fun projects"
+  },
+  "funsies-page-cards": {
+    "title": "Fun stuff to do",
+    "description": "Here are some of my things I coded for fun",
+    "card-0": {
+      "title": "[Fun 1]()",
+      "supertitle": "Fun 1",
+      "time": "7 May 2025"
+    }
   }
 }

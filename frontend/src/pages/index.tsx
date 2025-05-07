@@ -16,6 +16,7 @@ import { PagesEnum } from "../apis/enums";
 import * as styles from "./style.scss";
 import ChatbotComponent from "../components/ChatbotComponent";
 import { getCookie } from "../utils";
+import { FunsiesPage } from "./FunsiesPage";
 
 const ScrollToTopBeforeRender = ({
   children,
@@ -77,8 +78,15 @@ export const App = () => {
             <Routes>
               <Route path="/" element={<MainPage />} />
               <Route path="/about" element={<AboutPage />} />
-              <Route path="/funsies" element={<WIPPage />} />
-              <Route path="*" element={<ErrorPage />} />
+              <Route path="/funsies" element={<FunsiesPage />} />
+              <Route
+                path="*"
+                element={
+                  <React.Suspense fallback={<WIPPage />}>
+                    <ErrorPage />
+                  </React.Suspense>
+                }
+              />
             </Routes>
           </ScrollToTopBeforeRender>
         </Box>
