@@ -103,7 +103,11 @@ export const Footer: React.FC = () => {
             {t("footer.copyright")}
           </CustomTypography>
           <CustomTypography variant="subtitle2">&#8226;</CustomTypography>
-          <Link className={styles.link} target="_blank" href={Resume}>
+          <Link
+            className={styles.link}
+            target="_blank"
+            href={"https://github.com/bryanluwz/website"}
+          >
             <CustomTypography variant="subtitle2">
               {t("footer.sauce")}
             </CustomTypography>
