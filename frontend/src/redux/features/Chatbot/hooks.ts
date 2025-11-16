@@ -35,6 +35,8 @@ export const useChatbotStore = () => {
   };
   const postChatbotMessage = async (messages: ChatbotMessageModel[]) => {
     try {
+      // The API endpoint is no longer free, chatbot halted until further notice
+      throw Error("Error occured while sending message");
       const response = await dispatch(postMessage(messages)).unwrap();
       return response;
     } catch (err) {
