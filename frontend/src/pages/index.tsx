@@ -41,7 +41,7 @@ export const App = () => {
       ? location.pathname.slice(1)
       : location.pathname;
     setCurrentRoute(normalizedPath as PagesEnum);
-  }, []);
+  }, [location.pathname, setCurrentRoute]);
 
   React.useEffect(() => {
     const cookieVal = getCookie("darkMode");
@@ -55,15 +55,15 @@ export const App = () => {
     } else {
       // fallback to system
       const prefersDarkMode = window.matchMedia(
-        "(prefers-color-scheme: dark)"
+        "(prefers-color-scheme: dark)",
       ).matches;
       document.documentElement.setAttribute(
         "data-theme",
-        prefersDarkMode ? "dark" : "light"
+        prefersDarkMode ? "dark" : "light",
       );
       setDarkMode(prefersDarkMode);
     }
-  }, []);
+  }, [setDarkMode]);
 
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });

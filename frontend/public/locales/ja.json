@@ -6,7 +6,7 @@
     "contact": "連絡"
   },
   "footer": {
-    "copyright": "© 2025 Bryan Lu",
+    "copyright": "© 2026 Bryan Lu",
     "sauce": "ソース",
     "links": "リンク",
     "linkedin": "LinkedIn",
@@ -93,6 +93,24 @@
     "title": "経験",
     "description": "プロジェクトとか経験とか",
     "card-0": {
+      "title": "ソフトウェアエンジニア（フロントエンド）",
+      "supertitle": "フルタイム勤務",
+      "time": "2024年7月 - 現在",
+      "company": "Leoch Battery Pte. Ltd. Singapore",
+      "content": [
+        {
+          "content-title": "担当業務",
+          "content-body": [
+            "ESSウェブアプリケーション（デスクトップおよびタブレット）向けに、再利用可能なReactコンポーネントとレスポンシブページを開発・保守",
+            "Viteを使用してアプリケーションの構築・バンドルを行い、開発速度とビルド効率を向上",
+            "ReactとElectron.jsを使用したスタンドアロンのデスクトップアプリケーションを開発",
+            "アジャイル環境において、JIRAを通じて他部門のチームと連携しながら、自律的に業務を遂行"
+          ]
+        }
+      ]
+    },
+
+    "card-1": {
       "title": "フロントエンドエンジニア",
       "supertitle": "インターンシップ",
       "time": "2024年1月 - 2024年6月",
@@ -109,8 +127,8 @@
         }
       ]
     },
-    "card-1": {
-      "title": "[Full Stack チャットボット](https://ec2-54-169-177-146.ap-southeast-1.compute.amazonaws.com/)",
+    "card-2": {
+      "title": "Full Stack チャットボット",
       "supertitle": "Web開発 + AI",
       "time": "2024年8月 - 2025年5月",
       "company": "ナンヤン理工大学",
@@ -125,7 +143,7 @@
         }
       ]
     },
-    "card-2": {
+    "card-3": {
       "title": "自動運転車ナビゲーション",
       "supertitle": "組み込みプログラミング",
       "time": "2023年8月 - 2023年11月",
@@ -142,7 +160,7 @@
         }
       ]
     },
-    "card-3": {
+    "card-4": {
       "title": "優等学位",
       "supertitle": "コンピュータ工学",
       "time": "2021年 - 2025年",

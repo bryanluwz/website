@@ -2,7 +2,7 @@ export enum PagesEnum {
   "work" = "/",
   "about" = "about",
   "funsies" = "funsies",
-  "contact" = "contact",
+  "contact" = "contact", // not in use anymore lol
 }
 
 export enum ChatbotRoleEnum {

@@ -15,25 +15,15 @@ import * as mainStyles from "../style.scss";
 import * as styles from "./style.scss";
 
 import Mugshot from "../../../public/assets/mugshot.png";
-import InternImage from "../../../public/assets/main-page/intern.png";
-import ChatbotImage from "../../../public/assets/main-page/chatbot.png";
-import CircuitBoardImage from "../../../public/assets/main-page/circuit-board.png";
-import UniversityImage from "../../../public/assets/main-page/ntu.png";
 import { SkillCard } from "../../components/SkillCard";
-
-const pageCardsImages = [
-  InternImage,
-  ChatbotImage,
-  CircuitBoardImage,
-  UniversityImage,
-];
+import { MainPageCardsImage } from "../../constants/MainPage";
 
 export const MainPage: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { setCurrentRoute } = useNavigationStore();
 
   const pageCards = React.useMemo(() => {
-    const numCards = pageCardsImages.length;
+    const numCards = MainPageCardsImage.length;
 
     const calculateGridSize = (index: number) => {
       // The order of the grid size for md is 5, 7, 7, 5 repeating,
@@ -75,7 +65,7 @@ export const MainPage: React.FC = () => {
 
     return (
       <Grid2 container spacing={3} className={styles.cardGrid}>
-        {pageCardsImages.map((image: string, index: number) => {
+        {MainPageCardsImage.map((image: string, index: number) => {
           const cardContent = t(`main-page-cards.card-${index}.content`, {
             returnObjects: true,
           }) as unknown as PageCardContentModel[];
@@ -103,7 +93,7 @@ export const MainPage: React.FC = () => {
         })}
       </Grid2>
     );
-  }, [pageCardsImages, i18n.language]);
+  }, [t]);
 
   const skillCards = React.useMemo(() => {
     const skills: { title: string; skills: string[] }[] = [
@@ -130,7 +120,7 @@ export const MainPage: React.FC = () => {
         </Stack>
       </FadeWrapper>
     );
-  }, [i18n.language]);
+  }, [t]);
 
   return (
     <Stack

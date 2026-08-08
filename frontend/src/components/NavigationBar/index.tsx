@@ -18,7 +18,11 @@ import { setCookie } from "../../utils";
 
 interface NavigationBarProps {}
 
-const pages = Object.entries(PagesEnum);
+const pages: [string, PagesEnum][] = Object.entries(PagesEnum).filter(
+  ([key, value]) => {
+    return value !== PagesEnum.contact; // Filter out the contact page since it's not in used
+  },
+);
 const nonRoutablePages = [PagesEnum.contact];
 
 export const NavigationBar: React.FC<NavigationBarProps> = () => {
@@ -59,12 +63,12 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
   const [updateIndicatorBool, setUpdateIndicatorBool] = React.useState(false); // Stupid apple safari bug
   const navRefs = React.useRef<{ [key: number]: HTMLSpanElement | null }>({}); // Store refs for each tab
   const [updateIndicatorTimeoutId, setUpdateIndicatorTimeoutId] =
-    React.useState<NodeJS.Timeout | null>(null);
+    React.useState<ReturnType<typeof setTimeout> | null>(null);
 
-  const updateIndicator = () => {
+  const updateIndicator = React.useCallback(() => {
     const activeIndex = Math.max(
       pages.findIndex((page) => page[1] === currentRoute),
-      0
+      0,
     );
     const activeTab = navRefs.current[activeIndex];
 
@@ -75,7 +79,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
         height: activeTab.offsetHeight,
       });
     }
-  };
+  }, [currentRoute]);
 
   React.useEffect(() => {
     updateIndicator();
@@ -85,18 +89,18 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
     const title = t(`navigation.${pageName[0]}`);
     document.title = `Bryan Lu ${String.fromCharCode(8226)} 
     ${title}`;
-  }, [pages, i18n.language]);
+  }, [i18n.language, updateIndicator, t, currentRoute]);
 
   React.useEffect(() => {
     updateIndicator();
-  }, [currentRoute]);
+  }, [currentRoute, updateIndicator]);
 
   React.useEffect(() => {
     if (updateIndicatorBool) {
       updateIndicator();
       setUpdateIndicatorBool(false);
     }
-  }, [updateIndicatorBool]);
+  }, [updateIndicator, updateIndicatorBool]);
 
   React.useEffect(() => {
     const handleResize = () => {
@@ -106,7 +110,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
       setUpdateIndicatorTimeoutId(
         setTimeout(() => {
           setUpdateIndicatorBool(true);
-        }, 300)
+        }, 300),
       );
     };
 
@@ -114,7 +118,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [updateIndicatorTimeoutId]);
 
   // Set navigation bar styles
   const [navBarStyles, setNavBarStyles] = React.useState({});
@@ -151,7 +155,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
     setDarkMode(newDarkMode);
     document.documentElement.setAttribute(
       "data-theme",
-      newDarkMode ? "dark" : "light"
+      newDarkMode ? "dark" : "light",
     );
 
     setCookie("darkMode", String(newDarkMode));
@@ -172,6 +176,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = () => {
         >
           {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
         </Icon>
+        {/* Removed Contact Page  */}
         {pages.map((value, index) => (
           // I dont know why this woudlnt work work CustomTypography
           <Typography
