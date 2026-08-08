@@ -6,7 +6,7 @@
     "contact": "Hubungi"
   },
   "footer": {
-    "copyright": "© 2025 Bryan Lu",
+    "copyright": "© 2026 Bryan Lu",
     "sauce": "Sos",
     "links": "Pautan",
     "linkedin": "LinkedIn",
@@ -87,6 +87,24 @@
     "title": "Pengalaman",
     "description": "Berikut adalah beberapa projek dan pengalaman saya",
     "card-0": {
+      "title": "Jurutera Perisian (Frontend)",
+      "supertitle": "Jawatan Sepenuh Masa",
+      "time": "Jul 2024 - Kini",
+      "company": "Leoch Battery Pte. Ltd. Singapore",
+      "content": [
+        {
+          "content-title": "Tanggungjawab",
+          "content-body": [
+            "Membangunkan dan menyelenggara komponen React yang boleh digunakan semula serta halaman responsif untuk aplikasi web ESS (desktop dan tablet)",
+            "Membina dan membungkus aplikasi menggunakan Vite, sekali gus meningkatkan kelajuan pembangunan dan kecekapan proses build",
+            "Membangunkan aplikasi desktop kendiri menggunakan React dan Electron.js",
+            "Bekerja secara berdikari sambil bekerjasama dengan pasukan merentas fungsi melalui JIRA dalam persekitaran yang menggunakan metodologi agile"
+          ]
+        }
+      ]
+    },
+
+    "card-1": {
       "title": "Jurutera Frontend",
       "supertitle": "Latihan Industri",
       "time": "Jan 2024 - Jun 2024",
@@ -103,8 +121,8 @@
         }
       ]
     },
-    "card-1": {
-      "title": "[Chatbot Full Stack](https://ec2-54-169-177-146.ap-southeast-1.compute.amazonaws.com/)",
+    "card-2": {
+      "title": "Chatbot Full Stack",
       "supertitle": "Pembangunan Web + AI",
       "time": "Ogos 2024 - Mei 2025",
       "company": "Universiti Teknologi Nanyang",
@@ -119,7 +137,7 @@
         }
       ]
     },
-    "card-2": {
+    "card-3": {
       "title": "Navigasi Kenderaan Automatik",
       "supertitle": "Sistem Terbenam",
       "time": "Ogos 2023 - Nov 2023",
@@ -136,7 +154,7 @@
         }
       ]
     },
-    "card-3": {
+    "card-4": {
       "title": "Ijazah Kelas Pertama",
       "supertitle": "Kejuruteraan Komputer",
       "time": "2021 - 2025",

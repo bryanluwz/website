@@ -65,7 +65,7 @@ export const FunsiesPage: React.FC = () => {
         })}
       </Grid2>
     );
-  }, [funsiesCardsImages, i18n.language]);
+  }, [t]);
 
   return (
     <Stack

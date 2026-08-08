@@ -6,7 +6,7 @@
     "contact": "联系"
   },
   "footer": {
-    "copyright": "© 2025 Bryan Lu",
+    "copyright": "© 2026 Bryan Lu",
     "sauce": "酱",
     "links": "链接",
     "linkedin": "领英",
@@ -93,6 +93,24 @@
     "title": "经历",
     "description": "以下是我的一些项目和经历",
     "card-0": {
+      "title": "软件工程师（前端）",
+      "supertitle": "全职职位",
+      "time": "2024年7月 - 至今",
+      "company": "Leoch Battery Pte. Ltd. Singapore",
+      "content": [
+        {
+          "content-title": "工作职责",
+          "content-body": [
+            "为ESS网页应用程序（桌面端及平板端）开发和维护可复用的React组件及响应式页面",
+            "使用Vite构建及打包应用程序，提高开发速度和构建效率",
+            "使用React和Electron.js开发独立的桌面应用程序",
+            "在敏捷开发环境中，通过JIRA与跨职能团队协作，同时独立完成工作"
+          ]
+        }
+      ]
+    },
+
+    "card-1": {
       "title": "前端工程师",
       "supertitle": "实习",
       "time": "2024年1月 - 2024年6月",
@@ -109,8 +127,8 @@
         }
       ]
     },
-    "card-1": {
-      "title": "[全栈聊天机器人](https://ec2-54-169-177-146.ap-southeast-1.compute.amazonaws.com/)",
+    "card-2": {
+      "title": "全栈聊天机器人",
       "supertitle": "Web开发 + AI",
       "time": "2024年8月 - 2025年5月",
       "company": "南洋理工大学",
@@ -125,7 +143,7 @@
         }
       ]
     },
-    "card-2": {
+    "card-3": {
       "title": "自动驾驶汽车导航",
       "supertitle": "嵌入式编程",
       "time": "2023年8月 - 2023年11月",
@@ -142,7 +160,7 @@
         }
       ]
     },
-    "card-3": {
+    "card-4": {
       "title": "一等荣誉学位",
       "supertitle": "计算机工程",
       "time": "2021 - 2025",

@@ -85,7 +85,7 @@ export const AboutPage: React.FC = () => {
         ))}
       </Grid2>
     );
-  }, [i18n.language]);
+  }, [t]);
 
   return (
     <Stack

@@ -5,11 +5,11 @@ import { CustomTypography } from "../CustomTypography";
 
 import * as styles from "./style.scss";
 import Resume from "../../../public/assets/Resume.pdf";
-import { useNavigationStore } from "../../redux/features/Navigation/hooks";
+// import { useNavigationStore } from "../../redux/features/Navigation/hooks";
 
 export const Footer: React.FC = () => {
   const { t } = useTranslation();
-  const { toggleChatbot } = useNavigationStore();
+  // const { toggleChatbot } = useNavigationStore();
 
   return (
     <Grid2 container spacing={2} className={styles.container}>
@@ -81,7 +81,7 @@ export const Footer: React.FC = () => {
           </Stack>
         </Stack>
       </Grid2>
-      <Grid2 size={{ xs: 5, sm: 2 }}>
+      {/* <Grid2 size={{ xs: 5, sm: 2 }}>
         <Stack direction="column" spacing={{ xs: 1, sm: 2 }}>
           <CustomTypography variant="body2">
             {t("footer.message")}
@@ -94,7 +94,7 @@ export const Footer: React.FC = () => {
             </Link>
           </Stack>
         </Stack>
-      </Grid2>
+      </Grid2> */}
       <Grid2 size={{ xs: 3, sm: 2 }} />
       <Grid2 size={{ xs: 1, sm: 0 }} display={{ sm: "none" }} />
       <Grid2 size={{ xs: 10, sm: 5 }} display={{ sm: "none" }}>
